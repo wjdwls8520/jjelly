@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Hotmeet from "../component/Hotmeet";
 
 export default function Meeting() {
     return(
@@ -15,6 +16,13 @@ export default function Meeting() {
                     </Link>
                 </li>
             </ul>
-        </div>
+
+            <h2 className="title">
+                <em>HOT</em> 모임 <i>!</i>
+            </h2>
+
+            <Hotmeet />
+                
+        </div>  
     );
 };
