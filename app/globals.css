@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+
+* {margin: 0; padding: 0;}
+html, body {background: #fff; font-family: "Noto Sans KR", sans-serif; font-size: 16px; color: #121212;}
+h1, h2, h3, h4, h5, a, span, em {text-decoration: none; font-family: "Noto Sans KR", sans-serif; font-size: 16px; font-weight: 400; color: #121212;}
+input, textarea, select {border: 0px; background: transparent; resize: none; font-family: "Noto Sans KR", sans-serif; font-size: 16px; color: #121212;}
+ul, li {list-style: none;}
+
+
+.display-none {display: none !important;}
+.hidden {position: absolute !important; z-index: -100; margin: 0; padding: 0; width: 0; height: 0; line-height: 0; border: none; opacity: 0 !important; overflow: hidden !important; pointer-events: none !important;}
+.layoutLine {display: block; margin: 10px auto; width: calc(100% - 40px); height: 1px; border-radius: 9999px; box-sizing: border-box; background: #C6CBD4 ;}
+
+
+#header {display: flex; justify-content: space-between; align-items: center; padding: 0 3%; height: 70px; box-sizing: border-box;}
+
+#header .pageName {display: flex; align-items: center; gap: 0 4px; width: 120px;}
+#header .pageName > a {display: block; height: 24px;}
+#header .pageName > span {margin-bottom: 1px; font-size: 16px; font-weight: 500; color: #9EA1B6;}
+
+#header .logo {height: 54px;}
+#header .logo > a {display: block; height: 100%;}
+#header .logo > a > img {height: 100%;}
+
+#header .util {display: flex; justify-content: flex-end; align-items: center; width: 120px;}
+#header .util > a {display: block;}
+#header .util .profile {display: flex; justify-content: center; align-items: center; width: 44px; height: 44px; border-radius: 50%; overflow: hidden;}
+#header .util .profile > img {width: 110%; height: 110%; object-fit: cover;}
+
+/* 메인게시판 */
+#section {display: flex; flex-direction: column; gap: 22px; padding: 10px 20px; box-sizing: border-box;}
+#section.mainSection .boardWrap {display: flex; justify-content: space-between; align-items: center;}
+#section.mainSection .boardWrap .boardBox {display: flex; justify-content: center; align-items: center; width: 30%; height: 60px; border: 1px solid #a9b4ec; border-radius: 10px; box-sizing: border-box; text-align: center;}
+#section.mainSection .boardWrap .boardBox > span {display: block; font-size: 16px; font-weight: 500; color: #555;}
+/* 게시판별 타이틀 */
+#section .title {display: block; width: 100%; font-size: 18px; font-weight: 500; color: #666B8C;}
+
+/* 동물별게시판 */
+#section.mainSection .secondGroup {display: flex; flex-flow: wrap; justify-content: space-around; width: 100%; height: auto;}
+#section.mainSection  .secondGroup .leftContents {display: flex; flex-direction: column; gap: 10px; width: 80px;}
+#section.mainSection  .secondGroup .leftContents .boardBox {width: 100%;}
+#section.mainSection  .secondGroup .centerContents {display: flex; flex-flow: wrap; justify-content: center; align-items: center; gap: 10px; width: 130px; height: 100%;}
+#section.mainSection  .secondGroup .centerContents .boardBox {width: 60px; height: 60px; border-radius: 22px;}
+#section.mainSection  .secondGroup .rightContents {width: 80px; height: 130px;}
+#section.mainSection  .secondGroup .rightContents .boardBox {width: 100%; height: 100%; border-width: 1px; border-style: solid;}
+#section.mainSection  .secondGroup .boardBox {border: 2px dashed #a9b4ec;}
+/* 핫보드 */
+#section.hotBoard {display: flex; gap: 20px; flex-flow: wrap;}
+#section.hotBoard .userPost {position: relative; width: calc(50% - 10px); height: 180px; border: 0px solid #555; border-radius: 20px; box-sizing: border-box; overflow: hidden;}
+#section.hotBoard .userPost:nth-of-type(5n) {width: 100%; border-color: #666B8C;}
+#section.hotBoard .userPost .userProfile {position: absolute; z-index: 10; top: 6px; left: 6px; width: 40px; height: 40px; border-radius: 50%; box-sizing: border-box; background: #fff; overflow: hidden;}
+#section.hotBoard .userPost .userProfile img.postProfile {width: 100%; height: 100%; object-fit: cover; opacity: 1;}
+#section.hotBoard .userPost img.postImg {width: 100%; height: 100%; object-fit: cover; opacity: 0.8;}
+#section.hotBoard .userPost .postContent {position: absolute; z-index: 11; bottom: 0; left: 0; padding: 6px 16px; width: 100%; height: 38px; background: rgba(85, 85, 85, 0.8); box-sizing: border-box;}
+#section.hotBoard .userPost .postContent > span.txt {display: block; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; font-size: 12px; color: #fff; pointer-events: none;}
