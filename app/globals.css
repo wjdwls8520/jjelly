@@ -2,7 +2,7 @@
 
 
 * {margin: 0; padding: 0;}
-html, body {background: #fff; font-family: "Noto Sans KR", sans-serif; font-size: 16px; color: #121212;}
+html, body {max-width: 460px; background: #fff; font-family: "Noto Sans KR", sans-serif; font-size: 16px; color: #121212;}
 h1, h2, h3, h4, h5, a, span, em {text-decoration: none; font-family: "Noto Sans KR", sans-serif; font-size: 16px; font-weight: 400; color: #121212;}
 input, textarea, select {border: 0px; background: transparent; resize: none; font-family: "Noto Sans KR", sans-serif; font-size: 16px; color: #121212;}
 ul, li {list-style: none;}
