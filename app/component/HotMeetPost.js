@@ -3,13 +3,14 @@ import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
-export default function Hotmeet() {
+export default function HotMeetPost() {
     return(
         <div className="hotMeet">
+            {/* 핫 모임 */}
             <Swiper 
-                slidesPerView={2.6}
+                slidesPerView={1.8}
                 spaceBetween={30}
-                className="meetSwiper"
+                className="hotMeetPost"
             >
                 <SwiperSlide>
                     <div className="userPost">
@@ -81,7 +82,5 @@ export default function Hotmeet() {
                 </SwiperSlide>
             </Swiper>
         </div>
-
-
     );
 };
