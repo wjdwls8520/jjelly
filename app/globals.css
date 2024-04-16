@@ -35,7 +35,7 @@ body {background: #f8f8f8; min-height: 100vh;}
 /* ******** 메인게시판 ******** */
 #section {display: flex; flex-direction: column; gap: 22px; margin-top: 14px; padding: 10px 20px; box-sizing: border-box;}
 #section.mainSection .boardWrap {display: flex; justify-content: space-between; align-items: center;}
-#section.mainSection .boardWrap .boardBox {display: flex; justify-content: center; align-items: center; width: 30%; height: 60px; border: 1px solid #7571f1; border-radius: 10px; box-shadow: 2px 1px 3px 1px #666B8C; box-sizing: border-box; background: #fff; text-align: center;}
+#section.mainSection .boardWrap .boardBox {display: flex; justify-content: center; align-items: center; width: 30%; height: 60px; border: 1px solid #7571f1; border-radius: 10px; /*box-shadow: 2px 1px 3px 1px #666B8C;*/ box-sizing: border-box; background: #fff; text-align: center;}
 #section.mainSection .boardWrap .boardBox a {display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;}
 #section.mainSection .boardWrap .boardBox span {display: block; font-size: 16px; font-weight: 600; color: #9EA1B6;}
 /* 게시판별 타이틀 */
