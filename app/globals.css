@@ -15,7 +15,7 @@ ul, li {list-style: none;}
 
 
 body {background: #f8f8f8; min-height: 100vh;}
-#header {display: flex; justify-content: space-between; align-items: center; position: sticky; z-index: 3000; top: 0; left: 0; right: 0; padding: 0 3%; height: 70px; box-sizing: border-box; background: #a8a0d2;}
+#header {display: flex; justify-content: space-between; align-items: center; position: sticky; z-index: 3000; top: 0; left: 0; right: 0; padding: 0 3%; height: 70px; box-sizing: border-box; background: #bcb6da;}
 
 #header .pageName {display: flex; align-items: center; gap: 0 4px; width: 120px;}
 #header .pageName > a {display: block; height: 24px;}
@@ -35,24 +35,25 @@ body {background: #f8f8f8; min-height: 100vh;}
 /* ******** 메인게시판 ******** */
 #section {display: flex; flex-direction: column; gap: 22px; margin-top: 14px; padding: 10px 20px; box-sizing: border-box;}
 #section.mainSection .boardWrap {display: flex; justify-content: space-between; align-items: center;}
-#section.mainSection .boardWrap .boardBox {display: flex; justify-content: center; align-items: center; width: 30%; height: 60px; border: 1px solid #7571f1; border-radius: 10px; /*box-shadow: 2px 1px 3px 1px #666B8C;*/ box-sizing: border-box; background: #fff; text-align: center;}
+#section.mainSection .boardWrap .boardBox {display: flex; justify-content: center; align-items: center; position: relative; width: 30%; height: 60px; border: 1px solid #7571f1; border-radius: 15px; box-sizing: border-box; background: #fff; text-align: center; overflow: hidden;}
+#section.mainSection .boardWrap .boardBox > img.boardImg {position: absolute; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0.8;}
 #section.mainSection .boardWrap .boardBox a {display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;}
-#section.mainSection .boardWrap .boardBox span {display: block; font-size: 16px; font-weight: 600; color: #9EA1B6;}
+#section.mainSection .boardWrap .boardBox span {display: block; font-size: 14px; font-weight: 600; color: #9EA1B6;}
 /* 게시판별 타이틀 */
 #section .title, #section .title em {width: 100%; font-size: 18px; font-weight: 500; color: #666B8C;}
 #section .title em {font-weight: 700; color: #c7abdf;}
 
 /* 동물별게시판 */
-#section.mainSection .secondGroup {display: flex; flex-flow: wrap; justify-content: space-around; width: 100%; height: auto;}
-#section.mainSection  .secondGroup .leftContents {display: flex; flex-direction: column; gap: 10px; width: 80px;}
-#section.mainSection  .secondGroup .leftContents .boardBox {width: 100%;}
-#section.mainSection  .secondGroup .centerContents {display: flex; flex-flow: wrap; justify-content: center; align-items: center; gap: 10px; width: 150px; height: 100%;}
-#section.mainSection  .secondGroup .centerContents .boardBox {width: 70px; height: 70px; border: 0; /*border-radius: 22px;*/ background: transparent; background-image: url(/frame2.png); background-position: 50% 50%; background-size: 70px 70px;}
-#section.mainSection .secondGroup .centerContents .boardBox span {font-size: 14px;}
-#section.mainSection  .secondGroup .rightContents {width: 70px; height: 130px;}
-#section.mainSection  .secondGroup .rightContents .boardBox {width: 100%; height: 100%;}
-#section.mainSection  .secondGroup .boardBox {border: 2px dashed #a9b4ec; box-shadow: none;}
-#section.mainSection  .secondGroup .boardBox span {font-weight: 500;}
+#section.mainSection .secondGroup {display: flex; flex-direction: column;justify-content: space-around; gap: 32px; width: 100%; height: auto;}
+#section.mainSection .secondGroup .contents01 {display: flex; justify-content: space-between; width: 100%;}
+#section.mainSection .secondGroup .contents01 .boardBox {width: 100px; height: 100px;}
+
+#section.mainSection .secondGroup .contents02 {display: flex; justify-content: space-around; width: 100%;}
+
+#section.mainSection .secondGroup .boardBoxWrap {display: flex; flex-direction: column; gap: 10px;}
+#section.mainSection .secondGroup .boardBox {width: 70px; height: 70px; border: 0px dashed #a9b4ec; border-radius: 50%; box-shadow: none;}
+#section.mainSection .secondGroup .boardBoxWrap span {display: block; text-align: center; font-size: 14px; font-weight: 500; color: #9EA1B6;}
+
 /* 핫보드 */
 #section.hotBoard {display: flex; gap: 20px; flex-flow: wrap;}
 #section.hotBoard .userPost {position: relative; width: calc(50% - 10px); height: 180px; border: 0px solid #555; border-radius: 20px; box-shadow: 2px 1px 6px 5px #C6CBD4; box-sizing: border-box; overflow: hidden;}
