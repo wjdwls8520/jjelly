@@ -10,12 +10,12 @@ export default function Meeting() {
     return(
         <div id="section" className="meetingSection">
             <ul className="tabCategory">
-                <li className="meet active">
+                <li className="meet">
                     <Link href={{ pathname: '/meeting' }}>
                         젤리 모임
                     </Link>
                 </li>
-                <li className="meetNotice">
+                <li className="meetNotice active">
                     <Link href={{ pathname: '/meetNotice' }}>
                         젤리 공고
                     </Link>
@@ -30,7 +30,7 @@ export default function Meeting() {
             <Region />
 
             <h2 className="title">
-                <em>인기</em> 모임 <i>!</i>
+                <em>인기</em> 공고 <i>!</i>
             </h2>
 
             <HotMeetPost />
@@ -39,7 +39,7 @@ export default function Meeting() {
             <Field />
 
             <h2 className="title">
-                <em>젤리</em> 모임
+                <em>젤리</em> 공고 
             </h2>
 
             <MeetPost />

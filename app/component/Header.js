@@ -7,7 +7,7 @@ export default function Header() {
                 <Link href={{ pathname: '/' }}>
                     <img src='/back_arrow.png' /> 
                 </Link>
-                <span>HOME</span>
+                {/* <span>HOME</span> */}
             </div>
             <h1 className="logo">
                 <Link href={{ pathname: '/' }}>

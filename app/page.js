@@ -28,70 +28,71 @@ export default function Home() {
 
                 <div className="boardWrap secondGroup">
                     <div className="contents contents01">
-                        <div className="boardBoxWrap">
-                            <div className="boardBox">
-                                <img className="boardImg" src='/paws.png' /> 
-                                <Link href={{ pathname: '/' }}>
-                                </Link>
+                        <Link href={{ pathname: '/freeBoard' }}>
+                            <div className="boardBoxWrap">
+                                <div className="boardBox">
+                                    <img className="boardImg" src='/paws.png' /> 
+                                </div>
+                                <span>자유 게시판</span>
                             </div>
-                            <span>자유 게시판</span>
-                        </div>
+                        </Link>
 
-                        <div className="boardBoxWrap">
-                            <div className="boardBox">
-                                <img className="boardImg" src='/dog_bone.png' />                                 
-                                <Link href={{ pathname: '/' }}>
-                                </Link>
+                        <Link href={{ pathname: '/' }}>
+                            <div className="boardBoxWrap">
+                                <div className="boardBox">
+                                    <img className="boardImg" src='/dog_bone.png' />                                 
+                                </div>
+                                <span>핫 딜</span>
                             </div>
-                            <span>핫 딜</span>
-                        </div>
+                        </Link>
 
-                        <div className="boardBoxWrap">
-                            <div className="boardBox">
-                                <img className="boardImg" src='/volunteer.png' />   
-                                <Link href={{ pathname: '/' }}>
-                                </Link>
+                        <Link href={{ pathname: '/' }}>
+                            <div className="boardBoxWrap">
+                                <div className="boardBox">
+                                    <img className="boardImg" src='/volunteer.png' />   
+                                </div>
+                                <span>봉사 활동</span>
                             </div>
-                            <span>봉사 활동</span>
-                        </div>
+                        </Link>
                     </div>
 
                     <div className="contents contents02">
-                    <div className="boardBoxWrap">
-                            <div className="boardBox">
-                                <img className="boardImg" src='/dog.png' /> 
-                                <Link href={{ pathname: '/' }}>
-                                </Link>
+                        <Link href={{ pathname: '/dogBoard' }}>
+                            <div className="boardBoxWrap">
+                                <div className="boardBox">
+                                    <img className="boardImg" src='/dog.png' /> 
+                                </div>
+                                <span>멍멍이</span>
                             </div>
-                            <span>멍멍이</span>
-                        </div>
+                        </Link>
 
-                        <div className="boardBoxWrap">
-                            <div className="boardBox">
-                                <img className="boardImg" src='/cat.png' /> 
-                                <Link href={{ pathname: '/' }}>
-                                </Link>
+                        <Link href={{ pathname: '/' }}>
+                            <div className="boardBoxWrap">
+                                <div className="boardBox">
+                                    <img className="boardImg" src='/cat.png' /> 
+                                </div>
+                                <span>냥이</span>
                             </div>
-                            <span>냥이</span>
-                        </div>
+                        </Link>
 
-                        <div className="boardBoxWrap">
-                            <div className="boardBox">
-                                <img className="boardImg" src='/bird.png' /> 
-                                <Link href={{ pathname: '/' }}>
-                                </Link>
+                        <Link href={{ pathname: '/' }}>
+                            <div className="boardBoxWrap">
+                                <div className="boardBox">
+                                    <img className="boardImg" src='/bird.png' /> 
+                                </div>
+                                <span>새</span>
                             </div>
-                            <span>새</span>
-                        </div>
+                        </Link>
 
-                        <div className="boardBoxWrap">
-                            <div className="boardBox">
-                                <img className="boardImg" src='/fish2.png' /> 
-                                <Link href={{ pathname: '/' }}>
-                                </Link>
+                        <Link href={{ pathname: '/' }}>
+                            <div className="boardBoxWrap">
+                                <div className="boardBox">
+                                    <img className="boardImg" src='/fish2.png' /> 
+                                    
+                                </div>
+                                <span>물고기</span>
                             </div>
-                            <span>물고기</span>
-                        </div>
+                        </Link>
                     </div>      
                 </div>
 
