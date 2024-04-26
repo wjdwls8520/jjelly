@@ -2,6 +2,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "./component/Header";
 import Footer from "./component/Footer";
+import BtnWriteBoard from "./component/BtnWriteBoard";
+import WriteBoard from "./component/WriteBoard";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,10 +13,13 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+
+  let writeBoard = 'dasdas';
+
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <div id="wrap">
+      <body className={inter.className }>
+        <div id="wrap" className={writeBoard}>
 
             {/* 헤더 */}
             <Header />
@@ -22,9 +27,11 @@ export default function RootLayout({ children }) {
             {children}
 
             {/* 푸터 */}
-            <Footer />
+            {/* <Footer /> */}
         </div>
 
+        <BtnWriteBoard writeBoard={writeBoard} />
+        <WriteBoard writeBoard={writeBoard} />
       </body>
     </html>
   );

@@ -37,7 +37,7 @@ export default function Home() {
                             </div>
                         </Link>
 
-                        <Link href={{ pathname: '/' }}>
+                        <Link href={{ pathname: '/hotDeal' }}>
                             <div className="boardBoxWrap">
                                 <div className="boardBox">
                                     <img className="boardImg" src='/dog_bone.png' />                                 
@@ -46,7 +46,7 @@ export default function Home() {
                             </div>
                         </Link>
 
-                        <Link href={{ pathname: '/' }}>
+                        <Link href={{ pathname: '/volunteer' }}>
                             <div className="boardBoxWrap">
                                 <div className="boardBox">
                                     <img className="boardImg" src='/volunteer.png' />   
@@ -66,7 +66,7 @@ export default function Home() {
                             </div>
                         </Link>
 
-                        <Link href={{ pathname: '/' }}>
+                        <Link href={{ pathname: '/catBoard' }}>
                             <div className="boardBoxWrap">
                                 <div className="boardBox">
                                     <img className="boardImg" src='/cat.png' /> 
@@ -75,7 +75,7 @@ export default function Home() {
                             </div>
                         </Link>
 
-                        <Link href={{ pathname: '/' }}>
+                        <Link href={{ pathname: '/birdBoard' }}>
                             <div className="boardBoxWrap">
                                 <div className="boardBox">
                                     <img className="boardImg" src='/bird.png' /> 
@@ -84,7 +84,7 @@ export default function Home() {
                             </div>
                         </Link>
 
-                        <Link href={{ pathname: '/' }}>
+                        <Link href={{ pathname: '/fishBoard' }}>
                             <div className="boardBoxWrap">
                                 <div className="boardBox">
                                     <img className="boardImg" src='/fish2.png' /> 
