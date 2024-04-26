@@ -4,8 +4,6 @@ import Link from "next/link";
 
 export default function DogBoard() {
 
-    console.log(location.search)
-
     return (
         <div id="section" className="meetingSection">
             <ul className="tabCategory">
