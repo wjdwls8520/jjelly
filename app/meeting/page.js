@@ -22,14 +22,10 @@ export default function Meeting() {
                 </li>
             </ul>
 
-            {
-
-            }
-
             {/* 분류 : 지역 */}
             <Region />
 
-            <h2 className="title">
+            <h2 className="mainTitle">
                 <em>인기</em> 모임 <i>!</i>
             </h2>
 
@@ -38,7 +34,7 @@ export default function Meeting() {
             {/* 분류 카테고리, 활동  */}
             <Field />
 
-            <h2 className="title">
+            <h2 className="mainTitle">
                 <em>젤리</em> 모임
             </h2>
 

@@ -24,19 +24,21 @@ export default function FreeBoard() {
                 {
                     testArr.map((a, i)=> {
                         return (
-                            <div className="post commonPost">
+                            <div className="post commonPost style1">
                                 <div className="content">
-                                    <span className="title">
-                                        <Link href={{ pathname: '/freeBoard', query: 'detail' }}>
+                                    <Link href={{ pathname: '/freeBoard', query: 'detail' }}>
+                                        <span className="title titleLine2">
                                             <span className="subject">[일상에서]</span>
-                                            오늘은 스터디카페에 갔다왔어요. 기쁘며 얼마나 아름다우냐? 이것을
-                                        </Link>
-                                    </span> 
-                                    <div className="userInfo">
-                                        <span className="user">명젤리</span>
-                                        <span className="time">12:12</span>
-                                        <span className="check">조회 6</span>
-                                    </div>
+                                            <span>
+                                                오늘은 스터디카페에 갔다왔어요. 기쁘며 얼마나 아름다우냐? 이것을
+                                            </span>
+                                        </span> 
+                                        <div className="userInfo">
+                                            <span className="user">명젤리</span>
+                                            <span className="time">12:12</span>
+                                            <span className="check">조회 6</span>
+                                        </div>
+                                    </Link>
                                 </div>
 
                                 <div className="util">

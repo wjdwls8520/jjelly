@@ -9,7 +9,7 @@ export default function HotBoard() {
 
     return(
         <div id="section" className="boardWrap hotBoard">
-            <h2 className="title">
+            <h2 className="mainTitle">
                 <em>HOT</em> 젤 100 <i>!</i>
             </h2>
 

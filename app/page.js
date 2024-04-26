@@ -8,7 +8,7 @@ export default function Home() {
 
                 <div className="boardWrap firstGroup">
                     <div className="boardBox">
-                        <Link href={{ pathname: '/' }}>
+                        <Link href={{ pathname: '/news' }}>
                             <span>JJelly 소식</span>
                         </Link>
                     </div>
