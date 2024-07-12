@@ -1,5 +1,3 @@
-'use client'
-
 import { Editor } from '@toast-ui/react-editor';
 import '@toast-ui/editor/toastui-editor.css';
 
