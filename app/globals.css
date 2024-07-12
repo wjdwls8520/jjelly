@@ -161,12 +161,13 @@ br.m {display: none !important;}
 
 /* 공통 선 없는 인풋 */
 .myInput {padding: 0 5px 0 20px; width: 100%; height: 22px; box-sizing: border-box; font-size: 14px; font-weight: 500;}
-.myInput::placeholder {font-size: 16px; font-weight: 500; color: #9ea1b6;}
+.myInput::placeholder {font-size: 14px; font-weight: 500; color: #9ea1b6;}
 
-.myTTA {padding: 0px; width: 100%; font-size: 14px; font-weight: 400; box-sizing: border-box;}
+.myTTA {padding: 0px; width: 100%; height: 500px; font-size: 14px; font-weight: 400; box-sizing: border-box;}
 .myTTA::placeholder {word-break: break-all; font-size: 14px; font-weight: 400; color: #9ea1b6;}
 /* 공통 선 있는 인풋 */
 .myInput.bdCustom {display: block; padding: 0px 20px; height: 32px; border-radius: 8px; border: 1px solid #dadde6;}
+.myTTA.bdCustom {display: block; padding: 20px; border-radius: 8px; border: 1px solid #dadde6;}
 
 
 /* 공통 필드 카테고리 */
@@ -226,7 +227,7 @@ br.m {display: none !important;}
 /* 디테일 */
 .commonBoardSection .detailDataForm {display: flex; flex-direction: column;}
 .commonBoardSection .detailDataForm .titleSpace .title {display: block; margin: 0 0 16px; word-break: break-all; font-size: 28px; font-weight: 500;}
-.commonBoardSection .detailDataForm .titleSpace .customSellectBox .mySellect {text-align: left; font-size: 16px; font-weight: 500; color: #9ea1b6;}
+.commonBoardSection .detailDataForm .titleSpace .customSellectBox .mySellect {text-align: left; font-size: 14px; font-weight: 500; color: #9ea1b6;}
 .commonBoardSection .detailDataForm .userInfoSpace {display: flex; flex-direction: column; gap: 4px;}
 .commonBoardSection .detailDataForm .profileZone {display: flex; align-items: center; gap: 8px;}
 .commonBoardSection .detailDataForm .profileZone > img {background: #f4eeee; width: 32px; height: 32px; border-radius: 50%; overflow: hidden;}
