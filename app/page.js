@@ -35,7 +35,7 @@ export default function Home() {
                     {/* 쩰리 소식, 모임, 맵 */}
                     <ul className="boardList">
                         <li>
-                            <Link className="imgWrap" href={{ pathname: '/news' }}>
+                            <Link className="imgWrap" href={{ pathname: '/board' }}>
                                 <img src="/news.png" alt="모임" />
                                 쩰리 소식
                             </Link>
@@ -47,7 +47,7 @@ export default function Home() {
                             </Link>
                         </li>
                         <li>
-                            <Link className="imgWrap" href={{ pathname: '/meetNotice' }}>
+                            <Link className="imgWrap" href={{ pathname: '/map' }}>
                                 <img src="/map.png" alt="모임" />
                                 쩰리 맵
                                 </Link>
@@ -62,37 +62,37 @@ export default function Home() {
                     {/* 고통 게시판 */}
                     <ul className="boardList">
                         <li>
-                            <Link className="imgWrap" href={{ pathname: '/hotDeal' }}>
+                            <Link className="imgWrap" href={{ pathname: '/board' }}>
                                 <img src="/bird.png" alt="핫딜" />
                                 핫딜
                             </Link>
                         </li>
                         <li>
-                            <Link className="imgWrap" href={{ pathname: '/freeBoard' }}>
+                            <Link className="imgWrap" href={{ pathname: '/board' }}>
                                 <img src="/fish2.png" alt="자유게시판" />
                                 자유게시판
                             </Link>
                         </li>
                         <li>
-                            <Link className="imgWrap" href={{ pathname: '/volunteer' }}>
+                            <Link className="imgWrap" href={{ pathname: '/board' }}>
                                 <img src="/dog_bone.png" alt="봉사" />
                                 봉사
                             </Link> 
                         </li>
                         <li>
-                            <Link className="imgWrap" href={{ pathname: '/dogBoard' }}>
+                            <Link className="imgWrap" href={{ pathname: '/board' }}>
                                 <img src="/dog.png" alt="강아지게시판" />
                                 멍이 게시판
                             </Link>
                         </li>
                         <li>
-                            <Link className="imgWrap" href={{ pathname: '/catBoard' }}>
+                            <Link className="imgWrap" href={{ pathname: '/board' }}>
                                 <img src="/cat.png" alt="고양이게시판" />
                                 냥이 게시판
                             </Link>
                         </li>
                         <li>
-                            <Link className="imgWrap" href={{ pathname: '/allBoard' }}>
+                            <Link className="imgWrap" href={{ pathname: '/board' }}>
                                 <img src="/paws.png" alt="모두게시판" />
                                 모두 게시판
                             </Link>

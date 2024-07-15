@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Region from "../component/Region";
 import Field from "../component/Field";
+import SquareBoardSlide from "../component/SquareBoardSlide";
 import SquareBoard from "../component/SquareBoard";
 
 
@@ -8,7 +9,7 @@ export default function Meeting() {
     
     return(
         <section className="section pt80 squareBoardSection">
-            <ul className="tabCategory mt60">
+            <ul className="tabCategory">
                 <li className="meet active">
                     <Link href={{ pathname: '/meeting' }}>
                         젤리 모임
@@ -24,18 +25,24 @@ export default function Meeting() {
             {/* 분류 : 지역 */}
             <Region />
 
-            <h2 className="mainTitle">
-                <em>인기</em> 모임 <i>!</i>
-            </h2>
+            <h3 className="commonBoardTit">
+                인기 모임 <i>!</i>
+            </h3>
 
-            <SquareBoard />
+            <SquareBoardSlide />
+
+
+            {/* 공백 */}
+            <div className="mt60"></div>  
+
+
 
             {/* 분류 카테고리, 활동  */}
             <Field />
 
-            <h2 className="mainTitle">
-                <em>젤리</em> 모임
-            </h2>
+            <h3 className="commonBoardTit">
+                쩰리 모임
+            </h3>
 
             <SquareBoard />
                 
