@@ -8,26 +8,36 @@ export default function KakaoMap() {
     const [level, setLevel] = useState(3);
     const [currentPosition, setCurrentPosition] = useState({ lat: 37.5665, lng: 126.9780 }); // 기본 위치는 서울 시청으로 설정
     const [places, setPlaces] = useState([]); // 검색된 장소를 저장할 상태
+    const [loading, setLoading] = useState(true); // 위치 로딩 상태
     const mapRef = useRef();
 
     useEffect(() => {
         // 사용자의 현재 위치를 가져오는 함수
-        const getCurrentPosition = () => {
+        const getCurrentPosition = (retryCount = 0) => {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(
                     position => {
                         const { latitude, longitude } = position.coords;
                         setCurrentPosition({ lat: latitude, lng: longitude });
+                        setLoading(false);
                     },
                     error => {
                         console.error("Error getting current position: ", error);
+                        if (retryCount < 3) {
+                            setTimeout(() => getCurrentPosition(retryCount + 1), 1000); // 1초 후에 재시도
+                        } else {
+                            setLoading(false);
+                        }
                     },
                     {
                         enableHighAccuracy: true,
-                        timeout: 5000,
+                        timeout: 10000,
                         maximumAge: 0
                     }
                 );
+            } else {
+                setLoading(false);
+                console.error("Geolocation is not supported by this browser.");
             }
         };
 
@@ -68,36 +78,42 @@ export default function KakaoMap() {
 
     return (
         <>
-            <Map 
-                center={currentPosition} 
-                style={{ width: '100%', height: '400px' }} 
-                level={level}
-                onCreate={map => { mapRef.current = map; }} // 지도가 생성될 때 mapRef에 저장
-                onZoomChanged={(map) => setLevel(map.getLevel())} // 지도의 줌 레벨 변경 시 상태 업데이트
-            >
-                <MapMarker position={currentPosition} />
-                {places.map((place, index) => (
-                    <MapMarker 
-                        key={index} 
-                        position={{ lat: place.y, lng: place.x }} 
-                        title={place.place_name}
-                    />
-                ))}
-            </Map>
-            <button onClick={() => setLevel(level - 1)}>-</button>
-            <button onClick={() => setLevel(level + 1)}>+</button>
-            <button onClick={getAddress}>현재 좌표의 주소 얻기</button>
-            <button className='locationSearch' onClick={() => searchPlaces('병원')}>병원 검색</button>
-            <button className='locationSearch' onClick={() => searchPlaces('공원')}>공원 검색</button>
+            {loading ? (
+                <div>현재 위치를 불러오는 중...</div>
+            ) : (
+                <>
+                    <Map 
+                        center={currentPosition} 
+                        style={{ width: '100%', height: '400px' }} 
+                        level={level}
+                        onCreate={map => { mapRef.current = map; }} // 지도가 생성될 때 mapRef에 저장
+                        onZoomChanged={(map) => setLevel(map.getLevel())} // 지도의 줌 레벨 변경 시 상태 업데이트
+                    >
+                        <MapMarker position={currentPosition} />
+                        {places.map((place, index) => (
+                            <MapMarker 
+                                key={index} 
+                                position={{ lat: place.y, lng: place.x }} 
+                                title={place.place_name}
+                            />
+                        ))}
+                    </Map>
+                    <button onClick={() => setLevel(level - 1)}>-</button>
+                    <button onClick={() => setLevel(level + 1)}>+</button>
+                    <button onClick={getAddress}>현재 좌표의 주소 얻기</button>
+                    <button onClick={() => searchPlaces('병원')}>병원 검색</button>
+                    <button onClick={() => searchPlaces('공원')}>공원 검색</button>
 
-            {address && (
-                <div>
-                    현재 좌표의 주소는..
-                    <p>address_name: {address.address_name}</p>
-                    <p>region_1depth_name: {address.region_1depth_name}</p>
-                    <p>region_2depth_name: {address.region_2depth_name}</p>
-                    <p>region_3depth_name: {address.region_3depth_name}</p>
-                </div>
+                    {address && (
+                        <div>
+                            현재 좌표의 주소는..
+                            <p>address_name: {address.address_name}</p>
+                            <p>region_1depth_name: {address.region_1depth_name}</p>
+                            <p>region_2depth_name: {address.region_2depth_name}</p>
+                            <p>region_3depth_name: {address.region_3depth_name}</p>
+                        </div>
+                    )}
+                </>
             )}
         </>
     );
