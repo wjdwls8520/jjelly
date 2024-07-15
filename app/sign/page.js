@@ -26,23 +26,23 @@ export default function Sign() {
                 <div className="inputArea essential">
                     <div className="inputBox essential">
                         <div className="inputWrap">
-                            <label className="inpTit" for="inpUserName">
+                            <label className="inpTit" htmlFor="inpUserName">
                                 이름<span className="point">*</span>
                             </label>
-                            <input id="inpUserName" className="myInput disabled" type="text" value="" placeholder="김쩰리" />
+                            <input id="inpUserName" className="myInput disabled" type="text" defaultValue="" placeholder="김쩰리" />
                         </div>
                     </div>
                     <div className="inputBox essential">
                         <div className="inputWrap">
-                            <label className="inpTit" for="inpPhoneNumber">
+                            <label className="inpTit" htmlFor="inpPhoneNumber">
                                 휴대폰<span className="point">*</span>
                             </label>
-                            <input id="inpPhoneNumber" className="myInput disabled" type="text" maxlength="13" value="" placeholder="010 - 1234 - 5678" />
+                            <input id="inpPhoneNumber" className="myInput disabled" type="text" maxLength="13" defaultValue="" placeholder="010 - 1234 - 5678" />
                         </div>
                     </div>
                     <div className="inputBox essential">
                         <div className="inputWrap">
-                            <label className="inpTit" for="inpEmail">
+                            <label className="inpTit" htmlFor="inpEmail">
                                 이메일<span className="point">*</span>
                             </label>
                             <input id="inpEmail" className="myInput disabled" type="text" placeholder="이메일을 입력해주세요." />                      
@@ -58,10 +58,10 @@ export default function Sign() {
                     </div>
                     <div className="inputBox essential">
                         <div className="inputWrap">
-                            <label className="inpTit" for="inpNickName">
+                            <label className="inpTit" htmlFor="inpNickName">
                                 닉네임<span className="point">*</span>
                             </label>
-                            <input id="inpNickName" className="myInput btnInput" type="text" placeholder="xhoor1234" value="우주뚫고나가는쩰리" />
+                            <input id="inpNickName" className="myInput btnInput" type="text" placeholder="xhoor1234" defaultValue="우주뚫고나가는쩰리" />
 
                             <button id="btnNickNameDuplication" className="btnDuplication" type="button">
                                 중복확인
@@ -74,10 +74,10 @@ export default function Sign() {
                     </div>
                     <div className="inputBox essential">
                         <div className="inputWrap textAreaWrap checkWrap">
-                            <label className="inpTit" for="inpServiceAgreeCheck">
+                            <label className="inpTit" htmlFor="inpServiceAgreeCheck">
                                 (필수) 서비스 이용약관
                             </label>
-                            <textarea id="inpServiceAgreeCheck" className="myInput myTextArea" disabled="">제 1장 총칙
+                            <textarea id="inpServiceAgreeCheck" className="myInput myTextArea" disabled="" >제 1장 총칙
 
 제 1조 (목적)
 
@@ -406,10 +406,10 @@ export default function Sign() {
 
                             <div className="agreeWrap">
                                 <input id="serviceAgreeCheck" className="hidden myCheckBox" type="checkbox" />
-                                <label className="customCheck" for="serviceAgreeCheck">
+                                <label className="customCheck" htmlFor="serviceAgreeCheck">
                                     
                                 </label>
-                                <label className="inpTxt" for="serviceAgreeCheck">
+                                <label className="inpTxt" htmlFor="serviceAgreeCheck">
                                     [필수] 서비스 이용약관에 동의합니다. 
                                 </label>
                             </div>
@@ -421,7 +421,7 @@ export default function Sign() {
                     </div>
                     <div className="inputBox essential">
                         <div className="inputWrap textAreaWrap checkWrap">
-                            <label className="inpTit" for="inpIdentityCheck">
+                            <label className="inpTit" htmlFor="inpIdentityCheck">
                                 (필수) 개인정보 취급방침
                             </label>
                             <textarea id="inpIdentityCheck" className="myInput myTextArea" disabled="">개인정보 취급방침
@@ -585,10 +585,10 @@ export default function Sign() {
 
                             <div className="agreeWrap">
                                 <input id="identityCheck" className="hidden myCheckBox" type="checkbox" />
-                                <label className="customCheck" for="identityCheck">
+                                <label className="customCheck" htmlFor="identityCheck">
                                     
                                 </label>
-                                <label className="inpTxt" for="identityCheck">
+                                <label className="inpTxt" htmlFor="identityCheck">
                                     개인정보 취급방침에 동의합니다.
                                 </label>
                             </div>
@@ -601,10 +601,10 @@ export default function Sign() {
                     <div className="inputBox essential">
                         <div className="inputWrap checkWrap flexRow">
                             <input id="allAgreeCheck" className="hidden myCheckBox" type="checkbox" />
-                            <label className="customCheck" for="allAgreeCheck">
+                            <label className="customCheck" htmlFor="allAgreeCheck">
                                 
                             </label>
-                            <label className="inpTxt" for="allAgreeCheck">
+                            <label className="inpTxt" htmlFor="allAgreeCheck">
                                 모두 동의합니다.
                             </label>
                         </div>
