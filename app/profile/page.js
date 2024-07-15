@@ -1,10 +1,25 @@
+'use client'
+
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+
 export default function Home() {
-  return (
+    
+    const router = useRouter();
+
+    useEffect(()=> {
+  
+        if( !localStorage.getItem('login') ) {
+            router.push("/login");
+        };
+    }, [])
+    
+    return (
         <div id="wrap">
 
             <span className="layoutLine"></span>
-
+            
 
         </div>
-  );
+    );
 }

@@ -1,18 +1,18 @@
 /* 공통 리셋 */
 /* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap'); */
 
-* {margin: 0; padding: 0; font-family: 'Noto Sans KR', sans-serif !;}
+* {margin: 0; padding: 0; font-family: '__Noto_Sans_KR_99422f', '__Noto_Sans_KR_Fallback_99422f';}
 /* html {font-size: 10px;} */
 html, body {height: 100%; background: #fff; word-break: keep-all; color: #151515;}
 ul,li {list-style: none;}
 a {text-decoration: none; font-size: 16px; color: #151515;}
 h1,h2,h3,h4,h5 {font-size: 16px; font-weight: 400;}
 button {background: transparent; border: 0; box-sizing: border-box; outline: none; color: #151515; cursor: pointer;}
-input, textarea, button {border: 0; outline: none; resize: none; font-family: 'Noto Sans KR';}
+input, textarea, button {border: 0; outline: none; resize: none; font-family: '__Noto_Sans_KR_99422f', '__Noto_Sans_KR_Fallback_99422f';}
 
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 1000px #151515 inset; 
-    -webkit-text-fill-color: #9999A1; 
+    -webkit-text-fill-color: #9ea1b6; 
 }
 
 body {
@@ -276,3 +276,77 @@ br.m {display: none !important;}
 /* 맵 */
 .locationSearch {display: flex; padding: 5px; border: 1px solid #000;}
 
+
+/* 로그인 */
+.loginSec .loginForm {display: flex; flex-direction: column;}
+
+.loginSec .loginInput {margin-bottom: 8px; padding: 17px 50px 17px 16px; width: 100%; height: 50px; border: 1px solid #9ea1b6; box-sizing: border-box; border-radius: 8px; font-size: 16px;}
+.loginSec .loginInput::placeholder {font-size: 14px; font-weight: 500; color: #9ea1b6;}
+.loginSec .pwWrap {position: relative;}
+.loginSec .pwWrap > img {position: absolute; top: 50%; right: 16px; height: 16px; object-fit: contain; transform: translateY(-50%); cursor: pointer;}
+
+.loginSec .options {display: flex; justify-content: space-between; align-items: center; margin-top: 8px; margin-bottom: 30px; font-size: 12px; font-weight: 500; color: #9ea1b6;}
+
+.loginSec .options .box {display: flex; align-items: center; gap: 4px; cursor: pointer;}
+.loginSec .options .box label {cursor: pointer;}
+.loginSec .options .box .customCheck {width: 12px; height: 12px; border-radius: 3px; border: 1px solid #9ea1b6;}
+.loginSec .options .box .myCheck:checked + .customCheck {background: url(/icon_check_active.png) no-repeat; background-size: 100%;}
+.loginSec .findIdPw {text-decoration-line: underline; font-size: 12px; font-weight: 500; color: #9ea1b6;}
+
+.loginSec .loginButton {width: 100%; height: 50px; background-color: #fa9e60; border: none; border-radius: 8px; font-size: 14px; font-weight: 700; color: white; cursor: pointer;}
+
+.loginSec .snsLogin {margin-top: 40px; font-size: 14px;}
+
+.loginSec .snsLogin .snsTit {display: flex; justify-content: space-between; align-items: center; gap: 10px; position: relative; margin-bottom: 24px; line-height: normal; text-align: center; }
+.loginSec .snsLogin .snsTit > p {width: 132px; height: 1px; background: #9ea1b6;}
+.loginSec .snsLogin .snsTit > span {flex-shrink: 0; font-size: 14px; font-weight: 700; color: #9ea1b6;}
+
+.loginSec .snsIcons {display: flex; justify-content: center; gap: 30px; margin-top: 24px;}
+
+.loginSec .snsIcon {display: flex; justify-content: center; align-items: center; width: 40px; height: 40px; background-color: #FEE500; /* Blank space for SNS icons */ border-radius: 50%; cursor: pointer;}
+.loginSec .snsIcon + .snsIcon {background-color: #04C035;}
+.loginSec .snsIcon + .snsIcon +.snsIcon {background-color: #F2F4F6;}
+
+.loginSec .signupButton {margin-top: 24px; width: 100%; height: 50px; background-color: transparent; border: 1px solid #fa9e60; border-radius: 5px; font-size: 14px; font-weight: 700; cursor: pointer; color: #fa9e60;}
+
+
+/* 회원가입 */
+.signupWrap {display: flex; flex-direction: column; gap: 32px;}
+.signupWrap .faqTitle {margin-bottom: 0px; text-align: center; font-size: 32px; font-weight: 700; color: #151515;
+}
+.identityVerificationWrap {display: flex; flex-direction: column; align-items: center; margin: 0 auto 8px; padding: 40px 0; width: 100%; max-width: 372px; box-sizing: border-box; border-radius: 8px; box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.10);}
+.identityVerificationWrap .identityIcon {width: 100%; max-width: 70px; object-fit: contain;}
+.identityVerificationWrap .tit {display: block; margin-top: 16px; margin-bottom: 12px; font-size: 18px; font-weight: 700; color: #151515;}
+.identityVerificationWrap .txt {display: block; line-height: 19px; text-align: center; font-size: 13px; font-weight: 400; color: #9ea1b6;}
+.identityVerificationWrap .txt.bold {line-height: normal; font-size: 15px; font-weight: 700;}
+.identityVerificationWrap .btnIdentity {margin-top: 20px; width: 150px; height: 43px; background: #fa9e60; border-radius: 6px; font-size: 14px; font-weight: 800; color: #fff;}
+
+/* 컨택트 인풋랩 */
+.inputArea {display: flex; flex-direction: column; gap: 32px; margin: 0 auto 0px; width: 100%; max-width: 372px;}
+.inputArea .inputBox {display: flex; gap: 8px; width: 100%;}
+.inputArea .fileBox {align-items: flex-end;}
+.inputArea .inputBox .inputWrap {display: flex; flex-direction: column; gap: 8px; position: relative; width: 100%;}
+.inputArea .inputBox .inputWrap .btnDuplication {position: absolute; bottom: 0; right: 0; width: 80px; height: 50px; border-radius: 8px; background: #fa9e60; font-size: 14px; font-weight: 700; color: #fff; pointer-events: none;}
+.inputArea .inputBox .inputWrap .btnDuplication.active {background: hsla(24, 94%, 68%, 0.6); pointer-events: auto;}
+.inputArea .inputBox .inputWrap .warning {position: absolute; bottom: -20px; left: 0; width: 100%; font-size: 13px; font-weight: 700; color: #fa9e60;}
+.inputArea .inputBox .inputWrap .inpTit {font-size: 15px; font-weight: 600; color: #151515;}
+.inputArea .inputBox .inputWrap .myInput {flex-shrink: 0; padding: 0px 16px; width: 100%; height: 50px; border-radius: 8px; border: 1px solid #9ea1b6; box-sizing: border-box; color: #151515; font-size: 14px; font-weight: 500;}
+.inputArea .inputBox .inputWrap .myInput.btnInput {width: calc(100% - 88px);}
+.inputArea .inputBox .inputWrap .myInput.disabled {background: #f4eeee; color: #9ea1b6; pointer-events: none;}
+.inputArea .inputBox .inputWrap .myInput::placeholder {font-size: 14px; color: #9ea1b6;}
+.inputArea .inputBox .inputWrap .myTextArea {padding: 10px 10px 0 10px; font-size: 11px; height: 100px; color: #9ea1b6;}
+.inputArea .inputBox .fileWrap {width: auto;}
+.inputArea .inputBox .fileWrap .myInput {width: 244px; color: #9ea1b6; cursor: pointer;}
+.inputArea .inputBox .btnFile {display: block; flex-shrink: 0; width: 56px; height: 56px; background: url(/btnFile.png) no-repeat; background-size: 100%; cursor: pointer;}
+.inputArea .inputBox .txt {padding-left: 2px; line-height: 16px; font-size: 12px; font-weight: 500; color: #9ea1b6;}
+.inputArea .inputBox .txt .point {text-decoration: underline;}
+.inputArea .inputBox .checkWrap .customCheck {flex-shrink: 0; width: 16px; height: 16px; border: 1px solid #9ea1b6; border-radius: 4px; box-sizing: border-box; cursor: pointer;}
+.inputArea .inputBox .checkWrap .customCheck:focus {border: 1px solid #fa9e60; box-shadow: 0px 0px 8px 0px #fa9e60;}
+.inputArea .inputBox .checkWrap .myCheckBox:checked + .customCheck {background: url(/icon_check_active_black.png) no-repeat; background-size: 100%;}
+.inputArea .inputBox .checkWrap .myCheckBox.focus + .customCheck {border: 1px solid #fa9e60; box-shadow: 0px 0px 8px 0px #fa9e60;}
+.inputArea .inputBox .checkWrap .inpTxt {font-size: 14px; font-weight: 500; color: #151515; cursor: pointer;}
+.inputArea .inputBox .checkWrap > em {text-decoration: underline; font-size: 15px; font-weight: 500; color: #9ea1b6; cursor: pointer;}
+
+.agreeWrap {display: flex; align-items: center !important; gap: 6px !important;}
+.flexRow {display: flex; flex-direction: row !important; align-items: center;}
+.loginButton {width: 100%; height: 38px; background-color: #fa9e60; border: none; border-radius: 8px; font-size: 14px; font-weight: 700; color: white; cursor: pointer;}

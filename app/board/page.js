@@ -16,8 +16,8 @@ export default function HotDeal() {
         <section className="section pt80 commonBoardSection">
             
             {/* 카테고리 */}
-            <ul class="category">
-                <li class="active">
+            <ul className="category">
+                <li className="active">
                     최신순
                 </li>
                 <li>

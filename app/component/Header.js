@@ -21,7 +21,7 @@ export default function Header() {
                     <Link className="imgWrap" href={{ pathname: '/' }}>
                         <img src="/icon_alarm.png" alt="알림" />
                     </Link>
-                    <Link className="imgWrap" href={{ pathname: '/' }}>
+                    <Link className="imgWrap" href={{ pathname: '/profile' }}>
                         <img src="/icon_profile.png" alt="프로필" />
                     </Link>
                 </div>
