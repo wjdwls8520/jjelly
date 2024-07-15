@@ -271,3 +271,8 @@ br.m {display: none !important;}
 /* 쩰리 모임 */
 
 
+
+
+/* 맵 */
+.locationSearch {display: flex; padding: 5px; border: 1px solid #000;}
+
