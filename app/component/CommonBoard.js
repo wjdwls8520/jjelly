@@ -10,7 +10,7 @@ export default function CommonBoard() {
     const regex = /\/([^\/]*)\/detail/;
 
     const detailRomve = pathname.replace(/^(\/[^\/]+)\/.*/, '$1');
-    console.log(regex.test(pathname))
+    // console.log(regex.test(pathname))
     
     let statement = regex.test(pathname);
 

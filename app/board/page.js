@@ -1,10 +1,29 @@
 'use client'
 
+
+import { useSearchParams } from "next/navigation";
 import CommonBoard from "../component/CommonBoard";
 import FloatingSearch from "../component/FloatinSearch";
 import FloatingMenu from "../component/FloatingMenu";
+import { useEffect } from "react";
+import titleData from "./data";
+import { useState } from "react";
+
 
 export default function HotDeal() {
+
+    const params = useSearchParams();
+    const type = params.get('type');
+
+    const [title, setTitle] = useState(null);
+
+    useEffect(() => {
+        if (type) {
+          const newTitle = titleData[type];
+          setTitle(newTitle);
+          console.log(newTitle); // 이 시점에서 newTitle은 업데이트된 상태입니다.
+        }
+      }, [type]); // 의존성 배열에 type을 추가
 
 
     let testArr = [];
@@ -29,7 +48,7 @@ export default function HotDeal() {
             </ul>
 
             <h3 className="commonBoardTit">
-                핫 딜 <i>!</i>
+                {title} <i>!</i>
             </h3>
             <CommonBoard />
 
