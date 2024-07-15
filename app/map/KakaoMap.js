@@ -101,8 +101,8 @@ export default function KakaoMap() {
                     <button onClick={() => setLevel(level - 1)}>-</button>
                     <button onClick={() => setLevel(level + 1)}>+</button>
                     <button onClick={getAddress}>현재 좌표의 주소 얻기</button>
-                    <button onClick={() => searchPlaces('병원')}>병원 검색</button>
-                    <button onClick={() => searchPlaces('공원')}>공원 검색</button>
+                    <button className='locationSearch' onClick={() => searchPlaces('병원')}>병원 검색</button>
+                    <button className='locationSearch' onClick={() => searchPlaces('공원')}>공원 검색</button>
 
                     {address && (
                         <div>
