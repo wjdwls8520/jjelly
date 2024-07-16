@@ -77,7 +77,7 @@ export default function Sign() {
                             <label className="inpTit" htmlFor="inpServiceAgreeCheck">
                                 (필수) 서비스 이용약관
                             </label>
-                            <textarea id="inpServiceAgreeCheck" className="myInput myTextArea" disabled="" defaultValue="1원칙" />
+                            <textarea id="inpServiceAgreeCheck" className="myInput myTextArea" disabled="" value="1원칙" readOnly  />
 
 
                             <div className="agreeWrap">
@@ -100,7 +100,7 @@ export default function Sign() {
                             <label className="inpTit" htmlFor="inpIdentityCheck">
                                 (필수) 개인정보 취급방침
                             </label>
-                            <textarea id="inpIdentityCheck" className="myInput myTextArea" disabled="" defaultValue="1원칙" />
+                            <textarea id="inpIdentityCheck" className="myInput myTextArea" disabled="" value="1원칙" readOnly  />
 
 
                             <div className="agreeWrap">

@@ -8,6 +8,7 @@ import FloatingMenu from "../component/FloatingMenu";
 import { useEffect } from "react";
 import titleData from "./data";
 import { useState } from "react";
+import { Suspense } from "react";
 
 
 export default function HotDeal() {
@@ -32,30 +33,32 @@ export default function HotDeal() {
     };
 
     return (
-        <section className="section pt80 commonBoardSection">
-            
-            {/* 카테고리 */}
-            <ul className="category">
-                <li className="active">
-                    최신순
-                </li>
-                <li>
-                    조회순
-                </li>
-                <li>
-                    인기순
-                </li>
-            </ul>
+        <Suspense>
+            <section className="section pt80 commonBoardSection">
+                
+                {/* 카테고리 */}
+                <ul className="category">
+                    <li className="active">
+                        최신순
+                    </li>
+                    <li>
+                        조회순
+                    </li>
+                    <li>
+                        인기순
+                    </li>
+                </ul>
 
-            <h3 className="commonBoardTit">
-                {title} <i>!</i>
-            </h3>
-            <CommonBoard />
+                <h3 className="commonBoardTit">
+                    {title} <i>!</i>
+                </h3>
+                <CommonBoard />
 
-            {/* 플로팅 검색 ( 검색 ) */}
-            <FloatingSearch />
-            {/* 플로팅 메뉴 ( 글쓰기 ) */}
-            <FloatingMenu />
-        </section>
+                {/* 플로팅 검색 ( 검색 ) */}
+                <FloatingSearch />
+                {/* 플로팅 메뉴 ( 글쓰기 ) */}
+                <FloatingMenu />
+            </section>
+        </Suspense>
     );
 }
