@@ -3,7 +3,9 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export default function CommonBoard() {
+export default function CommonBoard(props) {
+    let typeProps = `type=${props.type}`;
+    console.log(typeProps)
 
     const pathname = usePathname();
 
@@ -12,7 +14,7 @@ export default function CommonBoard() {
     const detailRomve = pathname.replace(/^(\/[^\/]+)\/.*/, '$1');
     // console.log(regex.test(pathname))
     
-    let statement = regex.test(pathname);
+    let statement = regex.test(pathname + ' 111');
 
     return (
         <>
@@ -20,7 +22,7 @@ export default function CommonBoard() {
                 statement ?
                     <ul className="commonBoardListWrap">
                         <li>
-                            <Link href={{ pathname: detailRomve }}>
+                            <Link href={{ pathname: detailRomve , query: typeProps }}>
                                 <div className="post commonPost style2">
                                     <span className="imgBox">
                                         <img className="boardImg" src="/profile.png" />
@@ -37,7 +39,7 @@ export default function CommonBoard() {
                                     </div>
                                     <div className="util">
                                         <span className="commentBox">
-                                            <span className="aTag" href={{ pathname: detailRomve }}>
+                                            <span className="aTag" href={{ pathname: detailRomve , query: typeProps }}>
                                                 <span className="conmmentNum">3</span>
                                                 <span>댓글</span>
                                             </span>
@@ -47,7 +49,7 @@ export default function CommonBoard() {
                             </Link>
                         </li>
                         <li>
-                            <Link href={{ pathname: detailRomve }}>
+                            <Link href={{ pathname: detailRomve , query: typeProps }}>
                                 <div className="post commonPost style3">
                                     <div className="content">
                                         <span className="title titleLine2">
@@ -61,7 +63,7 @@ export default function CommonBoard() {
                                     </div>
                                     <div className="util">
                                         <span className="commentBox">
-                                            <span className="aTag" href={{ pathname: detailRomve }}>
+                                            <span className="aTag" href={{ pathname: detailRomve , query: typeProps }}>
                                                 <span className="conmmentNum">3</span>
                                                 <span>댓글</span>
                                             </span>
@@ -71,7 +73,7 @@ export default function CommonBoard() {
                             </Link>
                         </li>
                         <li>
-                            <Link href={{ pathname: detailRomve }}>
+                            <Link href={{ pathname: detailRomve , query: typeProps }}>
                                 <div className="post commonPost style3">
                                     <div className="content">
                                         <span className="title titleLine2">
@@ -85,7 +87,7 @@ export default function CommonBoard() {
                                     </div>
                                     <div className="util">
                                         <span className="commentBox">
-                                            <span className="aTag" href={{ pathname: detailRomve }}>
+                                            <span className="aTag" href={{ pathname: detailRomve , query: typeProps }}>
                                                 <span className="conmmentNum">3</span>
                                                 <span>댓글</span>
                                             </span>
@@ -95,7 +97,7 @@ export default function CommonBoard() {
                             </Link>
                         </li>
                         <li>
-                            <Link href={{ pathname: detailRomve }}>
+                            <Link href={{ pathname: detailRomve , query: typeProps }}>
                                 <div className="post commonPost style3">
                                     <div className="content">
                                         <span className="title titleLine2">
@@ -109,7 +111,7 @@ export default function CommonBoard() {
                                     </div>
                                     <div className="util">
                                         <span className="commentBox">
-                                            <span className="aTag" href={{ pathname: detailRomve }}>
+                                            <span className="aTag" href={{ pathname: detailRomve , query: typeProps }}>
                                                 <span className="conmmentNum">3</span>
                                                 <span>댓글</span>
                                             </span>
@@ -123,7 +125,7 @@ export default function CommonBoard() {
                 :
                     <ul className="commonBoardListWrap">
                         <li>
-                            <Link href={{ pathname: pathname + '/detail' }}>
+                            <Link href={{ pathname: pathname + '/detail', query : typeProps }}>
                                 <div className="post commonPost style2">
                                     <span className="imgBox">
                                         <img className="boardImg" src="/profile.png" />
@@ -140,7 +142,7 @@ export default function CommonBoard() {
                                     </div>
                                     <div className="util">
                                         <span className="commentBox">
-                                            <span className="aTag" href={{ pathname: pathname + '/detail' }}>
+                                            <span className="aTag" href={{ pathname: pathname + '/detail', query : typeProps }}>
                                                 <span className="conmmentNum">3</span>
                                                 <span>댓글</span>
                                             </span>
@@ -150,7 +152,7 @@ export default function CommonBoard() {
                             </Link>
                         </li>
                         <li>
-                            <Link href={{ pathname: pathname + '/detail' }}>
+                            <Link href={{ pathname: pathname + '/detail', query : typeProps }}>
                                 <div className="post commonPost style3">
                                     <div className="content">
                                         <span className="title titleLine2">
@@ -164,7 +166,7 @@ export default function CommonBoard() {
                                     </div>
                                     <div className="util">
                                         <span className="commentBox">
-                                            <span className="aTag" href={{ pathname: pathname + '/detail' }}>
+                                            <span className="aTag" href={{ pathname: pathname + '/detail', query : typeProps }}>
                                                 <span className="conmmentNum">3</span>
                                                 <span>댓글</span>
                                             </span>
@@ -174,7 +176,7 @@ export default function CommonBoard() {
                             </Link>
                         </li>
                         <li>
-                            <Link href={{ pathname: pathname + '/detail' }}>
+                            <Link href={{ pathname: pathname + '/detail', query : typeProps }}>
                                 <div className="post commonPost style3">
                                     <div className="content">
                                         <span className="title titleLine2">
@@ -188,7 +190,7 @@ export default function CommonBoard() {
                                     </div>
                                     <div className="util">
                                         <span className="commentBox">
-                                            <span className="aTag" href={{ pathname: pathname + '/detail' }}>
+                                            <span className="aTag" href={{ pathname: pathname + '/detail', query : typeProps }}>
                                                 <span className="conmmentNum">3</span>
                                                 <span>댓글</span>
                                             </span>
@@ -198,7 +200,7 @@ export default function CommonBoard() {
                             </Link>
                         </li>
                         <li>
-                            <Link href={{ pathname: pathname + '/detail' }}>
+                            <Link href={{ pathname: pathname + '/detail', query : props.type }}>
                                 <div className="post commonPost style3">
                                     <div className="content">
                                         <span className="title titleLine2">
@@ -212,7 +214,7 @@ export default function CommonBoard() {
                                     </div>
                                     <div className="util">
                                         <span className="commentBox">
-                                            <span className="aTag" href={{ pathname: pathname + '/detail' }}>
+                                            <span className="aTag" href={{ pathname: pathname + '/detail', query : props.type }}>
                                                 <span className="conmmentNum">3</span>
                                                 <span>댓글</span>
                                             </span>

@@ -1,11 +1,15 @@
 'use client'
 
 import CommonBoard from "@/app/component/CommonBoard";
-import ToastUiEditor from "@/app/component/ToastUi"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { usePathname, useSearchParams } from "next/navigation"
+import { Suspense } from "react";
 
-export default function HotDeal() {
+function DetailContent() {
+    const params = useSearchParams();
+    const type = params.get('type');
+
+    // console.log(type)
 
     const pathname = usePathname();
     const customPath = pathname.replace(/^(\/[^\/]+)\/.*/, '$1');
@@ -109,12 +113,12 @@ export default function HotDeal() {
                         더 보기
                     </span>
                 </h3>
-                <CommonBoard />
+                <CommonBoard type={type} />
             </section>
 
             {/* 목록으로 */}
             <div className="btnWrap returnList">
-                <Link href={{ pathname: customPath }}>
+                <Link href={{ pathname: customPath, query: 'type=' + type }}>
                     <button id="commontWrite" className="btn btnStyle02">
                         돌아가기
                     </button>
@@ -123,3 +127,11 @@ export default function HotDeal() {
         </>
     )
 };
+
+export default function Detail() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <DetailContent />
+        </Suspense>
+    );
+}

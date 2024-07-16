@@ -7,7 +7,7 @@ import FloatingMenu from "../component/FloatingMenu";
 import { useEffect, useState, Suspense } from "react";
 import titleData from "./data";
 
-function HotDealContent() {
+function BoardContent() {
     const params = useSearchParams();
     const type = params.get('type');
 
@@ -16,8 +16,7 @@ function HotDealContent() {
     useEffect(() => {
         if (type) {
           const newTitle = titleData[type];
-          setTitle(newTitle);
-          console.log(newTitle); // 이 시점에서 newTitle은 업데이트된 상태입니다.
+          setTitle(newTitle); // 이 시점에서 newTitle은 업데이트된 상태입니다.
         }
       }, [type]); // 의존성 배열에 type을 추가
 
@@ -44,7 +43,7 @@ function HotDealContent() {
             <h3 className="commonBoardTit">
                 {title} <i>!</i>
             </h3>
-            <CommonBoard />
+            <CommonBoard type={type} />
 
             {/* 플로팅 검색 ( 검색 ) */}
             <FloatingSearch />
@@ -54,10 +53,10 @@ function HotDealContent() {
     );
 }
 
-export default function HotDeal() {
+export default function Board() {
     return (
         <Suspense fallback={<div>Loading...</div>}>
-            <HotDealContent />
+            <BoardContent />
         </Suspense>
     );
 }
