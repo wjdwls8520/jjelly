@@ -9,7 +9,7 @@ export default function App() {
                 
                 <h2>Kakao Map</h2>
                 <KakaoMap />
-              
+              {/* 테스트 */}
         
             </div>
         </div>
