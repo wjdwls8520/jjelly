@@ -1,18 +1,13 @@
 'use client'
 
-
 import { useSearchParams } from "next/navigation";
 import CommonBoard from "../component/CommonBoard";
-import FloatingSearch from "../component/FloatinSearch";
+import FloatingSearch from "../component/FloatingSearch";
 import FloatingMenu from "../component/FloatingMenu";
-import { useEffect } from "react";
+import { useEffect, useState, Suspense } from "react";
 import titleData from "./data";
-import { useState } from "react";
-import { Suspense } from "react";
 
-
-export default function HotDeal() {
-
+function HotDealContent() {
     const params = useSearchParams();
     const type = params.get('type');
 
@@ -26,39 +21,43 @@ export default function HotDeal() {
         }
       }, [type]); // 의존성 배열에 type을 추가
 
-
     let testArr = [];
     for (let i = 0; i < 8; i++) {
         testArr.push('test');
     };
 
     return (
-        <Suspense>
-            <section className="section pt80 commonBoardSection">
-                
-                {/* 카테고리 */}
-                <ul className="category">
-                    <li className="active">
-                        최신순
-                    </li>
-                    <li>
-                        조회순
-                    </li>
-                    <li>
-                        인기순
-                    </li>
-                </ul>
+        <section className="section pt80 commonBoardSection">
+            {/* 카테고리 */}
+            <ul className="category">
+                <li className="active">
+                    최신순
+                </li>
+                <li>
+                    조회순
+                </li>
+                <li>
+                    인기순
+                </li>
+            </ul>
 
-                <h3 className="commonBoardTit">
-                    {title} <i>!</i>
-                </h3>
-                <CommonBoard />
+            <h3 className="commonBoardTit">
+                {title} <i>!</i>
+            </h3>
+            <CommonBoard />
 
-                {/* 플로팅 검색 ( 검색 ) */}
-                <FloatingSearch />
-                {/* 플로팅 메뉴 ( 글쓰기 ) */}
-                <FloatingMenu />
-            </section>
+            {/* 플로팅 검색 ( 검색 ) */}
+            <FloatingSearch />
+            {/* 플로팅 메뉴 ( 글쓰기 ) */}
+            <FloatingMenu />
+        </section>
+    );
+}
+
+export default function HotDeal() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <HotDealContent />
         </Suspense>
     );
 }
