@@ -5,16 +5,24 @@ import { usePathname } from "next/navigation";
 
 export default function CommonBoard(props) {
     let typeProps = `type=${props.type}`;
-    console.log(typeProps)
 
-    const pathname = usePathname();
+
+    let pathname = usePathname();
 
     const regex = /\/([^\/]*)\/detail/;
 
     const detailRomve = pathname.replace(/^(\/[^\/]+)\/.*/, '$1');
     // console.log(regex.test(pathname))
     
-    let statement = regex.test(pathname + ' 111');
+    let statement = regex.test(pathname);
+
+
+
+    if( pathname === '/' ) {
+        pathname = '/board';
+        typeProps = 'type=newsBd';
+    };   
+
 
     return (
         <>

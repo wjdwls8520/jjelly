@@ -1,18 +1,18 @@
 'use client'
 
 import CommonBoard from "@/app/component/CommonBoard";
-import Link from "next/link"
-import { usePathname, useSearchParams } from "next/navigation"
+import { useRouter, useSearchParams } from "next/navigation"
+
 import { Suspense } from "react";
 
 function DetailContent() {
+    
+    // 쿼리문찾기
     const params = useSearchParams();
     const type = params.get('type');
 
-    // console.log(type)
-
-    const pathname = usePathname();
-    const customPath = pathname.replace(/^(\/[^\/]+)\/.*/, '$1');
+    // 뒤로가기
+    const router = useRouter(); 
 
     return (
         <>
@@ -118,11 +118,11 @@ function DetailContent() {
 
             {/* 목록으로 */}
             <div className="btnWrap returnList">
-                <Link href={{ pathname: customPath, query: 'type=' + type }}>
+                <span onClick={()=> {router.back()}}>
                     <button id="commontWrite" className="btn btnStyle02">
                         돌아가기
                     </button>
-                </Link>
+                </span>
             </div>
         </>
     )
