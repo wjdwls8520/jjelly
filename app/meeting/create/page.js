@@ -26,7 +26,37 @@ function BoardCreateContent() {
           const newTitle = titleData[type];
           setTitle(newTitle); // 이 시점에서 newTitle은 업데이트된 상태입니다.
         }
-      }, [type]); // 의존성 배열에 type을 추가
+    }, [type]); // 의존성 배열에 type을 추가
+
+
+
+    const [file, setFile] = useState(null);
+    const [base64, setBase64] = useState("");
+
+    const handleFileChange = (event) => {
+        const selectedFile = event.target.files[0];
+        if (selectedFile) {
+            setFile(selectedFile);
+            convertToBase64(selectedFile);
+        } else {
+            setFile(null);
+            setBase64("");
+        };
+    };
+
+    const convertToBase64 = (file) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onloadend = () => {
+            setBase64(reader.result);
+        };
+    };
+
+    useEffect(() => {
+        console.log(file);
+    }, [file]);
+
+
 
     return (
         <>
@@ -60,10 +90,10 @@ function BoardCreateContent() {
                     <div className="titleSpace spaceWrap">
                         <label className="tit">대표 이미지</label>
                         <h3 className="title mainImg customSellectBox">
-                            <input type="file" id="inpMainImg" className="myInput bdCustom mySellect display-none" accept="image/*" />
-                            <label htmlFor="inpMainImg" className="customFile labelMainImg" >
-                                <img id="nomalImg" class="nomalImg" src="/nomal_profile.png" alt="대표이미지" />
-                                <div class="icon_profile">
+                            <input type="file" id="inpMainImg" className="myInput bdCustom mySellect display-none" accept="image/*" onChange={handleFileChange} />
+                            <label htmlFor="inpMainImg" className={base64 ? 'customFile labelMainImg on' : 'customFile labelMainImg'} >
+                                <img id="nomalImg" className="nomalImg" src={base64 ? base64 : `/nomal_profile.png`} alt="대표이미지" />
+                                <div className="icon_profile">
                                     <img src="/icon_camera.png" alt="카메라" />
                                 </div>
                             </label>

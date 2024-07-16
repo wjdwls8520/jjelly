@@ -189,7 +189,7 @@ br.m {display: none !important;}
 .myTTA {padding: 0px; width: 100%; height: 280px; font-size: 14px; font-weight: 500; box-sizing: border-box;}
 .myTTA::placeholder {word-break: break-all; font-size: 14px; font-weight: 400; color: #9ea1b6;}
 /* 공통 선 있는 인풋 */
-.myInput.bdCustom {display: block; padding: 0px 20px; height: 32px; border-radius: 8px; border: 1px solid #9ea1b6;}
+.myInput.bdCustom {display: block; padding: 0px 14px; height: 32px; border-radius: 8px; border: 1px solid #9ea1b6;}
 .myTTA.bdCustom {display: block; padding: 20px; border-radius: 8px; border: 1px solid #9ea1b6;}
 
 
@@ -276,6 +276,8 @@ br.m {display: none !important;}
 .commonBoardSection .labelMainImg > img.nomalImg {width: 50px; height: 50px; border-radius: 20px; object-fit: cover;}
 .commonBoardSection .labelMainImg .icon_profile {display: flex; justify-content: center; align-items: center; position: absolute; z-index: 10; bottom: 0; right: -15px; width: 30px; height: 30px; border-radius: 50%; background: #fa9e60;}
 
+.commonBoardSection .labelMainImg.on {border: 0;}
+.commonBoardSection .labelMainImg.on > img.nomalImg {width: 100%; height: 100%;}
 
 /* 모임 */
 
