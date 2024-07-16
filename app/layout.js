@@ -15,7 +15,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <title>JJelly</title>
+        <meta property="og:type" content="website" />
         <meta name="description" content='반려동물 커뮤니티' />
+        <meta property="og:image" content="/ogimage.png" />
         <script 
           type="text/javascript" 
           src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bb1a1a51327ee56bf50a95b4371d3f8e&libraries=services">
