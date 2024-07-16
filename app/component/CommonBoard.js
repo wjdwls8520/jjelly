@@ -76,10 +76,13 @@ export default function CommonBoard(props) {
                         </li>
                         <li>
                             <Link href={{ pathname: '/board' , query: 'type=newsBd' }}>
-                                <div className="post commonPost style3">
+                            <div className="post commonPost style2">
+                                    <span className="imgBox">
+                                        <img className="boardImg" src="/userimg_012.png" />
+                                    </span>
                                     <div className="content">
                                         <span className="title titleLine2">
-                                            반려동물 건강 체크리스트: 여름철 주의사항
+                                            아 ㅋㅋㅋ 킹받냐고 ㅋㅋㅋ
                                         </span>
                                         <div className="userInfo">
                                             <span className="user">명젤리</span>
@@ -89,7 +92,7 @@ export default function CommonBoard(props) {
                                     </div>
                                     <div className="util">
                                         <span className="commentBox">
-                                            <span className="aTag" href={{ pathname: '/board' , query: 'type=newsBd' }}>
+                                            <span className="aTag" href={{ pathname: detailRomve , query: typeProps }}>
                                                 <span className="conmmentNum">3</span>
                                                 <span>댓글</span>
                                             </span>
@@ -182,10 +185,13 @@ export default function CommonBoard(props) {
                         </li>
                         <li>
                             <Link href={{ pathname: detailRomve , query: typeProps }}>
-                                <div className="post commonPost style3">
+                                <div className="post commonPost style2">
+                                    <span className="imgBox">
+                                        <img className="boardImg" src="/userimg_012.png" />
+                                    </span>
                                     <div className="content">
                                         <span className="title titleLine2">
-                                            반려동물 건강 체크리스트: 여름철 주의사항
+                                            아 ㅋㅋㅋ 킹받냐고 ㅋㅋㅋ
                                         </span>
                                         <div className="userInfo">
                                             <span className="user">명젤리</span>
@@ -285,10 +291,13 @@ export default function CommonBoard(props) {
                         </li>
                         <li>
                             <Link href={{ pathname: pathname + '/detail', query : typeProps }}>
-                                <div className="post commonPost style3">
+                            <div className="post commonPost style2">
+                                    <span className="imgBox">
+                                        <img className="boardImg" src="/userimg_012.png" />
+                                    </span>
                                     <div className="content">
                                         <span className="title titleLine2">
-                                            반려동물 건강 체크리스트: 여름철 주의사항
+                                            아 ㅋㅋㅋ 킹받냐고 ㅋㅋㅋ
                                         </span>
                                         <div className="userInfo">
                                             <span className="user">명젤리</span>
@@ -298,7 +307,7 @@ export default function CommonBoard(props) {
                                     </div>
                                     <div className="util">
                                         <span className="commentBox">
-                                            <span className="aTag" href={{ pathname: pathname + '/detail', query : typeProps }}>
+                                            <span className="aTag" href={{ pathname: detailRomve , query: typeProps }}>
                                                 <span className="conmmentNum">3</span>
                                                 <span>댓글</span>
                                             </span>

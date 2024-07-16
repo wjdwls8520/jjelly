@@ -17,7 +17,7 @@ export default function SquareBoardSlide() {
                         <img className="postProfile" src="/profile2.png" />
                     </div>
                     <Link className="imgWrap" href={{ pathname: '/' }}>
-                        <img className="postImg" src="/profile.png" />
+                        <img className="postImg" src="/userimg_002.png" />
                     </Link>
                     <div className="postContent">
                         <span className="txt">
@@ -29,10 +29,10 @@ export default function SquareBoardSlide() {
             <SwiperSlide className="squareBoardWrapSlide">
                 <div className="userPost">
                     <div className="userProfile">
-                        <img className="postProfile" src="/profile2.png" />
+                        <img className="postProfile" src="/userimg_012.png" />
                     </div>
                     <Link className="imgWrap" href={{ pathname: '/' }}>
-                        <img className="postImg" src="/profile.png" />
+                        <img className="postImg" src="/userimg_003.png" />
                     </Link>
                     <div className="postContent">
                         <span className="txt">
@@ -44,10 +44,10 @@ export default function SquareBoardSlide() {
             <SwiperSlide className="squareBoardWrapSlide">
                 <div className="userPost">
                     <div className="userProfile">
-                        <img className="postProfile" src="/profile2.png" />
+                        <img className="postProfile" src="/userimg_008.png" />
                     </div>
                     <Link className="imgWrap" href={{ pathname: '/' }}>
-                        <img className="postImg" src="/profile.png" />
+                        <img className="postImg" src="/userimg_004.png" />
                     </Link>
                     <div className="postContent">
                         <span className="txt">
@@ -59,10 +59,10 @@ export default function SquareBoardSlide() {
             <SwiperSlide className="squareBoardWrapSlide">
                 <div className="userPost">
                     <div className="userProfile">
-                        <img className="postProfile" src="/profile2.png" />
+                        <img className="postProfile" src="/userimg_009.png" />
                     </div>
                     <Link className="imgWrap" href={{ pathname: '/' }}>
-                        <img className="postImg" src="/profile.png" />
+                        <img className="postImg" src="/userimg_005.png" />
                     </Link>
                     <div className="postContent">
                         <span className="txt">
@@ -74,10 +74,10 @@ export default function SquareBoardSlide() {
             <SwiperSlide className="squareBoardWrapSlide">
                 <div className="userPost">
                     <div className="userProfile">
-                        <img className="postProfile" src="/profile2.png" />
+                        <img className="postProfile" src="/profile.png" />
                     </div>
                     <Link className="imgWrap" href={{ pathname: '/' }}>
-                        <img className="postImg" src="/profile.png" />
+                        <img className="postImg" src="/userimg_011.png" />
                     </Link>
                     <div className="postContent">
                         <span className="txt">

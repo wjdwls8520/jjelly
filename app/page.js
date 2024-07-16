@@ -36,19 +36,19 @@ export default function Home() {
                     <ul className="boardList">
                         <li>
                             <Link className="imgWrap" href={{ pathname: '/board', query: 'type=newsBd' }}>
-                                <img src="/news.png" alt="소식" />
+                                <img src="/character_news.png" alt="소식" />
                                 쩰리 소식
                             </Link>
                         </li>
                         <li>
                             <Link className="imgWrap" href={{ pathname: '/meeting', query: 'type=meet' }}>
-                                <img src="/group.png" alt="모임" />
+                                <img src="/character_meet.png" alt="모임" />
                                 쩰리 모임
                             </Link>
                         </li>
                         <li>
                             <Link className="imgWrap" href={{ pathname: '/map' }}>
-                                <img src="/map.png" alt="맵" />
+                                <img src="/character_map.png" alt="맵" />
                                 쩰리 맵
                                 </Link>
                         </li>
@@ -63,37 +63,37 @@ export default function Home() {
                     <ul className="boardList">
                         <li>
                             <Link className="imgWrap" href={{ pathname: '/board', query: 'type=hotBd' }}>
-                                <img src="/bird.png" alt="핫딜" />
+                                <img src="/character_hotdeal.png" alt="핫딜" />
                                 핫딜
                             </Link>
                         </li>
                         <li>
                             <Link className="imgWrap" href={{ pathname: '/board', query: 'type=freeBd' }}>
-                                <img src="/fish2.png" alt="자유게시판" />
+                                <img src="/character_free.png" alt="자유게시판" />
                                 자유게시판
                             </Link>
                         </li>
                         <li>
                             <Link className="imgWrap" href={{ pathname: '/board', query: 'type=volunteerBd' }}>
-                                <img src="/dog_bone.png" alt="봉사" />
+                                <img src="/volunteer.png" alt="봉사" />
                                 봉사
                             </Link> 
                         </li>
                         <li>
                             <Link className="imgWrap" href={{ pathname: '/board', query: 'type=dogBd' }}>
-                                <img src="/dog.png" alt="강아지게시판" />
+                                <img src="/character_dog.png" alt="강아지게시판" />
                                 멍이 게시판
                             </Link>
                         </li>
                         <li>
                             <Link className="imgWrap" href={{ pathname: '/board', query: 'type=catBd' }}>
-                                <img src="/cat.png" alt="고양이게시판" />
+                                <img src="/character_cat.png" alt="고양이게시판" />
                                 냥이 게시판
                             </Link>
                         </li>
                         <li>
                             <Link className="imgWrap" href={{ pathname: '/board', query: 'type=allBd' }}>
-                                <img src="/paws.png" alt="모두게시판" />
+                                <img src="/character_all.png" alt="모두게시판" />
                                 모두 게시판
                             </Link>
                         </li>

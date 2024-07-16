@@ -11,10 +11,10 @@ export default function SquareBoard() {
         <ul className="squareBoardWrap hotPost">
             <li className="userPost">
                 <div className="userProfile">
-                    <img className="postProfile" src="/profile2.png" />
+                    <img className="postProfile" src="/character_dog.png" />
                 </div>
                 <Link className="imgWrap" href={{ pathname: '/' }}>
-                    <img className="postImg" src="/profile.png" />
+                    <img className="postImg" src="/userimg_001.png" />
                 </Link>
                 <div className="postContent">
                     <span className="txt">
@@ -27,7 +27,7 @@ export default function SquareBoard() {
                     <img className="postProfile" src="/bird.png" />
                 </div>
                 <Link className="imgWrap" href={{ pathname: '/' }}>
-                    <img className="postImg" src="/profile2.png" />
+                    <img className="postImg" src="/userimg_003.png" />
                 </Link>
                 <div className="postContent">
                     <span className="txt">
@@ -40,7 +40,7 @@ export default function SquareBoard() {
                     <img className="postProfile" src="/profile.png" />
                 </div>
                 <Link className="imgWrap" href={{ pathname: '/' }}>
-                    <img className="postImg" src="/fish.png" />
+                    <img className="postImg" src="/userimg_008.png" />
                 </Link>
                 <div className="postContent">
                     <span className="txt">
@@ -53,7 +53,7 @@ export default function SquareBoard() {
                     <img className="postProfile" src="/icon_cs.png" />
                 </div>
                 <Link className="imgWrap" href={{ pathname: '/' }}>
-                    <img className="postImg" src="/cat.png" />
+                    <img className="postImg" src="/userimg_006.png" />
                 </Link>
                 <div className="postContent">
                     <span className="txt">
@@ -66,7 +66,7 @@ export default function SquareBoard() {
                     <img className="postProfile" src="/profile2.png" />
                 </div>
                 <Link className="imgWrap" href={{ pathname: '/' }}>
-                    <img className="postImg" src="/dog_bone.png" />
+                    <img className="postImg" src="/userimg_007.png" />
                 </Link>
                 <div className="postContent">
                     <span className="txt">
@@ -79,20 +79,46 @@ export default function SquareBoard() {
                     <img className="postProfile" src="/dog.png" />
                 </div>
                 <Link className="imgWrap" href={{ pathname: '/' }}>
-                    <img className="postImg" src="/banner.png" />
+                    <img className="postImg" src="/userimg_012.png" />
                 </Link>
                 <div className="postContent">
                     <span className="txt">
-                        서로를 안아줄 때, 우리는 세상에서 가장 행복한 가족이 돼.
+                        ㅋㅋㅋ 개킹받쥬? ㅋㅋㅋㅋㅋㅋㅋ
                     </span>
                 </div>
             </li>
             <li className="userPost">
                 <div className="userProfile">
-                    <img className="postProfile" src="/profile.png" />
+                    <img className="postProfile" src="/userimg_001.png" />
                 </div>
                 <Link className="imgWrap" href={{ pathname: '/' }}>
-                    <img className="postImg" src="/banner_02.png" />
+                    <img className="postImg" src="/userimg_004.png" />
+                </Link>
+                <div className="postContent">
+                    <span className="txt">
+                        오늘도 몰랑이와 산책을 떠다는 강아지는 맛있는 쩰리를 먹습니다. 강아지는 맛있는 쩰리를 먹습니다. 강아지는 맛있는 쩰리를 먹습니다.
+                    </span>
+                </div>
+            </li>
+            <li className="userPost">
+                <div className="userProfile">
+                    <img className="postProfile" src="/userimg_005.png" />
+                </div>
+                <Link className="imgWrap" href={{ pathname: '/' }}>
+                    <img className="postImg" src="/userimg_009.png" />
+                </Link>
+                <div className="postContent">
+                    <span className="txt">
+                        오늘도 몰랑이와 산책을 떠다는 강아지는 맛있는 쩰리를 먹습니다. 강아지는 맛있는 쩰리를 먹습니다. 강아지는 맛있는 쩰리를 먹습니다.
+                    </span>
+                </div>
+            </li>
+            <li className="userPost">
+                <div className="userProfile">
+                    <img className="postProfile" src="/userimg_012.png" />
+                </div>
+                <Link className="imgWrap" href={{ pathname: '/' }}>
+                    <img className="postImg" src="/userimg_002.png" />
                 </Link>
                 <div className="postContent">
                     <span className="txt">
