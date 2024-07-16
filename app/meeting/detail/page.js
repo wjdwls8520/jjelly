@@ -2,11 +2,8 @@
 
 import CommonBoard from "@/app/component/CommonBoard";
 import { useRouter, useSearchParams } from "next/navigation"
-import { useState } from "react";
-import { useEffect } from "react";
 
 import { Suspense } from "react";
-import titleData from "../data";
 
 function DetailContent() {
     
@@ -17,25 +14,14 @@ function DetailContent() {
     // 뒤로가기
     const router = useRouter(); 
 
-    
-    // 쿼리문으로 게시판 타입 판별
-    const [title, setTitle] = useState(null);
-
-    useEffect(() => {
-        if (type) {
-          const newTitle = titleData[type];
-          setTitle(newTitle); // 이 시점에서 newTitle은 업데이트된 상태입니다.
-        }
-      }, [type]); // 의존성 배열에 type을 추가
-
     return (
         <>
-            <section className="section pt60 commonBoardSection">
+            <section className="section commonBoardSection">
                 <h3 className="commonBoardTit">
-                {title} <i>!</i>
+                핫 딜 <i>!</i>
                 </h3>
                 <div className="detailDataForm">
-                    <div className="titleSpace spaceWrap">
+                    <div className="titleSpace">
                         <h3 className="title">
                             갤럭시 노트 울라리 특가 581,000원 빨리 사러가자 애들아!!
                         </h3>

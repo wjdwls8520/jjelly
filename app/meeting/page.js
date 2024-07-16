@@ -1,11 +1,20 @@
+'use client'
+
 import Link from "next/link";
 import Region from "../component/Region";
 import Field from "../component/Field";
 import SquareBoardSlide from "../component/SquareBoardSlide";
 import SquareBoard from "../component/SquareBoard";
+import FloatingSearch from "../component/FloatingSearch";
+import FloatingMenu from "../component/FloatingMenu";
+import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
 
-export default function Meeting() {
+function MeetingContent() {
+
+    const params = useSearchParams();
+    const type = params.get('type');
     
     return(
         <section className="section pt80 squareBoardSection">
@@ -23,13 +32,13 @@ export default function Meeting() {
             </ul>
 
             {/* 분류 : 지역 */}
-            <Region />
+            <Region type={type} />
 
             <h3 className="commonBoardTit">
                 인기 모임 <i>!</i>
             </h3>
 
-            <SquareBoardSlide />
+            <SquareBoardSlide type={type} />
 
 
             {/* 공백 */}
@@ -38,14 +47,28 @@ export default function Meeting() {
 
 
             {/* 분류 카테고리, 활동  */}
-            <Field />
+            <Field type={type} />
 
             <h3 className="commonBoardTit">
                 쩰리 모임
             </h3>
 
-            <SquareBoard />
+            <SquareBoard type={type} />
                 
+
+            {/* 플로팅 검색 ( 검색 ) */}
+            <FloatingSearch type={type} />
+            {/* 플로팅 메뉴 ( 글쓰기 ) */}
+            <FloatingMenu type={type} />
         </section>  
     );
+};
+
+
+export default function Meeting() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <MeetingContent />
+        </Suspense>
+    )
 };

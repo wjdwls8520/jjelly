@@ -26,41 +26,44 @@ function BoardCreateContent() {
           const newTitle = titleData[type];
           setTitle(newTitle); // 이 시점에서 newTitle은 업데이트된 상태입니다.
         }
-    }, [type]); // 의존성 배열에 type을 추가
-
-
-    // inputJS
-    let [labelPosition, setLabelPosition] = useState(false);
-
+      }, [type]); // 의존성 배열에 type을 추가
 
     return (
         <>
-            <section className="section pt60 commonBoardSection">
+            <section className="section pt60 commonBoardSection meetSec">
                 <h3 className="commonBoardTit">
                 {title} <span> 만들기 </span>
                 </h3>
                 <div className="detailDataForm">
-                <div className="titleSpace spaceWrap">
-                        <label className="tit">말머리</label>
-                        <h3 className="title subTitle customSellectBox">
-                            <button id="inpSubTitle" className="myInput bdCustom mySellect">
-                                일상
+                    <div className="titleSpace spaceWrap">
+                        <label className="tit">모임 이름</label>
+                        <h3 className="title">
+                            <input type="text" id="inpGroupName" className="myInput bdCustom" autoComplete="off" placeholder="모임 이름" />
+                        </h3>
+                    </div>
+                    <div className="titleSpace spaceWrap">
+                        <label className="tit">컨셉 분류</label>
+                        <h3 className="title divition customSellectBox">
+                            <button id="inpDivition" className="myInput bdCustom mySellect">
+                                카페 / 음식점
                             </button>
                         </h3>
                     </div>
                     <div className="titleSpace spaceWrap">
-                        <label className="tit">제목</label>
-                        <h3 className="title">
-                            <input type="text" id="inpTitle" className="myInput bdCustom" autoComplete="off" placeholder="제목을 입력해주세요." />
+                        <label className="tit">지역 분류</label>
+                        <h3 className="title region customSellectBox">
+                            <button id="inpRegion" className="myInput bdCustom mySellect">
+                                서울
+                            </button>
                         </h3>
                     </div>
                     <div className="titleSpace spaceWrap">
-                        <label className="tit">첨부파일</label>
+                        <label className="tit">대표 이미지</label>
                         <h3 className="title mainImg customSellectBox">
                             <input type="file" id="inpMainImg" className="myInput bdCustom mySellect display-none" accept="image/*" />
                             <label htmlFor="inpMainImg" className="customFile labelMainImg" >
-                                <img id="nomalImg" className="nomalImg" src="/nomal_profile.png" alt="대표이미지" />
-                                <div className="icon_profile">
+                                <img id="nomalImg" class="nomalImg" src="/nomal_profile.png" alt="대표이미지" />
+                                <div class="icon_profile">
                                     <img src="/icon_camera.png" alt="카메라" />
                                 </div>
                             </label>
@@ -68,7 +71,7 @@ function BoardCreateContent() {
                     </div>
                     {/* <div className="line"></div> */}
                     <div className="contentSpace spaceWrap">
-                        <label className="tit">내용</label>
+                        <label className="tit">모임 소개</label>
                         <ToastUiEditor />
                     </div>
                 </div>

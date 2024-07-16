@@ -172,13 +172,13 @@ br.m {display: none !important;}
 
 
 /* 공통 검색 */
-.commonBoardSection .searchBox {position: fixed; z-index: 3200; top: 130px; right: 20px; padding-right: 42px; width: 42px; height: 42px; border-radius: 64px; background: #fff; box-shadow: 2px 3px 6px #656d7433; box-sizing: border-box; overflow: hidden; transition: all 0.3s;}
-.commonBoardSection .searchBox .btnSearch {display: flex; justify-content: center; align-items: center; position: absolute; z-index: 50; top: 50%; right: 4px; width: 34px; height: 34px; border-radius: 50%; transform: translate(0, -50%); transition: all 0.3s;}
-.commonBoardSection .searchBox .btnSearch > img {height: 24px; object-fit: contain; pointer-events: none;}
-.commonBoardSection .searchBox .searchWrap {display: flex; align-items: center; width: 100%; height: 100%; overflow: hidden;}
+.searchBox {position: fixed; z-index: 3200; top: 130px; right: 20px; padding-right: 42px; width: 42px; height: 42px; border-radius: 64px; background: #fff; box-shadow: 2px 3px 6px #656d7433; box-sizing: border-box; overflow: hidden; transition: all 0.3s;}
+.searchBox .btnSearch {display: flex; justify-content: center; align-items: center; position: absolute; z-index: 50; top: 50%; right: 4px; width: 34px; height: 34px; border-radius: 50%; transform: translate(0, -50%); transition: all 0.3s;}
+.searchBox .btnSearch > img {height: 24px; object-fit: contain; pointer-events: none;}
+.searchBox .searchWrap {display: flex; align-items: center; width: 100%; height: 100%; overflow: hidden;}
 
-.commonBoardSection .searchBox.active {width: 260px;}
-.commonBoardSection .searchBox.active .btnSearch {background: #f4eeee;}
+.searchBox.active {width: 260px;}
+.searchBox.active .btnSearch {background: #f4eeee;}
 
 
 
@@ -186,11 +186,11 @@ br.m {display: none !important;}
 .myInput {padding: 0 5px 0 20px; width: 100%; height: 22px; box-sizing: border-box; font-size: 14px; font-weight: 500;}
 .myInput::placeholder {font-size: 14px; font-weight: 500; color: #9ea1b6;}
 
-.myTTA {padding: 0px; width: 100%; height: 500px; font-size: 14px; font-weight: 400; box-sizing: border-box;}
+.myTTA {padding: 0px; width: 100%; height: 280px; font-size: 14px; font-weight: 500; box-sizing: border-box;}
 .myTTA::placeholder {word-break: break-all; font-size: 14px; font-weight: 400; color: #9ea1b6;}
 /* 공통 선 있는 인풋 */
-.myInput.bdCustom {display: block; padding: 0px 20px; height: 32px; border-radius: 8px; border: 1px solid #dadde6;}
-.myTTA.bdCustom {display: block; padding: 20px; border-radius: 8px; border: 1px solid #dadde6;}
+.myInput.bdCustom {display: block; padding: 0px 20px; height: 32px; border-radius: 8px; border: 1px solid #9ea1b6;}
+.myTTA.bdCustom {display: block; padding: 20px; border-radius: 8px; border: 1px solid #9ea1b6;}
 
 
 
@@ -235,8 +235,8 @@ br.m {display: none !important;}
 
 /* 디테일 */
 .commonBoardSection .detailDataForm {display: flex; flex-direction: column;}
-.commonBoardSection .detailDataForm .titleSpace .title {display: block; margin: 0 0 16px; word-break: break-all; font-size: 28px; font-weight: 500;}
-.commonBoardSection .detailDataForm .titleSpace .customSellectBox .mySellect {text-align: left; font-size: 14px; font-weight: 500; color: #9ea1b6;}
+.commonBoardSection .detailDataForm .spaceWrap .title {display: block; margin: 0 0 16px; word-break: break-all; font-size: 28px; font-weight: 500;}
+.commonBoardSection .detailDataForm .spaceWrap .customSellectBox .mySellect {text-align: left; font-size: 14px; font-weight: 500; color: #9ea1b6;}
 .commonBoardSection .detailDataForm .userInfoSpace {display: flex; flex-direction: column; gap: 4px;}
 .commonBoardSection .detailDataForm .profileZone {display: flex; align-items: center; gap: 8px;}
 .commonBoardSection .detailDataForm .profileZone > img {background: #f4eeee; width: 32px; height: 32px; border-radius: 50%; overflow: hidden;}
@@ -250,7 +250,7 @@ br.m {display: none !important;}
 .commonBoardSection .detailDataForm .utilWrap .view > img {height: 17px; object-fit: contain;}
 .commonBoardSection .detailDataForm .utilWrap .like {display: flex; align-items: center; gap: 4px; font-weight: 700;}
 .commonBoardSection .detailDataForm .utilWrap .like > img {height: 17px; object-fit: contain;}
-.commonBoardSection .detailDataForm .contentSpace {padding: 6px; word-break: break-all; box-sizing: border-box;}
+.commonBoardSection .detailDataForm .contentSpace {padding: 0px; word-break: break-all; box-sizing: border-box;}
 
 .commonBoardSection .bottomNav {display: flex; justify-content: space-between; align-items: center; position: sticky; z-index: 100; bottom: 30px; left: 0; margin-top: 45px; padding: 7px 26px; width: 100%; box-sizing: border-box; border: 1px solid #d0d1da; border-radius: 50px; box-shadow: 0px 2px 4px #8e929633; background: #fff;}
 .commonBoardSection .bottomNav .bUtilWrap {display: flex; align-items: flex-end; gap: 22px;}
@@ -269,13 +269,21 @@ br.m {display: none !important;}
 .commonBoardSection .commemtWrap .commentSpace .textNum {display: flex; justify-content: flex-end; margin-top: 14px; width: 100%; font-size: 13px; font-weight: 600; color: #9ea1b6;}
 
 
-/* 쩰리 모임 */
 
+/* 생성 */
+.spaceWrap > .tit {display: block; margin-bottom: 8px; padding-left: 6px; box-sizing: border-box; font-size: 14px; font-weight: 600; color: #666b8c;}
+.commonBoardSection .labelMainImg {display: flex; justify-content: center; align-items: center; position: relative; width: 100px; height: 100px; border-radius: 20px; background: #fff; border: 1px solid #9ea1b6; box-sizing: border-box; cursor: pointer;}
+.commonBoardSection .labelMainImg > img.nomalImg {width: 50px; height: 50px; border-radius: 20px; object-fit: cover;}
+.commonBoardSection .labelMainImg .icon_profile {display: flex; justify-content: center; align-items: center; position: absolute; z-index: 10; bottom: 0; right: -15px; width: 30px; height: 30px; border-radius: 50%; background: #fa9e60;}
+
+
+/* 모임 */
 
 
 
 /* 맵 */
 .locationSearch {display: flex; padding: 5px; border: 1px solid #000;}
+
 
 
 /* 로그인 */
@@ -309,6 +317,7 @@ br.m {display: none !important;}
 .loginSec .snsIcon + .snsIcon +.snsIcon {background-color: #F2F4F6;}
 
 .loginSec .signupButton {margin-top: 24px; width: 100%; height: 50px; background-color: transparent; border: 1px solid #fa9e60; border-radius: 5px; font-size: 14px; font-weight: 700; cursor: pointer; color: #fa9e60;}
+
 
 
 /* 회원가입 */
