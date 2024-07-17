@@ -1,6 +1,7 @@
 import Link from "next/link";
 import CommonBoard from "./component/CommonBoard";
 import SquareBoard from "./component/SquareBoard";
+import BestStar from "./component/BestStar";
 
 
 export default function Home() {
@@ -108,9 +109,16 @@ export default function Home() {
                 <CommonBoard />
             </section>
 
-            <section className="section section04 squareBoardSection">
+            <section className="section section04">
                 <h3 className="commonBoardTit">
-                    Best of Best <i>!</i>
+                    쩰리 인기의 전당 TOP3 <i>!</i>
+                </h3>
+                <BestStar />
+            </section>
+
+            <section className="section section05 squareBoardSection">
+                <h3 className="commonBoardTit mt60">
+                    베스트 모임 <i>!</i>
                 </h3>
                 <SquareBoard />
             </section>
