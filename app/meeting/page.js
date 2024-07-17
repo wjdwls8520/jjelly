@@ -9,12 +9,24 @@ import FloatingSearch from "../component/FloatingSearch";
 import FloatingMenu from "../component/FloatingMenu";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
+import titleData from "../data/data";
+import { useState } from "react";
+import { useEffect } from "react";
 
 
 function MeetingContent() {
 
     const params = useSearchParams();
     const type = params.get('type');
+
+    const [title, setTitle] = useState(null);
+
+    useEffect(() => {
+        if (type) {
+          const newTitle = titleData[type];
+          setTitle(newTitle); // 이 시점에서 newTitle은 업데이트된 상태입니다.
+        }
+      }, [type]); // 의존성 배열에 type을 추가
     
     return(
         <section className="section pt80 squareBoardSection">
@@ -35,7 +47,7 @@ function MeetingContent() {
             <Region type={type} />
 
             <h3 className="commonBoardTit">
-                인기 모임 <i>!</i>
+                인기 {title} <i>!</i>
             </h3>
 
             <SquareBoardSlide type={type} />
@@ -50,7 +62,7 @@ function MeetingContent() {
             <Field type={type} />
 
             <h3 className="commonBoardTit">
-                쩰리 모임
+                쩰리 {title}
             </h3>
 
             <SquareBoard type={type} />

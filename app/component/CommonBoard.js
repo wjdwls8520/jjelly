@@ -12,7 +12,6 @@ export default function CommonBoard(props) {
     const regex = /\/([^\/]*)\/detail/;
 
     const detailRomve = pathname.replace(/^(\/[^\/]+)\/.*/, '$1');
-    // console.log(regex.test(pathname))
     
     let statement = regex.test(pathname);
 
@@ -133,7 +132,7 @@ export default function CommonBoard(props) {
                 statement ?
                     <ul className="commonBoardListWrap">
                         <li>
-                            <Link href={{ pathname: detailRomve , query: typeProps }}>
+                            <Link href={{ pathname: detailRomve + '/detail' , query: typeProps }}>
                                 <div className="post commonPost style2">
                                     <span className="imgBox">
                                         <img className="boardImg" src="/profile.png" />
@@ -150,7 +149,7 @@ export default function CommonBoard(props) {
                                     </div>
                                     <div className="util">
                                         <span className="commentBox">
-                                            <span className="aTag" href={{ pathname: detailRomve , query: typeProps }}>
+                                            <span className="aTag" href={{ pathname: detailRomve + '/detail' , query: typeProps }}>
                                                 <span className="conmmentNum">3</span>
                                                 <span>댓글</span>
                                             </span>
@@ -160,7 +159,7 @@ export default function CommonBoard(props) {
                             </Link>
                         </li>
                         <li>
-                            <Link href={{ pathname: detailRomve , query: typeProps }}>
+                            <Link href={{ pathname: detailRomve + '/detail' , query: typeProps }}>
                                 <div className="post commonPost style3">
                                     <div className="content">
                                         <span className="title titleLine2">
@@ -174,7 +173,7 @@ export default function CommonBoard(props) {
                                     </div>
                                     <div className="util">
                                         <span className="commentBox">
-                                            <span className="aTag" href={{ pathname: detailRomve , query: typeProps }}>
+                                            <span className="aTag" href={{ pathname: detailRomve + '/detail' , query: typeProps }}>
                                                 <span className="conmmentNum">3</span>
                                                 <span>댓글</span>
                                             </span>
@@ -184,7 +183,7 @@ export default function CommonBoard(props) {
                             </Link>
                         </li>
                         <li>
-                            <Link href={{ pathname: detailRomve , query: typeProps }}>
+                            <Link href={{ pathname: detailRomve + '/detail' , query: typeProps }}>
                                 <div className="post commonPost style2">
                                     <span className="imgBox">
                                         <img className="boardImg" src="/userimg_012.png" />
@@ -201,7 +200,7 @@ export default function CommonBoard(props) {
                                     </div>
                                     <div className="util">
                                         <span className="commentBox">
-                                            <span className="aTag" href={{ pathname: detailRomve , query: typeProps }}>
+                                            <span className="aTag" href={{ pathname: detailRomve + '/detail' , query: typeProps }}>
                                                 <span className="conmmentNum">3</span>
                                                 <span>댓글</span>
                                             </span>
@@ -211,7 +210,7 @@ export default function CommonBoard(props) {
                             </Link>
                         </li>
                         <li>
-                            <Link href={{ pathname: detailRomve , query: typeProps }}>
+                            <Link href={{ pathname: detailRomve + '/detail' , query: typeProps }}>
                                 <div className="post commonPost style3">
                                     <div className="content">
                                         <span className="title titleLine2">
@@ -225,7 +224,7 @@ export default function CommonBoard(props) {
                                     </div>
                                     <div className="util">
                                         <span className="commentBox">
-                                            <span className="aTag" href={{ pathname: detailRomve , query: typeProps }}>
+                                            <span className="aTag" href={{ pathname: detailRomve + '/detail' , query: typeProps }}>
                                                 <span className="conmmentNum">3</span>
                                                 <span>댓글</span>
                                             </span>

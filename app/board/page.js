@@ -5,7 +5,8 @@ import CommonBoard from "../component/CommonBoard";
 import FloatingSearch from "../component/FloatingSearch";
 import FloatingMenu from "../component/FloatingMenu";
 import { useEffect, useState, Suspense } from "react";
-import titleData from "./data";
+import titleData from "../data/data";
+
 
 function BoardContent() {
     const params = useSearchParams();

@@ -1,12 +1,13 @@
 'use client'
 
 import CommonBoard from "@/app/component/CommonBoard";
+import titleData from "@/app/data/data";
 import { useRouter, useSearchParams } from "next/navigation"
 import { useState } from "react";
 import { useEffect } from "react";
 
 import { Suspense } from "react";
-import titleData from "../data";
+
 
 function DetailContent() {
     

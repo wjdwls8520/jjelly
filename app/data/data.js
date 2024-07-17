@@ -8,6 +8,6 @@ let titleData = {
     dogBd : '멍이 게시판',
     catBd : '냥이 게시판',
     allBd : '모두 게시판'
-}
+};
 
 export default  titleData

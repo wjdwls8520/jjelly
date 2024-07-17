@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function SquareBoard() {
+export default function SquareBoard(props) {
 
     let testArr = [];
     for (let i = 0; i < 11; i++) {
@@ -13,7 +13,7 @@ export default function SquareBoard() {
                 <div className="userProfile">
                     <img className="postProfile" src="/character_dog.png" />
                 </div>
-                <Link className="imgWrap" href={{ pathname: '/' }}>
+                <Link className="imgWrap" href={{ pathname: 'meeting/detail', query: 'type=' + props.type }}>
                     <img className="postImg" src="/userimg_001.png" />
                 </Link>
                 <div className="postContent">
@@ -26,7 +26,7 @@ export default function SquareBoard() {
                 <div className="userProfile">
                     <img className="postProfile" src="/bird.png" />
                 </div>
-                <Link className="imgWrap" href={{ pathname: '/' }}>
+                <Link className="imgWrap" href={{ pathname: 'meeting/detail', query: 'type=' + props.type }}>
                     <img className="postImg" src="/userimg_003.png" />
                 </Link>
                 <div className="postContent">
@@ -39,7 +39,7 @@ export default function SquareBoard() {
                 <div className="userProfile">
                     <img className="postProfile" src="/profile.png" />
                 </div>
-                <Link className="imgWrap" href={{ pathname: '/' }}>
+                <Link className="imgWrap" href={{ pathname: 'meeting/detail', query: 'type=' + props.type }}>
                     <img className="postImg" src="/userimg_008.png" />
                 </Link>
                 <div className="postContent">
@@ -52,7 +52,7 @@ export default function SquareBoard() {
                 <div className="userProfile">
                     <img className="postProfile" src="/icon_cs.png" />
                 </div>
-                <Link className="imgWrap" href={{ pathname: '/' }}>
+                <Link className="imgWrap" href={{ pathname: 'meeting/detail', query: 'type=' + props.type }}>
                     <img className="postImg" src="/userimg_006.png" />
                 </Link>
                 <div className="postContent">
@@ -65,7 +65,7 @@ export default function SquareBoard() {
                 <div className="userProfile">
                     <img className="postProfile" src="/profile2.png" />
                 </div>
-                <Link className="imgWrap" href={{ pathname: '/' }}>
+                <Link className="imgWrap" href={{ pathname: 'meeting/detail', query: 'type=' + props.type }}>
                     <img className="postImg" src="/userimg_007.png" />
                 </Link>
                 <div className="postContent">
@@ -78,7 +78,7 @@ export default function SquareBoard() {
                 <div className="userProfile">
                     <img className="postProfile" src="/dog.png" />
                 </div>
-                <Link className="imgWrap" href={{ pathname: '/' }}>
+                <Link className="imgWrap" href={{ pathname: 'meeting/detail', query: 'type=' + props.type }}>
                     <img className="postImg" src="/userimg_012.png" />
                 </Link>
                 <div className="postContent">
@@ -91,7 +91,7 @@ export default function SquareBoard() {
                 <div className="userProfile">
                     <img className="postProfile" src="/userimg_001.png" />
                 </div>
-                <Link className="imgWrap" href={{ pathname: '/' }}>
+                <Link className="imgWrap" href={{ pathname: 'meeting/detail', query: 'type=' + props.type }}>
                     <img className="postImg" src="/userimg_004.png" />
                 </Link>
                 <div className="postContent">
@@ -104,7 +104,7 @@ export default function SquareBoard() {
                 <div className="userProfile">
                     <img className="postProfile" src="/userimg_005.png" />
                 </div>
-                <Link className="imgWrap" href={{ pathname: '/' }}>
+                <Link className="imgWrap" href={{ pathname: 'meeting/detail', query: 'type=' + props.type }}>
                     <img className="postImg" src="/userimg_009.png" />
                 </Link>
                 <div className="postContent">
@@ -117,7 +117,7 @@ export default function SquareBoard() {
                 <div className="userProfile">
                     <img className="postProfile" src="/userimg_012.png" />
                 </div>
-                <Link className="imgWrap" href={{ pathname: '/' }}>
+                <Link className="imgWrap" href={{ pathname: 'meeting/detail', query: 'type=' + props.type }}>
                     <img className="postImg" src="/userimg_002.png" />
                 </Link>
                 <div className="postContent">

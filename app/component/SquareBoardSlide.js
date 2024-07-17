@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
 /* 분류 : 지역 */
-export default function SquareBoardSlide() {
+export default function SquareBoardSlide(props) {
     return(
         <Swiper 
             slidesPerView={2.16}
@@ -16,7 +16,7 @@ export default function SquareBoardSlide() {
                     <div className="userProfile">
                         <img className="postProfile" src="/profile2.png" />
                     </div>
-                    <Link className="imgWrap" href={{ pathname: '/' }}>
+                    <Link className="imgWrap" href={{ pathname: 'meeting/detail', query: 'type=' + props.type }}>
                         <img className="postImg" src="/userimg_002.png" />
                     </Link>
                     <div className="postContent">
@@ -31,7 +31,7 @@ export default function SquareBoardSlide() {
                     <div className="userProfile">
                         <img className="postProfile" src="/userimg_012.png" />
                     </div>
-                    <Link className="imgWrap" href={{ pathname: '/' }}>
+                    <Link className="imgWrap" href={{ pathname: 'meeting/detail', query: 'type=' + props.type }}>
                         <img className="postImg" src="/userimg_003.png" />
                     </Link>
                     <div className="postContent">
@@ -46,7 +46,7 @@ export default function SquareBoardSlide() {
                     <div className="userProfile">
                         <img className="postProfile" src="/userimg_008.png" />
                     </div>
-                    <Link className="imgWrap" href={{ pathname: '/' }}>
+                    <Link className="imgWrap" href={{ pathname: 'meeting/detail', query: 'type=' + props.type }}>
                         <img className="postImg" src="/userimg_004.png" />
                     </Link>
                     <div className="postContent">
@@ -61,7 +61,7 @@ export default function SquareBoardSlide() {
                     <div className="userProfile">
                         <img className="postProfile" src="/userimg_009.png" />
                     </div>
-                    <Link className="imgWrap" href={{ pathname: '/' }}>
+                    <Link className="imgWrap" href={{ pathname: 'meeting/detail', query: 'type=' + props.type }}>
                         <img className="postImg" src="/userimg_005.png" />
                     </Link>
                     <div className="postContent">
@@ -76,7 +76,7 @@ export default function SquareBoardSlide() {
                     <div className="userProfile">
                         <img className="postProfile" src="/profile.png" />
                     </div>
-                    <Link className="imgWrap" href={{ pathname: '/' }}>
+                    <Link className="imgWrap" href={{ pathname: 'meeting/detail', query: 'type=' + props.type }}>
                         <img className="postImg" src="/userimg_011.png" />
                     </Link>
                     <div className="postContent">

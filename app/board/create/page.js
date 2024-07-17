@@ -4,7 +4,7 @@ import ToastUiEditor from "@/app/component/ToastUi"
 import { useRouter, useSearchParams } from "next/navigation"
 import { useState } from "react";
 import { useEffect } from "react";
-import titleData from "../data";
+import titleData from "@/app/data/data";
 import { Suspense } from "react";
 
 function BoardCreateContent() {
