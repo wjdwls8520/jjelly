@@ -1,258 +1,258 @@
-'use client' 
+'use client';
 
 import Script from "next/script";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Map() {
+    const [location, setLocation] = useState({ latitude: 0, longitude: 0 });
+    const mapRef = useRef(null);
+    const [currCategory, setCurrCategory] = useState('');
+    const [map, setMap] = useState(null);
+    const [ps, setPs] = useState(null);
+    const [placeOverlay, setPlaceOverlay] = useState(null);
+    const [contentNode, setContentNode] = useState(null);
+    const [markers, setMarkers] = useState([]); // 배열 상태로 변경
 
-    useEffect(() => { 
-
-        const { kakao } = window;
-
-        // 마커를 클릭했을 때 해당 장소의 상세정보를 보여줄 커스텀오버레이입니다
-        var placeOverlay = new kakao.maps.CustomOverlay({zIndex:1}), 
-        contentNode = document.createElement('div'), // 커스텀 오버레이의 컨텐츠 엘리먼트 입니다 
-        markers = [], // 마커를 담을 배열입니다
-        currCategory = ''; // 현재 선택된 카테고리를 가지고 있을 변수입니다
-
-        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-        mapOption = {
-            center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
-            level: 5 // 지도의 확대 레벨
-        };  
-       
-
-        // 지도를 생성합니다    
-        var map = new kakao.maps.Map(mapContainer, mapOption); 
-
-        // 장소 검색 객체를 생성합니다
-        var ps = new kakao.maps.services.Places(map); 
-        
-        // 지도에 idle 이벤트를 등록합니다
-        kakao.maps.event.addListener(map, 'idle', searchPlaces);
-
-        // 커스텀 오버레이의 컨텐츠 노드에 css class를 추가합니다 
-        contentNode.className = 'placeinfo_wrap';
-
-        // 커스텀 오버레이의 컨텐츠 노드에 mousedown, touchstart 이벤트가 발생했을때
-        // 지도 객체에 이벤트가 전달되지 않도록 이벤트 핸들러로 kakao.maps.event.preventMap 메소드를 등록합니다 
-        addEventHandle(contentNode, 'mousedown', kakao.maps.event.preventMap);
-        addEventHandle(contentNode, 'touchstart', kakao.maps.event.preventMap);
-
-        // 커스텀 오버레이 컨텐츠를 설정합니다
-        placeOverlay.setContent(contentNode);  
-
-        // 각 카테고리에 클릭 이벤트를 등록합니다
-        addCategoryClickEvent();
-
-        // 엘리먼트에 이벤트 핸들러를 등록하는 함수입니다
-        function addEventHandle(target, type, callback) {
-            if (target.addEventListener) {
-                target.addEventListener(type, callback);
-            } else {
-                target.attachEvent('on' + type, callback);
-            }
+    useEffect(() => {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(success, error);
         }
 
-        // 카테고리 검색을 요청하는 함수입니다
-        function searchPlaces() {
-            if (!currCategory) {
-                return;
-            }
-            
-            // 커스텀 오버레이를 숨깁니다 
-            placeOverlay.setMap(null);
-
-            // 지도에 표시되고 있는 마커를 제거합니다
-            removeMarker();
-            
-            ps.categorySearch(currCategory, placesSearchCB, {useMapBounds:true}); 
+        function success(position) {
+            setLocation({
+                latitude: position.coords.latitude,
+                longitude: position.coords.longitude
+            });
         }
 
-        // 장소검색이 완료됐을 때 호출되는 콜백함수 입니다
-        function placesSearchCB(data, status, pagination) {
-            if (status === kakao.maps.services.Status.OK) {
-
-                // 정상적으로 검색이 완료됐으면 지도에 마커를 표출합니다
-                displayPlaces(data);
-            } else if (status === kakao.maps.services.Status.ZERO_RESULT) {
-                // 검색결과가 없는경우 해야할 처리가 있다면 이곳에 작성해 주세요
-
-            } else if (status === kakao.maps.services.Status.ERROR) {
-                // 에러로 인해 검색결과가 나오지 않은 경우 해야할 처리가 있다면 이곳에 작성해 주세요
-                
-            }
+        function error() {
+            setLocation({
+                latitude: 37.483034,
+                longitude: 126.902435
+            });
+            console.log("위치 받기 실패");
         }
+    }, []);
 
-        // 지도에 마커를 표출하는 함수입니다
-        function displayPlaces(places) {
+    const initMap = () => {
+        if (location.latitude && location.longitude) {
+            const container = document.getElementById('map');
+            const options = {
+                center: new kakao.maps.LatLng(location.latitude, location.longitude),
+                level: 5
+            };
 
-            // 몇번째 카테고리가 선택되어 있는지 얻어옵니다
-            // 이 순서는 스프라이트 이미지에서의 위치를 계산하는데 사용됩니다
-            var order = document.getElementById(currCategory).getAttribute('data-order');
+            const newMap = new kakao.maps.Map(container, options);
+            mapRef.current = newMap;
+            setMap(newMap);
 
-            
+            const newPs = new kakao.maps.services.Places(newMap);
+            setPs(newPs);
 
-            for ( var i=0; i<places.length; i++ ) {
+            kakao.maps.event.addListener(newMap, 'idle', searchPlaces);
 
-                    // 마커를 생성하고 지도에 표시합니다
-                    var marker = addMarker(new kakao.maps.LatLng(places[i].y, places[i].x), order);
+            const newPlaceOverlay = new kakao.maps.CustomOverlay({ zIndex: 1 });
+            const newContentNode = document.createElement('div');
+            newContentNode.className = 'placeinfo_wrap';
+            addEventHandle(newContentNode, 'mousedown', kakao.maps.event.preventMap);
+            addEventHandle(newContentNode, 'touchstart', kakao.maps.event.preventMap);
+            newPlaceOverlay.setContent(newContentNode);
+            setPlaceOverlay(newPlaceOverlay);
+            setContentNode(newContentNode);
 
-                    // 마커와 검색결과 항목을 클릭 했을 때
-                    // 장소정보를 표출하도록 클릭 이벤트를 등록합니다
-                    (function(marker, place) {
-                        kakao.maps.event.addListener(marker, 'click', function() {
-                            displayPlaceInfo(place);
-                        });
-                    })(marker, places[i]);
-            }
+            addCategoryClickEvent();
+
+            const zoomControl = new kakao.maps.ZoomControl();
+            newMap.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
         }
+    };
 
-        // 마커를 생성하고 지도 위에 마커를 표시하는 함수입니다
-        function addMarker(position, order) {
-            var imageSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/places_category.png', // 마커 이미지 url, 스프라이트 이미지를 씁니다
-                imageSize = new kakao.maps.Size(27, 28),  // 마커 이미지의 크기
-                imgOptions =  {
-                    spriteSize : new kakao.maps.Size(72, 208), // 스프라이트 이미지의 크기
-                    spriteOrigin : new kakao.maps.Point(46, (order*36)), // 스프라이트 이미지 중 사용할 영역의 좌상단 좌표
-                    offset: new kakao.maps.Point(11, 28) // 마커 좌표에 일치시킬 이미지 내에서의 좌표
-                },
-                markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imgOptions),
-                    marker = new kakao.maps.Marker({
-                    position: position, // 마커의 위치
-                    image: markerImage 
+    function addEventHandle(target, type, callback) {
+        if (target.addEventListener) {
+            target.addEventListener(type, callback);
+        } else {
+            target.attachEvent('on' + type, callback);
+        }
+    }
+
+    useEffect(() => {
+        if (location.latitude && location.longitude) {
+            kakao.maps.load(() => initMap());
+        }
+    }, [location]);
+
+    useEffect(() => {
+        if (currCategory && ps) {
+            searchPlaces();
+        } else {
+            removeMarkers();
+        }
+    }, [currCategory, ps]);
+
+    function searchPlaces() {
+        if (!currCategory || !ps) return;
+
+        placeOverlay && placeOverlay.setMap(null);
+        removeMarkers();
+
+        ps.categorySearch(currCategory, placesSearchCB, { useMapBounds: true });
+    }
+
+    function placesSearchCB(data, status, pagination) {
+        if (status === kakao.maps.services.Status.OK) {
+            displayPlaces(data);
+        } else if (status === kakao.maps.services.Status.ZERO_RESULT) {
+            alert("검색 결과가 없습니다.");
+        } else if (status === kakao.maps.services.Status.ERROR) {
+            alert("검색 중 오류가 발생했습니다.");
+        }
+    }
+
+    function displayPlaces(places) {
+        const order = document.getElementById(currCategory).getAttribute('data-order');
+        const newMarkers = []; // 새로운 마커 배열
+
+        for (let i = 0; i < places.length; i++) {
+            const marker = addMarker(new kakao.maps.LatLng(places[i].y, places[i].x), order);
+            newMarkers.push(marker);
+
+            (function (marker, place) {
+                kakao.maps.event.addListener(marker, 'click', function () {
+                    displayPlaceInfo(place);
                 });
-
-            marker.setMap(map); // 지도 위에 마커를 표출합니다
-            markers.push(marker);  // 배열에 생성된 마커를 추가합니다
-
-            return marker;
+            })(marker, places[i]);
         }
 
-        // 지도 위에 표시되고 있는 마커를 모두 제거합니다
-        function removeMarker() {
-            for ( var i = 0; i < markers.length; i++ ) {
-                markers[i].setMap(null);
-            }   
-            markers = [];
+        setMarkers(newMarkers); // 새로운 마커 배열로 업데이트
+    }
+
+    function addMarker(position, order) {
+        const imageSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/places_category.png',
+            imageSize = new kakao.maps.Size(27, 28),
+            imgOptions = {
+                spriteSize: new kakao.maps.Size(72, 208),
+                spriteOrigin: new kakao.maps.Point(46, order * 36),
+                offset: new kakao.maps.Point(11, 28)
+            },
+            markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imgOptions),
+            marker = new kakao.maps.Marker({
+                position: position,
+                image: markerImage
+            });
+
+        marker.setMap(map);
+
+        return marker;
+    }
+
+    function removeMarkers() {
+        markers.forEach(marker => {
+            marker.setMap(null);
+        });
+        setMarkers([]);
+    }
+
+    function displayPlaceInfo(place) {
+        let content = '<div class="placeinfo">' +
+            '   <a class="title" href="' + place.place_url + '" target="_blank" title="' + place.place_name + '">' + place.place_name + '</a>';
+
+        if (place.road_address_name) {
+            content += '    <span title="' + place.road_address_name + '">' + place.road_address_name + '</span>' +
+                '  <span class="jibun" title="' + place.address_name + '">(지번 : ' + place.address_name + ')</span>';
+        } else {
+            content += '    <span title="' + place.address_name + '">' + place.address_name + '</span>';
         }
 
-        // 클릭한 마커에 대한 장소 상세정보를 커스텀 오버레이로 표시하는 함수입니다
-        function displayPlaceInfo (place) {
-            var content = '<div class="placeinfo">' +
-                            '   <a class="title" href="' + place.place_url + '" target="_blank" title="' + place.place_name + '">' + place.place_name + '</a>';   
+        content += '    <span class="tel">' + place.phone + '</span>' +
+            '</div>' +
+            '<div class="after"></div>';
 
-            if (place.road_address_name) {
-                content += '    <span title="' + place.road_address_name + '">' + place.road_address_name + '</span>' +
-                            '  <span class="jibun" title="' + place.address_name + '">(지번 : ' + place.address_name + ')</span>';
-            }  else {
-                content += '    <span title="' + place.address_name + '">' + place.address_name + '</span>';
-            }                
-        
-            content += '    <span class="tel">' + place.phone + '</span>' + 
-                        '</div>' + 
-                        '<div class="after"></div>';
+        contentNode.innerHTML = content;
+        placeOverlay.setPosition(new kakao.maps.LatLng(place.y, place.x));
+        placeOverlay.setMap(map);
+    }
 
-            contentNode.innerHTML = content;
-            placeOverlay.setPosition(new kakao.maps.LatLng(place.y, place.x));
-            placeOverlay.setMap(map);  
+    function addCategoryClickEvent() {
+        const category = document.getElementById('category');
+        const children = category.children;
+
+        for (let i = 0; i < children.length; i++) {
+            children[i].onclick = onClickCategory;
         }
+    }
 
+    function onClickCategory() {
+        const id = this.id;
+        const className = this.className;
 
-        // 각 카테고리에 클릭 이벤트를 등록합니다
-        function addCategoryClickEvent() {
-            var category = document.getElementById('category'),
-                children = category.children;
-
-            for (var i=0; i<children.length; i++) {
-                children[i].onclick = onClickCategory;
-            }
-        }
-
-        // 카테고리를 클릭했을 때 호출되는 함수입니다
-        function onClickCategory() {
-            var id = this.id,
-                className = this.className;
-
+        if (placeOverlay) {
             placeOverlay.setMap(null);
-
-            if (className === 'on') {
-                currCategory = '';
-                changeCategoryClass();
-                removeMarker();
-            } else {
-                currCategory = id;
-                changeCategoryClass(this);
-                searchPlaces();
-            }
         }
 
-        // 클릭된 카테고리에만 클릭된 스타일을 적용하는 함수입니다
-        function changeCategoryClass(el) {
-            var category = document.getElementById('category'),
-                children = category.children,
-                i;
+        if (className === 'on') {
+            setCurrCategory('');
+            changeCategoryClass();
+            removeMarkers();
+        } else {
+            setCurrCategory(id);
+            changeCategoryClass(this);
+        }
+    }
 
-            for ( i=0; i<children.length; i++ ) {
-                children[i].className = '';
-            }
+    function changeCategoryClass(el) {
+        const category = document.getElementById('category');
+        const children = category.children;
 
-            if (el) {
-                el.className = 'on';
-            } 
-        } 
+        for (let i = 0; i < children.length; i++) {
+            children[i].className = '';
+        }
 
-
-        // // 일반 지도와 스카이뷰로 지도 타입을 전환할 수 있는 지도타입 컨트롤을 생성합니다
-        // var mapTypeControl = new kakao.maps.MapTypeControl();
-
-        // // 지도에 컨트롤을 추가해야 지도위에 표시됩니다
-        // // kakao.maps.ControlPosition은 컨트롤이 표시될 위치를 정의하는데 TOPRIGHT는 오른쪽 위를 의미합니다
-        // map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
-
-        // 지도 확대 축소를 제어할 수 있는  줌 컨트롤을 생성합니다
-        var zoomControl = new kakao.maps.ZoomControl();
-        map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
-
-    }, [])
+        if (el) {
+            el.className = 'on';
+        }
+    }
 
     return (
-        
         <div className="mapApp">
-            <div id="mapWrap">
-                <div id="map" style={{
-                    width: "100%", height: "400px",
-                    overflow: "hidden"
-                }}></div>
+            <Script
+                src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=9784fc8d43c2978a22923da1563dc53d&autoload=false&libraries=services,clusterer,drawing`}
+                strategy="beforeInteractive"
+            />
+            <div id="map" style={{ width: "100%", height: "350px" }}></div>
+            <div id="menu_wrap" className="bg_white">
                 <ul id="category">
-                    <li id="BK9" data-order="0"> 
-                        <span class="category_bg bank"></span>
+                    <li id="BK9" data-order="0">
+                        <span className="category_bg bank"></span>
                         은행
-                    </li>       
-                    <li id="MT1" data-order="1"> 
-                        <span class="category_bg mart"></span>
+                    </li>
+                    <li id="MT1" data-order="1">
+                        <span className="category_bg mart"></span>
                         마트
-                    </li>  
-                    <li id="PM9" data-order="2"> 
-                        <span class="category_bg pharmacy"></span>
+                    </li>
+                    <li id="PM9" data-order="2">
+                        <span className="category_bg pharmacy"></span>
                         약국
-                    </li>  
-                    <li id="OL7" data-order="3"> 
-                        <span class="category_bg oil"></span>
+                    </li>
+                    <li id="OL7" data-order="3">
+                        <span className="category_bg oil"></span>
                         주유소
-                    </li>  
-                    <li id="CE7" data-order="4"> 
-                        <span class="category_bg cafe"></span>
+                    </li>
+                    <li id="CE7" data-order="4">
+                        <span className="category_bg cafe"></span>
                         카페
-                    </li>  
-                    <li id="CS2" data-order="5"> 
-                        <span class="category_bg store"></span>
+                    </li>
+                    <li id="CS2" data-order="5">
+                        <span className="category_bg store"></span>
                         편의점
-                    </li>      
+                    </li>
                 </ul>
-            </div>     
+            </div>
             <button
-                // onClick={()=>initMap}
+                onClick={() => {
+                    if (mapRef.current) {
+                        mapRef.current.setCenter(new kakao.maps.LatLng(location.latitude, location.longitude));
+                    }
+                }}
             >현재 위치</button>
         </div>
     );
