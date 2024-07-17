@@ -1,5 +1,6 @@
 import { Noto_Sans_KR } from "next/font/google";
 import "./globals.css";
+import "./map.css";
 import Header from "./component/Header";
 import Footer from "./component/Footer";
 
@@ -20,7 +21,7 @@ export default function RootLayout({ children }) {
         <meta property="og:image" content="/ogimage.png" />
         <script 
           type="text/javascript" 
-          src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bb1a1a51327ee56bf50a95b4371d3f8e&libraries=services">
+          src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9784fc8d43c2978a22923da1563dc53d&libraries=services,clusterer,drawing,autoload=false">
         </script>
       </head>
       <body className={noto.className }>
