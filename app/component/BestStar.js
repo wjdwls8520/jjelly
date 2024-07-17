@@ -49,7 +49,7 @@ function BestStarContent() {
                             <img src="/userimg_002.png" alt="인기 스타 프로필" />
                         </div>
                         <div className="profileName">
-                            흰색 줄무늬 배리
+                            어쩔TV 멍이
                         </div>
                     </Link>
                     <div className="subscribeWrap">
