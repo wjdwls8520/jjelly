@@ -316,7 +316,7 @@ export default function CommonBoard(props) {
                             </Link>
                         </li>
                         <li>
-                            <Link href={{ pathname: pathname + '/detail', query : props.type }}>
+                            <Link href={{ pathname: pathname + '/detail', query : 'type=' + props.type }}>
                                 <div className="post commonPost style3">
                                     <div className="content">
                                         <span className="title titleLine2">
@@ -330,7 +330,7 @@ export default function CommonBoard(props) {
                                     </div>
                                     <div className="util">
                                         <span className="commentBox">
-                                            <span className="aTag" href={{ pathname: pathname + '/detail', query : props.type }}>
+                                            <span className="aTag" href={{ pathname: pathname + '/detail', query : 'type=' + props.type }}>
                                                 <span className="conmmentNum">3</span>
                                                 <span>댓글</span>
                                             </span>
