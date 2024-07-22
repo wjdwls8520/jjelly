@@ -30,13 +30,19 @@ function DetailContent() {
       }, [type]); // 의존성 배열에 type을 추가
 
 
+    const navigateToPage = () => {
+        router.push('/meetNotice/create?type=meetNotice');  // '/target-page'로 페이지 이동
+    };
+
     let [btnChange, setBtnChange] = useState(false);
     let btnApply = ()=> {
-        setBtnChange(!btnChange);
+
         if ( btnChange ) {
             // 공고만들기
+            navigateToPage();
         } else {
             alert('가입신청이 완료되었습니다.');
+            setBtnChange(true);
         };
     };  
 
