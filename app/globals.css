@@ -450,6 +450,7 @@ br.m {display: none !important;}
 .inputArea .inputBox .inputWrap .myInput.disabled {background: #f4eeee; color: #9ea1b6; pointer-events: none;}
 .inputArea .inputBox .inputWrap .myInput::placeholder {font-size: 14px; color: #9ea1b6;}
 .inputArea .inputBox .inputWrap .myTextArea {padding: 10px 10px 0 10px; font-size: 11px; height: 100px; color: #9ea1b6;}
+.customSellectBox.disabled {background: #f4eeee; color: #9ea1b6; pointer-events: none;}
 .inputArea .inputBox .fileWrap {width: auto;}
 .inputArea .inputBox .fileWrap .myInput {width: 244px; color: #9ea1b6; cursor: pointer;}
 .inputArea .inputBox .btnFile {display: block; flex-shrink: 0; width: 56px; height: 56px; background: url(/btnFile.png) no-repeat; background-size: 100%; cursor: pointer;}
