@@ -98,6 +98,8 @@
      position: absolute;
      top: 5px;
      left: 5px;
-     width: 97%;
+     width: 100%;
+     padding: 0 10px 0 0;
+     box-sizing: border-box;
      z-index: 10;
 }
