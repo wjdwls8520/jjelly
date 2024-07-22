@@ -4,14 +4,13 @@ import Link from "next/link";
 import Region from "../component/Region";
 import Field from "../component/Field";
 import SquareBoardSlide from "../component/SquareBoardSlide";
-import SquareBoard from "../component/SquareBoard";
 import FloatingSearch from "../component/FloatingSearch";
-import FloatingMenu from "../component/FloatingMenu";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 import titleData from "../data/data";
 import { useState } from "react";
 import { useEffect } from "react";
+import MeetNotice from "../component/MeetNotice";
 
 
 function MeetingContent() {
@@ -29,14 +28,14 @@ function MeetingContent() {
       }, [type]); // 의존성 배열에 type을 추가
     
     return(
-        <section className="section pt80 squareBoardSection">
+        <section className="section pt80 commonBoardSection squareBoardSection">
             <ul className="tabCategory">
-                <li className="meet active">
+                <li className="meet">
                     <Link href={{ pathname: '/meeting', query: 'type=meet' }}>
                         젤리 모임
                     </Link>
                 </li>
-                <li className="meetNotice">
+                <li className="meetNotice active">
                     <Link href={{ pathname: '/meetNotice', query: 'type=meetNotice' }}>
                         젤리 공고
                     </Link>
@@ -65,13 +64,11 @@ function MeetingContent() {
                 쩰리 {title}
             </h3>
 
-            <SquareBoard type={type} />
+            <MeetNotice />
                 
 
             {/* 플로팅 검색 ( 검색 ) */}
             <FloatingSearch type={type} />
-            {/* 플로팅 메뉴 ( 글쓰기 ) */}
-            <FloatingMenu type={type} />
         </section>  
     );
 };

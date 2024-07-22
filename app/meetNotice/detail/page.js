@@ -6,6 +6,7 @@ import { useEffect } from "react";
 
 import { Suspense } from "react";
 import titleData from "@/app/data/data";
+import Meeting from "@/app/meetNotice/page";
 import MeetNotice from "@/app/component/MeetNotice";
 
 function DetailContent() {
@@ -28,32 +29,12 @@ function DetailContent() {
         }
       }, [type]); // 의존성 배열에 type을 추가
 
-
-    let [btnChange, setBtnChange] = useState(false);
-    let btnApply = ()=> {
-        setBtnChange(!btnChange);
-        if ( btnChange ) {
-            // 공고만들기
-        } else {
-            alert('가입신청이 완료되었습니다.');
-        };
-    };  
-
-
     return (
         <>
             <section className="section pt60 commonBoardSection meet">
                 <h3 className="commonBoardTit">
                     {title} <i>!</i>
                 </h3>
-                <div className="divisionWrap">
-                    <div className="divInfo region">
-                        서울
-                    </div>
-                    <div className="divInfo field">
-                        카페 / 음식점
-                    </div>
-                </div>
                 <div className="detailDataForm">
                     <div className="bannerSpace spaceWrap">
                         <img src="/userimg_002.png" alt="메인 이미지" />
@@ -102,7 +83,7 @@ function DetailContent() {
                     </div>
 
                     <div className="membershipApply">
-                        <button type="button" className={btnChange ? 'btnApply noticeCreate' : 'btnApply meetJoin'} onClick={btnApply}>{btnChange ? '공고 만들기' : '가입 신청하기'}</button>
+                        <button type="button" className="btnApply">가입 신청하기</button>
                         <button type="button" className="btnShare">
                             <img src="/icon_share.png" alt="공유" />
                         </button>
@@ -114,10 +95,10 @@ function DetailContent() {
                             홈
                         </li>
                         <li>
-                            소개
+                            공고 
                         </li>
                         <li>
-                            공고 
+                            소개
                         </li>
                         <li>
                             리뷰
