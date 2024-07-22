@@ -13,6 +13,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-kakao-maps-sdk": "^1.1.27",
+    "react-zoom-pan-pinch": "^3.6.1",
     "swiper": "^11.1.1"
   }
 }

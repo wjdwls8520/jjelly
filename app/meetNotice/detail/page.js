@@ -6,8 +6,7 @@ import { useEffect } from "react";
 
 import { Suspense } from "react";
 import titleData from "@/app/data/data";
-import Meeting from "@/app/meetNotice/page";
-import MeetNotice from "@/app/component/MeetNotice";
+import ZoomInOut from "@/app/component/PinchZoom";
 
 function DetailContent() {
     
@@ -27,38 +26,36 @@ function DetailContent() {
           const newTitle = titleData[type];
           setTitle(newTitle); // 이 시점에서 newTitle은 업데이트된 상태입니다.
         }
-      }, [type]); // 의존성 배열에 type을 추가
+    }, [type]); // 의존성 배열에 type을 추가
+
+
+    // 줌인아웃 공고 이미지
+    let posterURL = '/sample.png';
+
 
     return (
         <>
-            <section className="section pt60 commonBoardSection meet">
+            <section className="section pt60 commonBoardSection meet meetNotice">
                 <h3 className="commonBoardTit">
                     {title} <i>!</i>
                 </h3>
+                <div className="divisionWrap">
+                    <div className="divInfo region">
+                        서울
+                    </div>
+                    <div className="divInfo field">
+                        카페 / 음식점
+                    </div>
+                </div>
                 <div className="detailDataForm">
                     <div className="bannerSpace spaceWrap">
                         <img src="/userimg_002.png" alt="메인 이미지" />
-                    </div>
-                    <div className="titleSpace spaceWrap">
-                        <h3 className="title">
-                            배리베리굿 모임
-                        </h3>
                     </div>
                     <div className="userInfoSpace">
                         {/* 모임 방장 */}
                         <div className="profileZone">
                             <img src="/profile.png" alt="프로필" />
-                            <span className="nickname">박쩰리</span>
-                        </div>
-                        <div className="postInfoZone">
-                            <div className="dateWrap">
-                                <span className="time">
-                                    모임 생성일 :
-                                </span>
-                                <span className="date">
-                                    2024.07.07
-                                </span>
-                            </div>
+                            <span className="nickname">배리베리굿 모임</span>
                         </div>
 
                         {/* 좋아요 버튼 */}
@@ -78,56 +75,56 @@ function DetailContent() {
                         </div>
                         <div className="infoZone review">
                             <span className="num">45</span>
-                            <span className="tit">리뷰</span>
+                            <span className="tit">댓글</span>
                         </div>
                     </div>
 
-                    <div className="membershipApply">
-                        <button type="button" className="btnApply">가입 신청하기</button>
-                        <button type="button" className="btnShare">
-                            <img src="/icon_share.png" alt="공유" />
-                        </button>
-                    </div>
-
-                    {/* 모임 탭 카테고리 */}
-                    <ul className="contentCategory">
-                        <li className="active">
-                            홈
-                        </li>
-                        <li>
-                            공고 
-                        </li>
-                        <li>
-                            소개
-                        </li>
-                        <li>
-                            리뷰
-                        </li>
-                    </ul>
 
                     <div className="line"></div>
 
-                    <div className="contentSpace">
-                        <span className="tit">소개</span>
-                        저희는 강아지를 키우는 사람들의 모임입니다.
+                    {/* 공고 제목 */}
+                    <div className="titleSpace spaceWrap">
+                        <h3 className="title">
+                            이번주 상암동 강아지 모임 합니다!!
+                        </h3>
                     </div>
-                </div>
+                    {/* 공고 생성일 */}
+                    <div className="postInfoZone">
+                        <div className="dateWrap">
+                            <span className="time">
+                                공고 생성일 :
+                            </span>
+                            <span className="date">
+                                2024.07.07
+                            </span>
+                        </div>
+                    </div>
 
-                <div className="noticeWrap">
-                    <h4 className="tit">
-                        공고
-                    </h4>
-                    <MeetNotice type={type} />
+                    {/* 내용 */}
+                    <div className="contentSpace">
+                        <span className="tit">내용</span>
+                        {/* 공고 이미지 */}
+                        <div className="posterSpace">
+                            <ZoomInOut posterURL={posterURL} />
+                        </div>
+
+                        여기가 저희가 만날 상암동 카페입니다. 
+                        <br />
+                        카카오톡 오픈채팅방에 자세한 얘기 남겨놨으니 알아서 오세요.
+                        <br />
+                        <br />
+                        위치 : 상암동 카페 
+                        <br />
+                        일시 : 다음주 화요일
+                        
+                    </div>
                 </div>
 
                 <div className="commemtWrap">
                     <h4 className="tit">
-                        리뷰
+                        댓글
                         <span className="num">
-                            4.5
-                        </span>
-                        <span className="rating">
-                            ★★★★☆
+                            45
                         </span>
                     </h4>
                     <div className="commentSpace">
@@ -145,17 +142,6 @@ function DetailContent() {
                     </div>
                 </div>
             </section>
-
-            {/* anotherBoardList */}
-            {/* <section className="section commonBoardSection anotherBoardList">
-                <h3 className="commonBoardTit">
-                핫 딜 <i>!</i>
-                    <span className="seeMore">
-                        더 보기
-                    </span>
-                </h3>
-                <CommonBoard type={type} />
-            </section> */}
 
             {/* 목록으로 */}
             <div className="btnWrap returnList">

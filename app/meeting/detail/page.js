@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import { Suspense } from "react";
 import titleData from "@/app/data/data";
 import MeetNotice from "@/app/component/MeetNotice";
+import SquareBoardSlide from "@/app/component/SquareBoardSlide";
 
 function DetailContent() {
     
@@ -127,8 +128,21 @@ function DetailContent() {
                     <div className="line"></div>
 
                     <div className="contentSpace">
-                        <span className="tit">소개</span>
-                        저희는 강아지를 키우는 사람들의 모임입니다.
+                        <span className="tit mb30">소개</span>
+                            저희는 강아지를 키우는 사람들의 모임입니다.
+                            <br />
+                            <br />
+                            <br />
+                            아래 방법으로 새로운 오픈채팅방을 만들 수 있습니다.
+                            <br />
+                            <br />
+                            1) 카카오톡 - 오픈채팅탭 - 우상단 채팅 만들기 버튼 누르기
+                            <br />
+                            <br />
+                            2) 우상단 MY 버튼 - 나의 채팅방 영역의 만들기 버튼 누르기
+                            <br />
+                            <br />
+                            채팅방의 이름과 #키워드, 사용할 프로필을 선택하여 오픈채팅 대화방 링크를 생성하고, 생성된 링크를 블로그나 카페 등에 공유해 보세요.
                     </div>
                 </div>
 
@@ -166,15 +180,15 @@ function DetailContent() {
             </section>
 
             {/* anotherBoardList */}
-            {/* <section className="section commonBoardSection anotherBoardList">
+            <section className="section commonBoardSection anotherBoardList">
                 <h3 className="commonBoardTit">
-                핫 딜 <i>!</i>
+                인기 {title}
                     <span className="seeMore">
                         더 보기
                     </span>
                 </h3>
-                <CommonBoard type={type} />
-            </section> */}
+                <SquareBoardSlide type={type} />
+            </section>
 
             {/* 목록으로 */}
             <div className="btnWrap returnList">

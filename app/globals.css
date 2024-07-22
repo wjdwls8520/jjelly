@@ -74,6 +74,9 @@ br.m {display: none !important;}
 .mt25 {margin-top: 25px !important;}
 .mt60 {margin-top: 60px !important;}
 .mt80 {margin-top: 80px !important;}
+.mb0 {margin-bottom: 0px !important;}
+.mb10 {margin-bottom: 10px !important;}
+.mb30 {margin-bottom: 30px !important;}
 
 .main, .commonBoard, .login, .sign {background: #f4eeee;}
 
@@ -274,7 +277,7 @@ br.m {display: none !important;}
 
 /* 디테일 */
 .commonBoardSection .detailDataForm {display: flex; flex-direction: column;}
-.commonBoardSection .detailDataForm .spaceWrap .title {display: block; margin: 0 0 16px; word-break: break-all; font-size: 28px; font-weight: 500;}
+.commonBoardSection .detailDataForm .spaceWrap .title {display: block; margin: 0 0 16px; word-break: break-all; line-height: 1.3; font-size: 28px; font-weight: 500;}
 .commonBoardSection .detailDataForm .spaceWrap .customSellectBox .mySellect {text-align: left; font-size: 14px; font-weight: 500; color: #9ea1b6;}
 .commonBoardSection .detailDataForm .userInfoSpace {display: flex; flex-direction: column; gap: 4px;}
 .commonBoardSection .detailDataForm .profileZone {display: flex; align-items: center; gap: 8px;}
@@ -319,6 +322,7 @@ br.m {display: none !important;}
 .commonBoardSection .labelMainImg.on > img.nomalImg {width: 100%; height: 100%;}
 
 /* 모임 */
+.commonBoardSection.meet .commonBoardTit {padding-bottom: 0;}
 .commonBoardSection.meet .divisionWrap {display: flex; justify-content: flex-end; align-items: center; gap: 8px; margin-bottom: 6px;}
 .commonBoardSection.meet .divisionWrap .divInfo {padding: 3px 10px; background: #fededf; border-radius: 20px; font-size: 12px; font-weight: 500; color: #9ea1b6;}
 
@@ -356,6 +360,30 @@ br.m {display: none !important;}
 .commonBoardSection.meet .noticeWrap .tit {display: block; margin-bottom: 10px; font-size: 16px; font-weight: 500; color: #151515;}
 
 .commonBoardSection.meet .commemtWrap {margin-top: 40px;}
+
+
+
+/* 공고 */
+.commonBoardListWrap.meetNotice .commonPost {flex-direction: column; flex-flow: wrap; gap: 16px;}
+.commonBoardListWrap.meetNotice .commonPost .imgBox {width: 100%; height: 175px;}
+.commonBoardListWrap.meetNotice .content {width: 100%;}
+.commonBoardListWrap.meetNotice .title {font-size: 18px;}
+.commonBoardListWrap.meetNotice .userInfo {flex-flow: wrap; gap: 0px 6px;}
+.commonBoardListWrap.meetNotice .userInfo .groupName {display: flex; align-items: center; gap: 10px; flex-shrink: 0; margin-top: 6px; width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 14px; color: #423f3f;}
+.commonBoardListWrap.meetNotice .userInfo .groupName .groupProfile {width: 26px; height: 26px; background: #f4eeee; border-radius: 50%; overflow: hidden;}
+.commonBoardListWrap.meetNotice .userInfo .noticeContent {display: -webkit-box; -webkit-line-clamp: 2;  -webkit-box-orient: vertical; margin: 14px 0; overflow: hidden; text-overflow: ellipsis;}
+
+/* 공고 디테일, 공고 상세보기 */
+.commonBoardSection.meetNotice .userInfoSpace {margin-top: 16px;}
+.commonBoardSection.meetNotice .detailDataForm .spaceWrap .title {margin-bottom: 8px; padding: 0;}
+.commonBoardSection.meetNotice .contentSpace {margin-top: 20px;}
+.commonBoardSection.meetNotice .posterSpace {display: flex; justify-content: center; align-items: center; position: relative; margin-bottom: 16px; width: 100%; height: 176px; border: 1px solid #9ea1b6; border-radius: 10px; box-sizing: border-box; overflow: hidden;}
+.react-transform-wrapper, .react-transform-component {width: 100% !important; height: 100% !important;}
+.commonBoardSection.meetNotice .react-transform-component img {width: 100%; height: 100%; object-fit: contain; cursor: pointer;}
+.commonBoardSection.meetNotice .tools {display: flex; align-items: center; gap: 6px; position: absolute; z-index: 100; bottom: 6px; right: 6px; max-height: 32px;}
+.commonBoardSection.meetNotice .tools > button {display: flex; justify-content: center; align-items: center; width: 32px; height: 32px; background: #fa9e60; border-radius: 4px;}
+.commonBoardSection.meetNotice .tools > button > img {width: 20px;}
+
 
 
 /* 맵 */
