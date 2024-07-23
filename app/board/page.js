@@ -27,7 +27,7 @@ function BoardContent() {
     };
 
     return (
-        <section className="section pt80 commonBoardSection">
+        <section className="section customPt commonBoardSection">
             {/* 카테고리 */}
             <ul className="category">
                 <li className="active">

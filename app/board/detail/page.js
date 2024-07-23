@@ -31,7 +31,7 @@ function DetailContent() {
 
     return (
         <>
-            <section className="section pt60 commonBoardSection">
+            <section className="section customPt commonBoardSection">
                 <h3 className="commonBoardTit">
                 {title} <i>!</i>
                 </h3>

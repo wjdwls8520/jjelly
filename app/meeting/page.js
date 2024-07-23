@@ -29,7 +29,7 @@ function MeetingContent() {
       }, [type]); // 의존성 배열에 type을 추가
     
     return(
-        <section className="section pt80 squareBoardSection">
+        <section className="section customPt squareBoardSection">
             <ul className="tabCategory">
                 <li className="meet active">
                     <Link href={{ pathname: '/meeting', query: 'type=meet' }}>

@@ -42,7 +42,7 @@ export default function Login() {
                         </div>
                     </div>
                 </div>
-                <Link href={{ pathname: '/sign' }}>
+                <Link href={{ pathname: '/sign', query: 'type=sign' }}>
                     <button id="btnSignUp" className="signupButton">회원가입</button>
                 </Link>
             </div>

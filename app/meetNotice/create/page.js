@@ -60,7 +60,7 @@ function BoardCreateContent() {
 
     return (
         <>
-            <section className="section pt60 commonBoardSection meetSec">
+            <section className="section customPt commonBoardSection meetSec">
                 <h3 className="commonBoardTit">
                 {title} <span> 만들기 </span>
                 </h3>

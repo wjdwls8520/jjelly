@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Sign() {
     return (
-        <section className="section pt80">
+        <section className="section signSec">
             <div className="signupWrap mt60">
                 <h2 className="faqTitle">회원가입</h2>
                 <div className="identityVerificationWrap">

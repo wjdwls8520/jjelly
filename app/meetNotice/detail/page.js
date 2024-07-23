@@ -35,7 +35,7 @@ function DetailContent() {
 
     return (
         <>
-            <section className="section pt60 commonBoardSection meet meetNotice">
+            <section className="section customPt commonBoardSection meet meetNotice">
                 <h3 className="commonBoardTit">
                     {title} <i>!</i>
                 </h3>
@@ -51,11 +51,16 @@ function DetailContent() {
                     <div className="bannerSpace spaceWrap">
                         <img src="/userimg_002.png" alt="메인 이미지" />
                     </div>
+                    <div className="titleSpace spaceWrap meetTitle">
+                        <h3 className="title">
+                            배리베리굿 강아지 모임
+                        </h3>
+                    </div>
                     <div className="userInfoSpace">
                         {/* 모임 방장 */}
                         <div className="profileZone">
                             <img src="/profile.png" alt="프로필" />
-                            <span className="nickname">배리베리굿 모임</span>
+                            <span className="nickname">배리베리굿 모임장</span>
                         </div>
 
                         {/* 좋아요 버튼 */}
@@ -83,7 +88,7 @@ function DetailContent() {
                     <div className="line"></div>
 
                     {/* 공고 제목 */}
-                    <div className="titleSpace spaceWrap">
+                    <div className="titleSpace spaceWrap meetNoticeTitle">
                         <h3 className="title">
                             이번주 상암동 강아지 모임 합니다!!
                         </h3>

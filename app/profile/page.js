@@ -10,7 +10,7 @@ export default function Home() {
     useEffect(()=> {
   
         if( !localStorage.getItem('login') ) {
-            router.push("/login");
+            router.push("/login?type=login");
         };
     }, [])
     
