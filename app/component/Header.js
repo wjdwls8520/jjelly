@@ -48,7 +48,6 @@ export default function Header() {
                 </div>
             </div>
 
-            {/* 헤더가아닌 각 게시판들에 뒤로가기 미니 헤더를 만드는게 어떤지 */}
             {/* 헤더 축소 */}
             <div className="inner innerSub innerSubTop">
                 <h1 className="logo">
