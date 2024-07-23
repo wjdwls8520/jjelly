@@ -3,13 +3,12 @@
 #mapWrap, #mapWrap * {font-family:'Malgun Gothic',dotum,'돋움',sans-serif;font-size:12px;}
 #mapWrap {position:relative;width:100%;}
 #menu_wrap {position: absolute;
-     top: 100px;
+     top: 35px;
      right: 0px;
-     width: 500px; 
-     height: 600px;
-     background: #ffffffb0;
+     width: 300px;
+     height: 100%;
      overflow: scroll;
-     z-index: 1;
+     z-index: 11;
      
 }
 #category {position:absolute;top:10px;left:10px;border-radius: 5px; border:1px solid #909090;box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);background: #fff;overflow: hidden;z-index: 2;}
@@ -38,9 +37,20 @@
 .placeinfo .jibun {color:#999;font-size:11px;margin-top:0;}
 
 
-
+#placesList {
+     display: flex;
+     flex-direction: column;
+     gap: 8px;
+     padding-top: 8px;
+}
 #placesList li {list-style: none;}
-#placesList .item {position:relative;border-bottom:1px solid #888;overflow: hidden;cursor: pointer;min-height: 65px;}
+#placesList .item {position:relative;
+     overflow: hidden;
+     cursor: pointer;
+     min-height: 65px;
+     border-radius: 20px;
+     background: #ffffff;
+}
 #placesList .item span {display: block;margin-top:4px;}
 #placesList .item h5, #placesList .item .info {text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
 #placesList .item .info{padding:10px 0 10px 55px;}
@@ -66,3 +76,30 @@
 #pagination {margin:10px auto;text-align: center;}
 #pagination a {display:inline-block;margin-right:10px;}
 #pagination .on {font-weight: bold; cursor: default;color:#777;}
+
+.currPo {
+     position: absolute;
+     bottom: 25px;
+     left: 5px;
+     display: flex;
+     align-items: center;
+     background-color: #fff;
+     border-radius: 5px;
+     padding: 5px;
+     z-index: 10;
+}
+
+.currPo > img {
+     width: 22px;
+     height: 22px;
+}
+
+.keywordBtn { 
+     position: absolute;
+     top: 5px;
+     left: 5px;
+     width: 100%;
+     padding: 0 10px 0 0;
+     box-sizing: border-box;
+     z-index: 10;
+}
