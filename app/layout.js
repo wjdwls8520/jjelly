@@ -19,10 +19,10 @@ export default function RootLayout({ children }) {
         <meta property="og:type" content="website" />
         <meta name="description" content='반려동물 커뮤니티' />
         <meta property="og:image" content="/ogimage.png" />
-        {/* <script 
+        <script 
           type="text/javascript" 
           src="//dapi.kakao.com/v2/maps/sdk.js?appkey=9784fc8d43c2978a22923da1563dc53d&libraries=services,clusterer,drawing,autoload=false">
-        </script> */}
+        </script>
       </head>
       <body className={noto.className }>
         <div id="wrap">
