@@ -2,32 +2,29 @@
 
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import titleData from "../data/data";
-
 
 export default function Header() {
 
     // 뒤로가기
     const router = useRouter(); 
 
-    const pathname = usePathname()
+    const pathname = usePathname();
     let notMain = pathname === '/' ? 'main' : 'commonBoard login sign'; 
 
-
-
-
     // 쿼리문으로 게시판 타입 판별
-    const [title, setTitle] = useState(null);
+    const [title, setTitle] = useState('');
     const params = useSearchParams();
     const type = params.get('type');
+
     useEffect(() => {
-        if (type) {
-          const newTitle = titleData[type];
-          setTitle(newTitle); // 이 시점에서 newTitle은 업데이트된 상태입니다.
+        if (type && titleData[type]) {
+          setTitle(titleData[type]);
+        } else {
+          setTitle('');
         }
-    }, [type]); // 의존성 배열에 type을 추가
+    }, [type]);
 
     return (
         <header id="header" className={notMain}>
@@ -66,8 +63,8 @@ export default function Header() {
                 </div>
             </div>
             <div className="inner innerSub innerSubBot">
-                <span className="backImg" onClick={()=> {router.back()}}>
-                    <img src="icon_back.png" alt="뒤로가기" />
+                <span className="backImg" onClick={() => { router.back() }}>
+                    <img src="/icon_back.png" alt="뒤로가기" />
                 </span>
 
                 <span className="currentTitle">
@@ -75,7 +72,7 @@ export default function Header() {
                 </span>
 
                 <span className="utilMenu">
-                    <img src="icon_dot_menu.png" alt="메뉴" />
+                    <img src="/icon_dot_menu.png" alt="메뉴" />
                 </span>
                 
             </div>
