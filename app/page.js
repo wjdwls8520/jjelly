@@ -48,10 +48,10 @@ export default function Home() {
                             </Link>
                         </li>
                         <li>
-                            <Link className="imgWrap" href={{ pathname: '/map' }}>
+                            <Link className="imgWrap" href={{ pathname: '/map', query: 'type=map' }}>
                                 <img src="/character_map.png" alt="맵" />
                                 쩰리 맵
-                                </Link>
+                            </Link>
                         </li>
                     </ul>
                     <h3 className="boardTit">

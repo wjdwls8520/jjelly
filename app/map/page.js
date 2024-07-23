@@ -1,10 +1,11 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
+import { Suspense } from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
-export default function Map() {
+function MapContents() {
   const [location, setLocation] = useState({ latitude: null, longitude: null });
   const [currentAddress, setCurrentAddress] = useState('');
   const [adminDistrict, setAdminDistrict] = useState('');
@@ -259,3 +260,11 @@ export default function Map() {
     </div>
   );
 }
+
+export default function Map() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <MapContents />
+        </Suspense>
+    )
+};

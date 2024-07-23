@@ -1,6 +1,7 @@
 import Link from "next/link";
+import { Suspense } from "react";
 
-export default function Sign() {
+function SignContents() {
     return (
         <section className="section signSec">
             <div className="signupWrap mt60">
@@ -143,3 +144,12 @@ export default function Sign() {
         </section>
     );
 }
+
+
+export default function Sign() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <SignContents />
+        </Suspense>
+    )
+};

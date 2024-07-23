@@ -1,6 +1,7 @@
 import Link from "next/link";
+import { Suspense } from "react";
 
-export default function Login() {
+function LoginContents() {
     return (
         <section className="section pt80 loginSec">
             <div className="loginContainer mt80">
@@ -48,4 +49,13 @@ export default function Login() {
             </div>
         </section>
     );
-}
+};
+
+
+export default function Login() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <LoginContents />
+        </Suspense>
+    )
+};

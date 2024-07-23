@@ -2,29 +2,31 @@
 
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useEffect } from "react";
 import titleData from "../data/data";
+import { Suspense } from "react";
 
-export default function Header() {
+
+function HeaderContents() {
 
     // 뒤로가기
     const router = useRouter(); 
 
-    const pathname = usePathname();
+    const pathname = usePathname()
     let notMain = pathname === '/' ? 'main' : 'commonBoard login sign'; 
 
+
     // 쿼리문으로 게시판 타입 판별
-    const [title, setTitle] = useState('');
+    const [title, setTitle] = useState(null);
     const params = useSearchParams();
     const type = params.get('type');
-
     useEffect(() => {
-        if (type && titleData[type]) {
-          setTitle(titleData[type]);
-        } else {
-          setTitle('');
-        }
-    }, [type]);
+        if (type) {
+          const newTitle = titleData[type];
+          setTitle(newTitle); // 이 시점에서 newTitle은 업데이트된 상태입니다.
+        };
+    }, [type]); // 의존성 배열에 type을 추가
 
     return (
         <header id="header" className={notMain}>
@@ -39,7 +41,7 @@ export default function Header() {
                     <Link className="imgWrap" href={{ pathname: '/' }}>
                         <img src="/icon_alarm.png" alt="알림" />
                     </Link>
-                    <Link className="imgWrap" href={{ pathname: '/profile' }}>
+                    <Link className="imgWrap" href={{ pathname: '/profile', query : 'type=profile' }}>
                         <img src="/icon_profile.png" alt="프로필" />
                     </Link>
                 </div>
@@ -57,13 +59,13 @@ export default function Header() {
                     <Link className="imgWrap" href={{ pathname: '/' }}>
                         <img src="/icon_alarm.png" alt="알림" />
                     </Link>
-                    <Link className="imgWrap" href={{ pathname: '/profile' }}>
+                    <Link className="imgWrap" href={{ pathname: '/profile', query : 'type=profile' }}>
                         <img src="/icon_profile.png" alt="프로필" />
                     </Link>
                 </div>
             </div>
             <div className="inner innerSub innerSubBot">
-                <span className="backImg" onClick={() => { router.back() }}>
+                <span className="backImg" onClick={()=> {router.back()}}>
                     <img src="/icon_back.png" alt="뒤로가기" />
                 </span>
 
@@ -79,3 +81,11 @@ export default function Header() {
         </header>
     );
 };
+
+export default function Header() {
+    return(
+        <Suspense fallback={<div>Loading...</div>}>
+            <HeaderContents />
+        </Suspense>
+    )
+};  

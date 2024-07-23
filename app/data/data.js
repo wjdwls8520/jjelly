@@ -10,7 +10,8 @@ let titleData = {
     allBd : '모두 게시판',
     login : '로그인',
     sign : '회원가입',
-
+    map : '지도',
+    profile : '프로필'
 };
 
 export default  titleData
