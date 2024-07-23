@@ -42,7 +42,7 @@ br.m {display: none !important;}
 
 
 
-/* 헤더푸터 */
+/* 헤더 */
 #wrap {background: #fefefe;}
 
 #header {position: fixed; z-index: 3000; top: 0; left: 0; padding: 20px; width: 100%; height: 80px; box-sizing: border-box;}
@@ -55,6 +55,24 @@ br.m {display: none !important;}
 #header .inner .util > .imgWrap {height: 32px;}
 #header .inner .util > .imgWrap > img {height: 100%; object-fit: contain;}
 
+#header.main {padding: 20px; height: 80px !important;}
+#header.main .inner {display: flex !important;}
+#header.main .innerSub {display: none !important;}
+#header {padding: 16px 20px 20px; height: auto;}
+#header .inner {display: none !important;}
+#header .innerSub {display: flex !important;}
+
+#header .innerSubTop {height: 28px;}
+#header .innerSubTop .util > .imgWrap {height: 26px;}
+#header .innerSubTop .logo > a > span {letter-spacing: 2px; font-size: 16px;}
+#header .innerSubBot {margin-top: 26px;}
+#header .innerSubBot .backImg {height: 30px;}
+#header .innerSubBot .backImg > img {height: 100%;}
+#header .innerSubBot .currentTitle {font-size: 16px; font-weight: 600; color: #423f3f;}
+#header .innerSubBot .utilMenu {height: 28px;}
+#header .innerSubBot .utilMenu > img {height: 100%;}
+
+/* 푸터 */
 #footer {margin-top: 80px; background: #f4eeee;}
 #footer .inner {display: flex;}
 #footer .inner .logo {width: 100%;}
@@ -62,12 +80,18 @@ br.m {display: none !important;}
 
 
 /* 공통 CSS */
+
+.customPt {padding-top: 120px !important;} /* 최상단 패딩 커스텀 */
+
 .pt0 {padding-top: 0 !important;}
 .pt10 {padding-top: 10px !important;}
 .pt20 {padding-top: 20px !important;}
 .pt25 {padding-top: 25px !important;}
 .pt60 {padding-top: 60px !important;}
 .pt80 {padding-top: 80px !important;}
+.pt100 {padding-top: 100px !important;}
+.pt110 {padding-top: 110px !important;}
+.pt120 {padding-top: 120px !important;}
 .mt0 {margin-top: 0 !important;}
 .mt10 {margin-top: 10px !important;}
 .mt20 {margin-top: 20px !important;}
@@ -79,6 +103,7 @@ br.m {display: none !important;}
 .mb30 {margin-bottom: 30px !important;}
 
 .main, .commonBoard, .login, .sign {background: #f4eeee;}
+
 
 
 /* 플로팅 메뉴 */
@@ -153,7 +178,7 @@ br.m {display: none !important;}
 .tabCategory>li.active a { color: #fff;}
 
 /* 공통 일반 카테고리 */
-.commonBoardSection .category {display: flex; gap: 12px; position: absolute; top: 100px; left: 20px;}
+.commonBoardSection .category {display: flex; gap: 12px; position: absolute; top: 136px; left: 20px;}
 .commonBoardSection .category li {display: flex; justify-content: center; align-items: center; padding: 3px 10px; background: #f4eeee; border-radius: 20px; font-size: 14px; font-weight: 600; color: #423f3f;}
 .commonBoardSection .category li.active {background: #fa9e60; font-weight: 500; color: #fff;}
 
@@ -175,7 +200,7 @@ br.m {display: none !important;}
 
 
 /* 공통 검색 */
-.searchBox {position: fixed; z-index: 3200; top: 130px; right: 20px; padding-right: 42px; width: 42px; height: 42px; border-radius: 64px; background: #fff; box-shadow: 2px 3px 6px #656d7433; box-sizing: border-box; overflow: hidden; transition: all 0.3s;}
+.searchBox {position: fixed; z-index: 3200; top: 170px; right: 20px; padding-right: 42px; width: 42px; height: 42px; border-radius: 64px; background: #fff; box-shadow: 2px 3px 6px #656d7433; box-sizing: border-box; overflow: hidden; transition: all 0.3s;}
 .searchBox .btnSearch {display: flex; justify-content: center; align-items: center; position: absolute; z-index: 50; top: 50%; right: 4px; width: 34px; height: 34px; border-radius: 50%; transform: translate(0, -50%); transition: all 0.3s;}
 .searchBox .btnSearch > img {height: 24px; object-fit: contain; pointer-events: none;}
 .searchBox .searchWrap {display: flex; align-items: center; width: 100%; height: 100%; overflow: hidden;}
@@ -375,6 +400,7 @@ br.m {display: none !important;}
 
 /* 공고 디테일, 공고 상세보기 */
 .commonBoardSection.meetNotice .userInfoSpace {margin-top: 16px;}
+.commonBoardSection.meetNotice .detailDataForm .profileZone > img {width: 42px; height: 42px;}
 .commonBoardSection.meetNotice .detailDataForm .spaceWrap .title {margin-bottom: 8px; padding: 0;}
 .commonBoardSection.meetNotice .contentSpace {margin-top: 20px;}
 .commonBoardSection.meetNotice .posterSpace {display: flex; justify-content: center; align-items: center; position: relative; margin-bottom: 16px; width: 100%; height: 176px; border: 1px solid #9ea1b6; border-radius: 10px; box-sizing: border-box; overflow: hidden;}
