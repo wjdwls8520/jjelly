@@ -2,10 +2,10 @@
 
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-
 import { useState } from "react";
-import titleData from "../data/data";
 import { useEffect } from "react";
+import titleData from "../data/data";
+
 
 export default function Header() {
 
@@ -15,19 +15,6 @@ export default function Header() {
     const pathname = usePathname()
     let notMain = pathname === '/' ? 'main' : 'commonBoard login sign'; 
 
-
-
-
-    // 쿼리문으로 게시판 타입 판별
-    const [title, setTitle] = useState(null);
-    const params = useSearchParams();
-    const type = params.get('type');
-    useEffect(() => {
-        if (type) {
-          const newTitle = titleData[type];
-          setTitle(newTitle); // 이 시점에서 newTitle은 업데이트된 상태입니다.
-        }
-    }, [type]); // 의존성 배열에 type을 추가
 
     return (
         <header id="header" className={notMain}>
@@ -71,7 +58,7 @@ export default function Header() {
                 </span>
 
                 <span className="currentTitle">
-                    {title}
+                  
                 </span>
 
                 <span className="utilMenu">

@@ -8,10 +8,9 @@ let titleData = {
     dogBd : '멍이 게시판',
     catBd : '냥이 게시판',
     allBd : '모두 게시판',
-
     login : '로그인',
     sign : '회원가입',
-    
+
 };
 
 export default  titleData
