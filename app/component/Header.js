@@ -28,6 +28,20 @@ function HeaderContents() {
         };
     }, [type]); // 의존성 배열에 type을 추가
 
+
+    let [hide, setHide] = useState(false);
+    useEffect(() => {
+        function checkUrl(url) {
+            const regex = /^\/[^\/]+\/(detail|create|edit)(\/|$|\?)/;
+            return regex.test(url);
+        };
+        if(checkUrl(pathname)) { // 디테일 수정 쓰기 일때
+            setHide(false);
+        } else {
+            setHide(true);
+        };
+    }, []);
+
     return (
         <header id="header" className={notMain}>
             <div className="inner">
@@ -73,7 +87,7 @@ function HeaderContents() {
                     {title}
                 </span>
 
-                <span className="utilMenu">
+                <span className={hide ? 'utilMenu hide' : 'utilMenu'}>
                     <img src="/icon_dot_menu.png" alt="메뉴" />
                 </span>
                 

@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 export default function MeetNotice(props) {
 
     let pathName = usePathname();
-    console.log(pathName)
 
     return (
         <>

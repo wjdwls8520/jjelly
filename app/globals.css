@@ -23,6 +23,7 @@ input, label, select, textarea, a, span, h1, h2, h3, h4, h5, em, p, div {line-he
 
 .hidden {position: fixed !important; z-index: -100 !important; top: -200%; left: -200%; margin: 0 !important; padding: 0 !important; width: 0 !important; height: 0 !important; opacity: 0 !important; overflow: hidden !important; pointer-events: none !important;}
 .display-none {display: none !important;}
+.hide {opacity: 0 !important; pointer-events: none;}
 .dim {display: none; position: fixed; z-index: 8000; top: 0; left: 0; width: 100%; height: 100%; background: hsla(0, 0%, 0%, 0.7);}
 .dim.on {display: block;}
 
@@ -167,15 +168,22 @@ br.m {display: none !important;}
 .squareBoardWrapSlide .userPost .postContent {position: static; padding: 0 4px; width: 100%; background: #fff; box-sizing: border-box;}
 .squareBoardWrapSlide .userPost .postContent>span.txt { display: block; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; letter-spacing: -0.05rem; font-size: 15px; font-weight: 500; color: #423f3f; pointer-events: none;}
 
+/* 풀 슬라이드 타일형 게시글 */
+
 
 
 
 /* 공통 탭 카테고리 */
-.tabCategory {display: flex; justify-content: center; margin: 40px auto 56px; padding: 8px; max-width: 192px; border-radius: 45px; background: #f4eeee;}
+/* .tabCategory {display: flex; justify-content: center; margin: 40px auto 56px; padding: 8px; max-width: 192px; border-radius: 45px; background: #f4eeee;}
 .tabCategory>li {display: flex; justify-content: center; align-items: center; padding: 8px 16px; text-align: center;}
 .tabCategory>li>a {display: block; width: 100%; font-size: 16px; font-weight: 500; color: #423f3f;}
 .tabCategory>li.active {border-radius: 58px; background: #fa9e60; box-shadow: 0px 0px 15px hsla(24, 83%, 65%, 0.6)}
-.tabCategory>li.active a { color: #fff;}
+.tabCategory>li.active a { color: #fff;} */
+.tabCategory {display: flex; justify-content: space-around; margin: 0 auto 56px; padding: 10px; width: 100%; border-bottom: 2px solid #f4eeee; box-sizing: border-box; background: #fff;}
+.tabCategory>li {display: flex; justify-content: center; align-items: center;text-align: center;}
+.tabCategory>li>a {display: block; width: 100%; font-size: 14px; font-weight: 500; color: #423f3f;}
+.tabCategory>li.active {}
+.tabCategory>li.active a { color: #fa9e60;}
 
 /* 공통 일반 카테고리 */
 .commonBoardSection .category {display: flex; gap: 12px; position: absolute; top: 136px; left: 20px;}
@@ -200,7 +208,7 @@ br.m {display: none !important;}
 
 
 /* 공통 검색 */
-.searchBox {position: fixed; z-index: 3200; top: 170px; right: 20px; padding-right: 42px; width: 42px; height: 42px; border-radius: 64px; background: #fff; box-shadow: 2px 3px 6px #656d7433; box-sizing: border-box; overflow: hidden; transition: all 0.3s;}
+.searchBox {position: fixed; z-index: 3200; top: 64px; right: 16px; padding-right: 42px; width: 42px; height: 42px; border-radius: 64px; background: #fff; box-shadow: 2px 3px 6px #656d7433; box-sizing: border-box; overflow: hidden; transition: all 0.3s;}
 .searchBox .btnSearch {display: flex; justify-content: center; align-items: center; position: absolute; z-index: 50; top: 50%; right: 4px; width: 34px; height: 34px; border-radius: 50%; transform: translate(0, -50%); transition: all 0.3s;}
 .searchBox .btnSearch > img {height: 24px; object-fit: contain; pointer-events: none;}
 .searchBox .searchWrap {display: flex; align-items: center; width: 100%; height: 100%; overflow: hidden;}

@@ -14,7 +14,7 @@ import MeetNotice from "../component/MeetNotice";
 import FloatingMenu from "../component/FloatingMenu";
 
 
-function MeetingContent() {
+function MeetingNoticeContent() {
 
     const params = useSearchParams();
     const type = params.get('type');
@@ -77,10 +77,10 @@ function MeetingContent() {
 };
 
 
-export default function Meeting() {
+export default function MeetingNotice() {
     return (
         <Suspense fallback={<div>Loading...</div>}>
-            <MeetingContent />
+            <MeetingNoticeContent />
         </Suspense>
     )
 };

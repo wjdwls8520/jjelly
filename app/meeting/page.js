@@ -12,6 +12,7 @@ import { Suspense } from "react";
 import titleData from "../data/data";
 import { useState } from "react";
 import { useEffect } from "react";
+import SlideFullBoard from "../component/SlideFullBoard";
 
 
 function MeetingContent() {
@@ -50,8 +51,8 @@ function MeetingContent() {
                 인기 {title} <i>!</i>
             </h3>
 
-            <SquareBoardSlide type={type} />
-
+            <SlideFullBoard type={type} />
+            
 
             {/* 공백 */}
             <div className="mt60"></div>  
