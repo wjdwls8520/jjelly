@@ -30,13 +30,13 @@ export default function RootLayout({ children }) {
         <body className={noto.className }>
             <div id="wrap">
                 {/* 항상 스크롤 최상단 위치 */}
-                <ScrollToTop />
 
                 {/* 헤더 */}
                 <Header />
 
                 <PageMotion>
                     {children}
+                    <ScrollToTop />
                 </PageMotion>
 
                 {/* 푸터 */}
