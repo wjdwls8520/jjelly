@@ -17,6 +17,8 @@ function SlideFullBoardContents(props) {
     
     let statement = regex.test(pathName);
 
+    console.log(props.type)
+
 
     return(
         <>
@@ -122,10 +124,10 @@ function SlideFullBoardContents(props) {
 };
 
 
-export default function SlideFullBoard() {
+export default function SlideFullBoard(props) {
     return(
         <Suspense fallback={<div>Loading...</div>}>
-            <SlideFullBoardContents />
+            <SlideFullBoardContents type={props.type} />
         </Suspense>
     )
 };

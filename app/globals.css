@@ -17,6 +17,8 @@ input:-webkit-autofill {
 
 body {
     line-height: normal;
+    height: -webkit-fill-available;
+    height: fill-available;
 }
 input, label, select, textarea, a, span, h1, h2, h3, h4, h5, em, p, div {line-height: normal; font-style: normal;}
 
