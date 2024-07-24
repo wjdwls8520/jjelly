@@ -15,7 +15,7 @@ input:-webkit-autofill {
     -webkit-text-fill-color: #9ea1b6; 
 }
 
-html {width: 100vw; overflow: hidden;}
+html {width: 100vw; overflow-x: hidden;}
 body {
     line-height: normal;
     height: -webkit-fill-available;
