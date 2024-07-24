@@ -36,10 +36,11 @@ function HeaderContents() {
             const regex = /^\/[^\/]+\/(detail|create|edit)(\/|$|\?)/;
             return regex.test(url);
         };
+        // hide = true 면 보이기, false면 숨기기 
         if(checkUrl(pathname)) { // 디테일 수정 쓰기 일때
-            setHide(false);
+            setHide(false); // 보이기
         } else {
-            setHide(true);
+            setHide(true); // 숨기기
         };
     }, [typeSate]);
 

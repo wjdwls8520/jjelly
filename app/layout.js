@@ -6,6 +6,7 @@ import Footer from "./component/Footer";
 import ScrollToTop from "./component/ScrollToTop";
 import { AnimatePresence } from "framer-motion";
 import PageMotion from "./component/PageMotion";
+import FloatUtil from "./component/FloatingUtil";
 
 
 const noto = Noto_Sans_KR({
@@ -29,18 +30,22 @@ export default function RootLayout({ children }) {
         </head>
         <body className={noto.className }>
             <div id="wrap">
-                {/* 항상 스크롤 최상단 위치 */}
-
+                
                 {/* 헤더 */}
                 <Header />
 
                 <PageMotion>
                     {children}
-                    <ScrollToTop />
                 </PageMotion>
+
+                {/* 항상 스크롤 최상단 위치 */}
+                <ScrollToTop />
 
                 {/* 푸터 */}
                 <Footer />
+
+
+                <FloatUtil />
             </div>
         </body>
     </html>

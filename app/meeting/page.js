@@ -68,11 +68,6 @@ function MeetingContent() {
 
             <SquareBoard type={type} />
                 
-
-            {/* 플로팅 검색 ( 검색 ) */}
-            <FloatingSearch type={type} />
-            {/* 플로팅 메뉴 ( 글쓰기 ) */}
-            <FloatingMenu type={type} />
         </section>  
     );
 };
