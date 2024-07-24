@@ -21,6 +21,7 @@ function HeaderContents() {
     const [title, setTitle] = useState(null);
     const params = useSearchParams();
     const type = params.get('type');
+    const typeSate = useState( params.get('type') );
     useEffect(() => {
         if (type) {
           const newTitle = titleData[type];
@@ -40,7 +41,7 @@ function HeaderContents() {
         } else {
             setHide(true);
         };
-    }, []);
+    }, [typeSate]);
 
     return (
         <header id="header" className={notMain}>
