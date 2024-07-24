@@ -245,14 +245,14 @@ word-wrap: break-word; -webkit-line-clamp: 2; -webkit-box-orient: vertical; text
 
 /* 본문 메인페이지 */
 .section {padding: 0 20px; box-sizing: border-box;}
-.section01 {position: fixed; top: 0; left: 0; z-index: -1; padding: 0px 20px 30px; padding-top: 80px; width: 100%; background: #f4eeee; box-sizing: border-box;}
-.section01 .sloganWrap {display: flex; flex-direction: column; padding: 30px 0; box-sizing: border-box;}
-.section01 .sloganWrap .subSW {padding-left: 4px; line-height: 22px; font-size: 16px; font-weight: 700; color: #555;}
-.section01 .sloganWrap .subSW:first-of-type {letter-spacing: -0.9px; font-size: 18px; font-weight: 600; color: #9ea1b6;}
-.section01 .sloganWrap .mainSW {padding: 0 0 16px; line-height: 42px; letter-spacing: -1.5px; font-size: 42px; font-weight: 700;}
-.section01 .bannerWrap {position: relative; width: 100%; height: 200px;}
-.section01 .bannerWrap .banner {position: absolute; top: -30px; right: -12px; width: 240px; height: 240px; border-radius: 50%; box-sizing: border-box; background: url(/banner.png) no-repeat; background-size: 100%; background-position: center center; opacity: 0.6;}
-.section01 .bannerWrap .banner02 {top: -80px; left: -80px; width: 160px; height: 160px; background: url(/banner_02.png) no-repeat; background-size: 100%; background-position: center center; opacity: 0.3;}
+.fixedSec {position: fixed; top: 0; left: 0; z-index: -1; padding: 0px 20px 30px; padding-top: 80px; width: 100%; background: #f4eeee; box-sizing: border-box; pointer-events: none;}
+.fixedSec .sloganWrap {display: flex; flex-direction: column; padding: 30px 0; box-sizing: border-box;}
+.fixedSec .sloganWrap .subSW {padding-left: 4px; line-height: 22px; font-size: 16px; font-weight: 700; color: #555;}
+.fixedSec .sloganWrap .subSW:first-of-type {letter-spacing: -0.9px; font-size: 18px; font-weight: 600; color: #9ea1b6;}
+.fixedSec .sloganWrap .mainSW {padding: 0 0 16px; line-height: 42px; letter-spacing: -1.5px; font-size: 42px; font-weight: 700;}
+.fixedSec .bannerWrap {position: relative; width: 100%; height: 200px;}
+.fixedSec .bannerWrap .banner {position: absolute; top: -30px; right: -12px; width: 240px; height: 240px; border-radius: 50%; box-sizing: border-box; background: url(/banner.png) no-repeat; background-size: 100%; background-position: center center; opacity: 0.6;}
+.fixedSec .bannerWrap .banner02 {top: -80px; left: -80px; width: 160px; height: 160px; background: url(/banner_02.png) no-repeat; background-size: 100%; background-position: center center; opacity: 0.3;}
 
 .section02 {margin-top: 500px; padding-top: 42px; height: auto;}
 .section02 .boardListWrap {display: flex; flex-direction: column;}

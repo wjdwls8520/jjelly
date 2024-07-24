@@ -7,6 +7,7 @@ import ScrollToTop from "./component/ScrollToTop";
 import { AnimatePresence } from "framer-motion";
 import PageMotion from "./component/PageMotion";
 import FloatUtil from "./component/FloatingUtil";
+import MainBanner from "./component/MainBanner";
 
 
 const noto = Noto_Sans_KR({
@@ -34,9 +35,13 @@ export default function RootLayout({ children }) {
                 {/* 헤더 */}
                 <Header />
 
-                <PageMotion>
-                    {children}
-                </PageMotion>
+                {/* 배너 */}
+                <MainBanner />
+
+                    {/* 모든 렌더 페이지 */}
+                    <PageMotion>
+                        {children}
+                    </PageMotion>
 
                 {/* 항상 스크롤 최상단 위치 */}
                 <ScrollToTop />
