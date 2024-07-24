@@ -3,6 +3,7 @@ import "./globals.css";
 import "./map.css";
 import Header from "./component/Header";
 import Footer from "./component/Footer";
+import ScrollToTop from "./component/ScrollToTop";
 
 
 const noto = Noto_Sans_KR({
@@ -26,6 +27,8 @@ export default function RootLayout({ children }) {
       </head>
       <body className={noto.className }>
         <div id="wrap">
+            {/* 항상 스크롤 최상단 위치 */}
+            <ScrollToTop />
 
             {/* 헤더 */}
             <Header />
