@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import titleData from "../data/data";
 import { Suspense } from "react";
+import HeaderMenu from "./HeaderMenu";
 
 
 function HeaderContents() {
@@ -90,7 +91,7 @@ function HeaderContents() {
                 </span>
 
                 <span className={hide ? 'utilMenu hide' : 'utilMenu'}>
-                    <img src="/icon_dot_menu.png" alt="메뉴" />
+                    <HeaderMenu />
                 </span>
                 
             </div>
