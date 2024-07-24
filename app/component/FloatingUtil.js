@@ -9,22 +9,7 @@ import { useState } from "react"
 
 
 
-function FloatUtilContents({type}) {
-    return(
-        <>
-            {/* 플로팅검색 */}
-            <FloatingSearch type={type} />
-
-            {/* 플로팅메뉴 */}
-            <FloatingMenu type={type} />
-        
-        </>
-
-    )
-};
-
-
-export default function FloatUtil() {
+function FloatUtilContents() {
 
     const pathname = usePathname()
     const params = useSearchParams();
@@ -45,21 +30,33 @@ export default function FloatUtil() {
         };
     }, [typePathname]);
 
-
-    return (
+    return(
         <>
             {
                 hide ? 
+                    <>
+                        {/* 플로팅검색 */}
+                        <FloatingSearch type={type} />
 
-                    <Suspense fallback={<div>Loading...</div>}>
-                        <FloatUtilContents type={type} />
-                    </Suspense>
-
+                        {/* 플로팅메뉴 */}
+                        <FloatingMenu type={type} />
+                    </>
                 : 
-
+                
                     null
             }
-        </>
         
+        </>
+
+    )
+};
+
+
+export default function FloatUtil() {
+
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <FloatUtilContents />
+        </Suspense> 
     )
 };
