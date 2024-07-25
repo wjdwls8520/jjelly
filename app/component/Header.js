@@ -57,7 +57,6 @@ function HeaderContents() {
 
     const handleScroll = () => {
         const position = window.pageYOffset;
-        console.log(position)
         setScrollPosition(position);
 
         // 스크롤을 내릴 때 특정 위치를 지나가면 이벤트 발생
