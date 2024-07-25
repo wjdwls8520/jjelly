@@ -62,7 +62,7 @@ br.m {display: none !important;}
 #header.main {padding: 20px; height: 80px !important; background: transparent; transition: all 0.3s;}
 #header.main .inner .logo > a > span {filter: invert(1); transition: all 0.3s;}
 #header.main .inner .util > .imgWrap > img {filter: invert(1); transition: all 0.3s;}
-#header.active.main {background: #f4eeee;}
+#header.active.main {background: #fff;}
 #header.active.main .logo > a > span {filter: invert(0)}
 #header.active.main .util > .imgWrap > img {filter: invert(0)}
 #header.main .inner {display: flex !important;}
