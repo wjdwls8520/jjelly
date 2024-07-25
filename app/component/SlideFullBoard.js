@@ -28,7 +28,8 @@ function SlideFullBoardContents(props) {
                 pathName === '/' ? 
                 
                 <Swiper 
-                    autoplay={{ delay: 2000, disableOnInteraction: false }}
+                    autoplay={{ delay: 2500, disableOnInteraction: false }}
+                    speed={800}
                     slidesPerView={1}
                     spaceBetween={20}
                     scrollbar={{
@@ -38,6 +39,7 @@ function SlideFullBoardContents(props) {
                         type: 'fraction',
                     }}
                     navigation={true}
+                    loop={true}
                     modules={[Autoplay, Scrollbar, Pagination, Navigation]}
                     className="mySwiper fullSlideBoard"
                 >
@@ -133,7 +135,8 @@ function SlideFullBoardContents(props) {
 
                     // 자동슬라이드 + 페이지네이션 + 타이틀
                     <Swiper 
-                        autoplay={{ delay: 2000, disableOnInteraction: false }}
+                        autoplay={{ delay: 2500, disableOnInteraction: false }}
+                        speed={800}
                         slidesPerView={1}
                         spaceBetween={20}
                         scrollbar={{
@@ -143,6 +146,7 @@ function SlideFullBoardContents(props) {
                             type: 'fraction',
                         }}
                         navigation={true}
+                        loop={true}
                         modules={[Scrollbar, Pagination, Navigation]}
                         className="mySwiper fullSlideBoard"
                     >

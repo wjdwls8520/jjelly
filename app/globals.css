@@ -270,7 +270,7 @@ word-wrap: break-word; -webkit-line-clamp: 2; -webkit-box-orient: vertical; text
 /* 수정후 */
 .fixedSec {height: 520px; background: url(/banner02.png) no-repeat; background-size: cover; pointer-events: auto;}
 .fixedSec:after {content: ''; position: absolute; z-index: 0; top: 50%; left: 50%; width: calc(100%); height: calc(100%); background: linear-gradient(0deg,rgba(0,0,0,.22),rgba(0,0,0,.26)),linear-gradient(222deg,rgba(0,0,0,0) 16.62%,rgba(0,0,0,.64) 99.06%); transform: translate(-50%, -50%);}
-.fixedSec .fullSlideBoard .meetPost {display: flex; flex-direction: column; height: 440px;}
+.fixedSec .fullSlideBoard .meetPost {display: flex; flex-direction: column; margin: 0 auto; max-width: 550px; height: 440px;}
 .fixedSec .fullSlideBoard .meetPost .imgWrap {margin: 30px auto 0; border: 2px solid #fff; border-radius: 2px; width: 165px; height: 220px;}
 .fixedSec .fullSlideBoard .meetPost .postContent {bottom: 92px; width: calc(100% - 40px); font-size: 20px;}
 .fixedSec .fullSlideBoard .meetPost .meetProfile .postProfile {width: 28px; height: 28px;}
