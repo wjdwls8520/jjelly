@@ -18,8 +18,8 @@ const itemVariants = {
 export default function HeaderMenu(props) {
 
     let pathName = usePathname();
-    const regex = /\/([^\/]*)\/detail/;
     const detailRomve = pathName.replace(/^(\/[^\/]+)\/.*/, '$1');
+    const regex = /\/([^\/]*)\/detail/;
     let statement = regex.test(pathName);
 
     const [isOpen, setIsOpen] = useState(false);
@@ -64,16 +64,30 @@ export default function HeaderMenu(props) {
             }}
             style={{ pointerEvents: isOpen ? "auto" : "none" }}
         >
-            <motion.li variants={itemVariants}>
-                <Link className="txt" href={{ pathname: detailRomve + '/edit', query : 'type=' + props.type }}>
-                    수정하기 
-                </Link>
-            </motion.li>
-            <motion.li variants={itemVariants}>
-                <span className="txt">
-                    삭제하기
-                </span>
-            </motion.li>
+            
+                {
+                    statement ?
+                        <>
+                            <motion.li variants={itemVariants}>
+                                <Link className="txt" href={{ pathname: detailRomve + '/edit', query : 'type=' + props.type }}>
+                                    수정하기 
+                                </Link>
+                            </motion.li>
+                            <motion.li variants={itemVariants}>
+                                <span className="txt">
+                                    삭제하기
+                                </span>
+                            </motion.li>
+                        </>
+                    :
+                        <motion.li variants={itemVariants}>
+                            <span className="txt">
+                                삭제하기
+                            </span>
+                        </motion.li>
+                }
+            
+                
         </motion.ul>
         </motion.nav>
     );

@@ -33,7 +33,7 @@ function HeaderContents() {
     let [hide, setHide] = useState(false);
     useEffect(() => {
         function checkUrl(url) {
-            const regex = /^\/[^\/]+\/(detail|create|edit)(\/|$|\?)/;
+            const regex = /^\/[^\/]+\/(detail|edit)(\/|$|\?)/;
             return regex.test(url);
         };
         // hide = true 면 보이기, false면 숨기기 
