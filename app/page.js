@@ -83,22 +83,22 @@ export default function Home() {
             </section>
 
             <section className="section section03 commonBoardSection">
-                <h3 className="commonBoardTit">
-                    이 주의 인기 소식 <i>!</i>
+                <h3 className="commonBoardTit grayColor">
+                    이 주의 인기 소식
                 </h3>
                 <CommonBoard />
             </section>
 
             <section className="section section04">
-                <h3 className="commonBoardTit">
-                    쩰리 인기의 전당 TOP3 <i>!</i>
+                <h3 className="commonBoardTit grayColor">
+                    쩰리 인기의 전당 TOP3
                 </h3>
                 <BestStar />
             </section>
 
             <section className="section section05 squareBoardSection">
-                <h3 className="commonBoardTit mt60">
-                    베스트 모임 <i>!</i>
+                <h3 className="commonBoardTit mt60 grayColor">
+                    베스트 모임
                 </h3>
                 <SlideFullBoard />
             </section>

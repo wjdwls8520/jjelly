@@ -80,8 +80,11 @@ br.m {display: none !important;}
 #header .innerSubBot .backImg > img {height: 100%;}
 #header .innerSubBot .currentTitle {font-size: 16px; font-weight: 600; color: #423f3f;}
 #header .innerSubBot .utilMenu {position: relative; height: 28px;}
-#header .innerSubBot .utilMenu .menu {height: 100%;}
+#header .innerSubBot .utilMenu .menu {position: relative; height: 100%;}
 #header .innerSubBot .utilMenu .menu > button {height: 100%;}
+#header .innerSubBot .utilMenu .menu > .menuDepth {display: flex; flex-direction: column; gap: 8px; position: absolute; z-index: 10; bottom: -84px; left: -55px; padding: 12px 0px; background: #fff;}
+#header .innerSubBot .utilMenu .menu > .menuDepth > li {padding: 0 16px; }
+#header .innerSubBot .utilMenu .menu > .menuDepth > li .txt {font-size: 13px; font-weight: 500; color: #423f3f;}
 #header .innerSubBot .utilMenu img {height: 100%;}
 
 /* 푸터 */
@@ -113,6 +116,8 @@ br.m {display: none !important;}
 .mb0 {margin-bottom: 0px !important;}
 .mb10 {margin-bottom: 10px !important;}
 .mb30 {margin-bottom: 30px !important;}
+
+.grayColor {color: #423f3f !important;}
 
 .main, .commonBoard, .login, .sign {background: #f4eeee;}
 .motionWrap {position: relative;}
@@ -278,7 +283,7 @@ word-wrap: break-word; -webkit-line-clamp: 2; -webkit-box-orient: vertical; text
 .fixedSec .swiper-scrollbar {position: absolute; z-index: 10; bottom: 24px !important; left: calc(50% - 20px) !important; background: #423f3f93; width: 88px !important; transform: translateX(-50%);}
 .fixedSec .swiper-scrollbar-drag {background: #fff;}
 .fixedSec .swiper-pagination {bottom: 20px; left: calc(50% + 50px); width: 40px; font-size: 12px; color: #fff; transform: translateX(-50%);}
-.fixedSec .swiper-button-prev, .fixedSec .swiper-button-next {display: block; top: 142px; font-size: 16px; color:#fff;}
+.fixedSec .swiper-button-prev, .fixedSec .swiper-button-next {display: block; top: 142px; height: auto; text-align: center; font-size: 16px; color:#fff;}
 .fixedSec .swiper-button-prev {left: calc(50% - 120px); transform: translateX(-50%);}
 .fixedSec .swiper-button-next {right: calc(50% - 120px); transform: translateX(50%);}
 

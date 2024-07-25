@@ -7,7 +7,7 @@ import "swiper/css";
 export default function Region() {
     return(
         <Swiper 
-            slidesPerView={3.7}
+            slidesPerView={3.3}
             spaceBetween={6}
             className="mySwiper regionSwiper"
         >

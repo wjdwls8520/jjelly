@@ -7,7 +7,7 @@ import "swiper/css";
 export default function Field() {
     return(
         <Swiper 
-            slidesPerView={3.3}
+            slidesPerView={2.8}
             spaceBetween={6}
             className="mySwiper fieldSwiper"
         >

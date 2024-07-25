@@ -127,7 +127,7 @@ function HeaderContents() {
                 </span>
 
                 <span className={hide ? 'utilMenu hide' : 'utilMenu'}>
-                    <HeaderMenu />
+                    <HeaderMenu type={type} />
                 </span>
                 
             </div>
