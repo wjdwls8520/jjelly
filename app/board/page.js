@@ -45,6 +45,12 @@ function BoardContent() {
                 {title} <i>!</i>
             </h3>
             <CommonBoard type={type} />
+
+            <div className="btnWrap returnList mt40">
+                <button className="btn btnStyle03">
+                    더 보기
+                </button>
+            </div>
             
         </section>
     );

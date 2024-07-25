@@ -111,6 +111,7 @@ br.m {display: none !important;}
 .mt10 {margin-top: 10px !important;}
 .mt20 {margin-top: 20px !important;}
 .mt25 {margin-top: 25px !important;}
+.mt40 {margin-top: 40px !important;}
 .mt60 {margin-top: 60px !important;}
 .mt80 {margin-top: 80px !important;}
 .mb0 {margin-bottom: 0px !important;}
@@ -235,6 +236,7 @@ word-wrap: break-word; -webkit-line-clamp: 2; -webkit-box-orient: vertical; text
 .btnWrap > span {display: block; width: 100%;}
 .btnWrap .btn.btnStyle01 {background: #fa9e60; color: #fff;}
 .btnWrap .btn.btnStyle02 {border: 1px solid #656d7433; background: #fff; color: #fa9e60;}
+.btnWrap .btn.btnStyle03 {width: 120px; border: 1px solid #9ea1b6; box-shadow: none; border-radius: 20px; color: #9ea1b6;} 
 
 
 /* 공통 검색 */
