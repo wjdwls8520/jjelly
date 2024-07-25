@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 
 const itemVariants = {
     open: {
@@ -23,11 +24,15 @@ export default function HeaderMenu(props) {
 
     const [isOpen, setIsOpen] = useState(false);
 
+    useEffect(()=> {
+        setIsOpen(false)
+    }, [pathName]);
+
     return (
         <motion.nav
-        initial={false}
-        animate={isOpen ? "open" : "closed"}
-        className="menu"
+            initial={false}
+            animate={isOpen ? "open" : "closed"}
+            className="menu"
         >
         <motion.button
             whileTap={{ scale: 0.97 }}

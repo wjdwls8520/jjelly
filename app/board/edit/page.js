@@ -102,7 +102,7 @@ function BoardCreateContent() {
             <div className="btnWrap returnList">
                 
                 <button id="commontWrite" className="btn btnStyle01">
-                    작성하기
+                    수정하기
                 </button>
 
                 <span onClick={()=> {router.back()}}>
