@@ -2,6 +2,7 @@ import Link from "next/link";
 import CommonBoard from "./component/CommonBoard";
 import BestStar from "./component/BestStar";
 import SlideFullBoard from "./component/SlideFullBoard";
+import SquareBoardSlide from "./component/SquareBoardSlide";
 
 
 export default function Home() {
@@ -89,6 +90,13 @@ export default function Home() {
                 <CommonBoard />
             </section>
 
+            <section className="section section05 squareBoardSection">
+                <h3 className="commonBoardTit mt60 grayColor">
+                    이 주의 인기 공고
+                </h3>
+                <SquareBoardSlide />
+            </section>
+
             <section className="section section04">
                 <h3 className="commonBoardTit grayColor">
                     쩰리 인기의 전당 TOP3
@@ -96,12 +104,7 @@ export default function Home() {
                 <BestStar />
             </section>
 
-            <section className="section section05 squareBoardSection">
-                <h3 className="commonBoardTit mt60 grayColor">
-                    베스트 모임
-                </h3>
-                <SlideFullBoard />
-            </section>
+           
         </>
     );
 }
