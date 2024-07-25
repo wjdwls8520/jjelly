@@ -3,9 +3,8 @@ import { Suspense } from "react";
 
 function SignContents() {
     return (
-        <section className="section signSec">
+        <section className="section signSec mt150">
             <div className="signupWrap mt60">
-                <h2 className="faqTitle">회원가입</h2>
                 <div className="identityVerificationWrap">
                     <img className="identityIcon" src="identity_icon.png" alt="아이콘" />
                     <span className="tit">
