@@ -1,7 +1,7 @@
 import Link from "next/link";
 import CommonBoard from "./component/CommonBoard";
-import SquareBoard from "./component/SquareBoard";
 import BestStar from "./component/BestStar";
+import SlideFullBoard from "./component/SlideFullBoard";
 
 
 export default function Home() {
@@ -100,7 +100,7 @@ export default function Home() {
                 <h3 className="commonBoardTit mt60">
                     베스트 모임 <i>!</i>
                 </h3>
-                <SquareBoard />
+                <SlideFullBoard />
             </section>
         </>
     );

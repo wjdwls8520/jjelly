@@ -13,10 +13,12 @@ export default function PageMotion({children}) {
             <AnimatePresence>
                 <motion.div className="motionWrap"
                     key={pathName}
-                    initial={{ opacity: 0.9, x: '100%' }}
-                    animate={{ opacity: 1, x: ['100%', '-3%', 0] }}
+                    initial={{ opacity: 0.9, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: [0.9, 1] }}
+                    // initial={{ opacity: 0.9, x: '100%' }}
+                    // animate={{ opacity: 1, x: ['100%', '-3%', 0] }}
                     exit={{ opacity: 1, x: 0 }}
-                    transition={{ ease: "easeOut", duration: 0.55 }}
+                    transition={{ ease: "easeOut", duration: 0.4 }}
                 >
                     {children}
                 </motion.div>

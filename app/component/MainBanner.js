@@ -1,16 +1,18 @@
 'use client'
 
 import { usePathname } from "next/navigation"
+import SlideFullBoard from "./SlideFullBoard";
 
 export default function MainBanner() {
     const pathName = usePathname();
+
     return (
         <>
             {
                 pathName === '/' ? 
 
                     <section className="section section01 fixedSec">
-                        <div className="sloganWrap">
+                        {/* <div className="sloganWrap">
                             <span className="subSW">
                                 사랑과 추억을 나누는,
                             </span>
@@ -27,7 +29,8 @@ export default function MainBanner() {
                         <div className="bannerWrap">
                             <div className="banner banner01"></div>
                             <div className="banner banner02"></div>
-                        </div>
+                        </div> */}
+                        <SlideFullBoard />
                     </section>
 
                 : 
