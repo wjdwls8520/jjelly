@@ -90,18 +90,18 @@ export default function Home() {
                 <CommonBoard />
             </section>
 
-            <section className="section section05 squareBoardSection">
-                <h3 className="commonBoardTit mt60 grayColor">
-                    이 주의 인기 공고
-                </h3>
-                <SquareBoardSlide />
-            </section>
-
             <section className="section section04 bestStar">
                 <h3 className="commonBoardTit grayColor">
                     쩰리 인기의 전당 TOP3
                 </h3>
                 <BestStar />
+            </section>
+
+            <section className="section section05 squareBoardSection">
+                <h3 className="commonBoardTit mt60 grayColor">
+                    이 주의 인기 공고
+                </h3>
+                <SquareBoardSlide />
             </section>
 
            

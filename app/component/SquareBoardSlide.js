@@ -27,6 +27,26 @@ export default function SquareBoardSlide(props) {
                         slidesPerView={2.16}
                         spaceBetween={14}
                         className="mySwiper regionSwiper"
+                        breakpoints={{
+                            320:{
+                                slidesPerView:2.16        
+                            },
+                            520:{
+                                slidesPerView:2.3
+                            },
+                            768:{
+                                slidesPerView:2.8
+                            },
+                            1024:{
+                                slidesPerView:3.2
+                            },
+                            1248: {
+                                slidesPerView:3.8
+                            },
+                            1400: {
+                                slidesPerView:4.4
+                            }
+                        }}
                     >
                         <SwiperSlide className="squareBoardWrapSlide">
                             <div className="userPost">
@@ -114,6 +134,26 @@ export default function SquareBoardSlide(props) {
                         slidesPerView={2.16}
                         spaceBetween={14}
                         className="mySwiper regionSwiper"
+                        breakpoints={{
+                            320:{
+                                slidesPerView:2.16        
+                            },
+                            520:{
+                                slidesPerView:2.3
+                            },
+                            768:{
+                                slidesPerView:2.8
+                            },
+                            1024:{
+                                slidesPerView:3.2
+                            },
+                            1248: {
+                                slidesPerView:3.8
+                            },
+                            1400: {
+                                slidesPerView:4.4
+                            }
+                        }}
                     >
                         <SwiperSlide className="squareBoardWrapSlide">
                             <div className="userPost">
@@ -199,6 +239,26 @@ export default function SquareBoardSlide(props) {
                         slidesPerView={2.16}
                         spaceBetween={14}
                         className="mySwiper regionSwiper"
+                        breakpoints={{
+                            320:{
+                                slidesPerView:2.16        
+                            },
+                            520:{
+                                slidesPerView:2.3
+                            },
+                            768:{
+                                slidesPerView:2.8
+                            },
+                            1024:{
+                                slidesPerView:3.2
+                            },
+                            1248: {
+                                slidesPerView:3.8
+                            },
+                            1400: {
+                                slidesPerView:4.4
+                            }
+                        }}
                     >
                         <SwiperSlide className="squareBoardWrapSlide">
                             <div className="userPost">

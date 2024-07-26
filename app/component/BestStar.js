@@ -156,7 +156,10 @@ function BestStarContentSlide() {
                     slidesPerView:2.8
                 },
                 1400: {
-                    slidesPerView:3
+                    slidesPerView:1.8
+                },
+                1620: {
+                    slidesPerView:2.2
                 }
             }}
         >
