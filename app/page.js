@@ -97,7 +97,7 @@ export default function Home() {
                 <SquareBoardSlide />
             </section>
 
-            <section className="section section04">
+            <section className="section section04 bestStar">
                 <h3 className="commonBoardTit grayColor">
                     쩰리 인기의 전당 TOP3
                 </h3>
