@@ -3,13 +3,13 @@
 #mapWrap, #mapWrap * {font-family:'Malgun Gothic',dotum,'돋움',sans-serif;font-size:12px;}
 #mapWrap {position:relative;width:100%;}
 #menu_wrap {position: absolute;
-     top: 35px;
+     top: 55px;
      right: 0px;
      width: 300px;
      height: 100%;
+     background: #ffff;
      overflow: scroll;
      z-index: 11;
-     
 }
 #category {position:absolute;top:10px;left:10px;border-radius: 5px; border:1px solid #909090;box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);background: #fff;overflow: hidden;z-index: 2;}
 #category li {float:left;list-style: none;width:50px; border-right:1px solid #acacac;padding:6px 0;text-align: center; cursor: pointer;}
@@ -42,14 +42,16 @@
      flex-direction: column;
      gap: 8px;
      padding-top: 8px;
+     padding-bottom: 45px;
 }
 #placesList li {list-style: none;}
 #placesList .item {position:relative;
      overflow: hidden;
      cursor: pointer;
      min-height: 65px;
-     border-radius: 20px;
-     background: #ffffff;
+     /* border-radius: 20px; */
+     /* background: #ffffff; */
+     border-bottom: 1px solid #e3e3e3;
 }
 #placesList .item span {display: block;margin-top:4px;}
 #placesList .item h5, #placesList .item .info {text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
@@ -96,10 +98,33 @@
 
 .keywordBtn { 
      position: absolute;
-     top: 5px;
+     top: 25px;
      left: 5px;
      width: 100%;
      padding: 0 10px 0 0;
      box-sizing: border-box;
      z-index: 10;
+}
+
+
+.mySwiper .division {
+     margin-right: 3px;
+     background: #fff;
+     box-shadow: 1px 1px 1px 1px rgba(185, 185, 185, 0.39);
+}
+
+
+.keywordSearch > form {
+     display: flex;
+     justify-content: space-evenly;
+}
+
+.swiper {
+     overflow: inherit !important;
+}
+
+@media (max-width: 767px){
+	.mySwiper .division {
+          padding: 3px 12px;
+     }
 }

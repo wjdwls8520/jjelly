@@ -19,7 +19,7 @@ function MapContents() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(success, error);
     } else {
-      // Use default location
+      // 기본 위치 사용
       setLocation({ latitude: 37.566826, longitude: 126.9786567 });
       getCurrentAddress(37.566826, 126.9786567);
     }
@@ -220,6 +220,12 @@ function MapContents() {
     setKeyword(e.target.value);
   };
 
+  const handleClose = () => {
+    setPlaces([]);
+    removeAllChildNodes(document.getElementById('placesList'));
+    removeMarker();
+  };
+
   return (
     <div className="mapApp">
       <div className="map_wrap">
@@ -228,11 +234,11 @@ function MapContents() {
             <div className="option">
               <div className='keywordSearch'>
                 <form onSubmit={handleSearch}>
-                  <input type="text" value={keyword} onChange={handleChange} id="keyword" size="15" />
+                  <input type="text" value={keyword} onChange={handleChange} id="keyword" size="18" />
                   <button type="submit">검색</button>
+                  <button type="button" onClick={handleClose}>닫기</button>
                 </form>
               </div>
-              
             </div>
             <hr />
             <ul id="placesList"></ul>
@@ -255,7 +261,6 @@ function MapContents() {
           </div>
         </div>
       </div>
-      
       <p>현재 위치 행정구역명: {adminDistrict}</p>
     </div>
   );
@@ -266,5 +271,5 @@ export default function Map() {
         <Suspense fallback={<div>Loading...</div>}>
             <MapContents />
         </Suspense>
-    )
-};
+    );
+}
