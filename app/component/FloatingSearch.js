@@ -71,6 +71,7 @@ export default function FloatingSearch() {
                     id="inpSearch" 
                     className="myInput" 
                     type="text"
+                    maxLength={25}
                     ref={inpSearch}
                 />
             </div>

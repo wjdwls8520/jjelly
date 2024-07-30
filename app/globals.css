@@ -82,9 +82,9 @@ br.m {display: none !important;}
 #header .innerSubBot .utilMenu {position: relative; height: 28px;}
 #header .innerSubBot .utilMenu .menu {position: relative; height: 100%;}
 #header .innerSubBot .utilMenu .menu > button {height: 100%;}
-#header .innerSubBot .utilMenu .menu > .menuDepth {display: flex; flex-direction: column; gap: 8px; position: absolute; z-index: 10; top: 36px; left: -55px; padding: 12px 0px; background: #fff;}
-#header .innerSubBot .utilMenu .menu > .menuDepth > li {padding: 0 16px; }
-#header .innerSubBot .utilMenu .menu > .menuDepth > li .txt {font-size: 13px; font-weight: 500; color: #423f3f;}
+#header .innerSubBot .utilMenu .menu > .menuDepth {display: flex; flex-direction: column; gap: 8px; position: absolute; z-index: 10; top: 36px; left: -66px; padding: 12px 0px; background: #d0d1da;}
+#header .innerSubBot .utilMenu .menu > .menuDepth > li {padding: 1px 24px; }
+#header .innerSubBot .utilMenu .menu > .menuDepth > li .txt {font-size: 13px; font-weight: 600; color: #423f3f;}
 #header .innerSubBot .utilMenu img {height: 100%;}
 
 /* 푸터 */
