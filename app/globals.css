@@ -15,7 +15,7 @@ input:-webkit-autofill {
     -webkit-text-fill-color: #9ea1b6; 
 }
 
-html { overflow-x: hidden; }
+html { overflow-x: hidden; -webkit-text-size-adjust: none; text-size-adjust: none; }
 body {
     line-height: normal;
     height: -webkit-fill-available;
@@ -96,6 +96,10 @@ br.m {display: none !important;}
 
 /* 공통 CSS */
 
+.tl {text-align: left !important;}
+.tc {text-align: center !important;}
+.tr {text-align: right !important;}
+
 .customPt {padding-top: 120px !important;} /* 최상단 패딩 커스텀 */
 
 .pt0 {padding-top: 0 !important;}
@@ -136,6 +140,7 @@ br.m {display: none !important;}
 /* 공통 인기 소식 게시판 */
 .section .commonBoardTit {margin-top: 60px; padding-left: 6px; padding-bottom: 20px; letter-spacing: -0.9px; font-size: 16px; font-weight: 600; color: #fa9e60;}
 .section .commonBoardTit .seeMore {display: inline-block; margin-left: 8px; font-size: 14px; font-weight: 500; color: #424242;}
+.section .commonBoardTit .ment {font-size: 14px; font-weight: 600;}
 .squareBoardSection .commonBoardTit {margin-top: 18px; padding-bottom: 12px;}
 
 .commonBoardSection .commonBoardListWrap {display: flex; flex-direction: column; gap: 8px;}
