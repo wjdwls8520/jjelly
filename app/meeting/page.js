@@ -9,7 +9,7 @@ import FloatingSearch from "../component/FloatingSearch";
 import FloatingMenu from "../component/FloatingMenu";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
-import titleData from "../data/data";
+import { titleData } from "../data/data";
 import { useState } from "react";
 import { useEffect } from "react";
 import SlideFullBoard from "../component/SlideFullBoard";

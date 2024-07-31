@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 
 import { Suspense } from "react";
-import titleData from "@/app/data/data";
+import { titleData } from "@/app/data/data";
 import ZoomInOut from "@/app/component/PinchZoom";
 
 function DetailContent() {

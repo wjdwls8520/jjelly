@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { useEffect } from "react";
-import titleData from "../data/data";
+import { titleData } from "../data/data";
 import { Suspense } from "react";
 import HeaderMenu from "./HeaderMenu";
 

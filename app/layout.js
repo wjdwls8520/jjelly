@@ -4,7 +4,6 @@ import "./map.css";
 import Header from "./component/Header";
 import Footer from "./component/Footer";
 import ScrollToTop from "./component/ScrollToTop";
-import { AnimatePresence } from "framer-motion";
 import PageMotion from "./component/PageMotion";
 import FloatUtil from "./component/FloatingUtil";
 import MainBanner from "./component/MainBanner";

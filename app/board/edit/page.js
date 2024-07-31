@@ -4,8 +4,9 @@ import ToastUiEditor from "@/app/component/ToastUi"
 import { useRouter, useSearchParams } from "next/navigation"
 import { useState } from "react";
 import { useEffect } from "react";
-import titleData from "@/app/data/data";
+import { titleData } from "@/app/data/data";
 import { Suspense } from "react";
+import SellectBox from "@/app/component/SellectBox";
 
 function BoardCreateContent() {
 
@@ -67,9 +68,7 @@ function BoardCreateContent() {
                 <div className="titleSpace spaceWrap">
                         <label className="tit">말머리</label>
                         <h3 className="title subTitle customSellectBox">
-                            <button id="inpSubTitle" className="myInput bdCustom mySellect">
-                                일상
-                            </button>
+                            <SellectBox id={'inpSubTitle'} field={'subTitle'} />
                         </h3>
                     </div>
                     <div className="titleSpace spaceWrap">
