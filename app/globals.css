@@ -241,7 +241,7 @@ word-wrap: break-word; -webkit-line-clamp: 2; -webkit-box-orient: vertical; text
 .commonBoardSection .category li.active {background: #fa9e60; font-weight: 500; color: #fff;}
 
 /* 공통 슬라이드 필드 카테고리 */
-.mySwiper {width: 100%; overflow: hidden;}
+.mySwiper {width: 100%; overflow: hidden !important;}
 .mySwiper .swiper-wrapper {display: flex; align-items: center;}
 .mySwiper .division {display: flex; justify-content: center; align-items: center; padding: 3px 16px; background: #edf0f4; border-radius: 20px; font-size: 14px; font-weight: 600; color: #423f3f;}
 .mySwiper .division.active {background: #fededf; font-weight: 600; color: #423f3f;}
