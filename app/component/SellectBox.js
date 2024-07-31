@@ -43,8 +43,8 @@ export default function SellectBox(props) {
                         <motion.div 
                             initial={{ y: '100%', x: '-50%' }}
                             animate={{ y: ['100%', '0%', '5%'] , x: '-50%'}}
-                            exit={{ y: 0, x: '-50%' }}
-                            transition={{ ease: "easeOut", duration: 0.3 }}
+                            exit={{ y: [null, '-0%', '100%'], x: '-50%' }}
+                            transition={{ ease: "easeOut", duration: 0.5 }}
                             className="sellectBoxWrap"
                         >                
                             <span className="boxTitle">
