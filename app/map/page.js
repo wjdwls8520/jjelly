@@ -15,6 +15,7 @@ function MapContents() {
   const [pagination, setPagination] = useState(null);
   const infowindow = useRef(null);
 
+  // 위치 정보를 가져오는 useEffect
   useEffect(() => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(success, error);
@@ -37,6 +38,7 @@ function MapContents() {
     }
   }, []);
 
+  // 현재 위치 주소를 가져오는 함수
   const getCurrentAddress = (lat, lng) => {
     if (!window.kakao || !window.kakao.maps) {
       console.error('Kakao Maps API가 로드되지 않았습니다.');
@@ -59,6 +61,7 @@ function MapContents() {
     });
   };
 
+  // 지도를 초기화하는 함수
   const initMap = () => {
     if (location.latitude && location.longitude) {
       const container = document.getElementById('map');
@@ -74,6 +77,7 @@ function MapContents() {
     }
   };
 
+  // Kakao 지도 API를 로드하는 useEffect
   useEffect(() => {
     const script = document.createElement('script');
     script.src = 'https://dapi.kakao.com/v2/maps/sdk.js?appkey=9784fc8d43c2978a22923da1563dc53d&autoload=false&libraries=services,clusterer,drawing';
@@ -86,6 +90,7 @@ function MapContents() {
     document.head.appendChild(script);
   }, [location]);
 
+  // 장소를 검색하는 함수
   const searchPlaces = () => {
     if (!mapRef.current) return;
 
@@ -96,6 +101,12 @@ function MapContents() {
         setPlaces(data);
         setPagination(pagination);
         displayPlaces(data);
+
+        // 검색 결과가 있을 때 클래스 추가
+        document.querySelector('#menu_wrap').classList.add('on');
+        document.querySelector('.updownBtn').classList.add('on');
+        document.querySelector('#placesList').classList.add('on');
+        document.querySelector('#pagination').classList.add('on');
       } else if (status === window.kakao.maps.services.Status.ZERO_RESULT) {
         alert('검색 결과가 존재하지 않습니다.');
       } else if (status === window.kakao.maps.services.Status.ERROR) {
@@ -104,6 +115,7 @@ function MapContents() {
     });
   };
 
+  // 장소를 표시하는 함수
   const displayPlaces = (places) => {
     const map = mapRef.current;
     const bounds = new window.kakao.maps.LatLngBounds();
@@ -140,6 +152,7 @@ function MapContents() {
     map.setBounds(bounds);
   };
 
+  // 마커를 추가하는 함수
   const addMarker = (position, idx) => {
     const imageSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_number_blue.png';
     const imageSize = new window.kakao.maps.Size(36, 37);
@@ -159,6 +172,7 @@ function MapContents() {
     return marker;
   };
 
+  // 모든 마커를 제거하는 함수
   const removeMarker = () => {
     if (mapRef.current && mapRef.current.markers) {
       mapRef.current.markers.forEach(marker => marker.setMap(null));
@@ -166,18 +180,21 @@ function MapContents() {
     }
   };
 
+  // 인포윈도우를 표시하는 함수
   const displayInfowindow = (marker, title) => {
     const content = `<div style="padding:5px;z-index:1;">${title}</div>`;
     infowindow.current.setContent(content);
     infowindow.current.open(mapRef.current, marker);
   };
 
+  // 모든 자식 노드를 제거하는 함수
   const removeAllChildNodes = (el) => {
     while (el.hasChildNodes()) {
       el.removeChild(el.lastChild);
     }
   };
 
+  // 리스트 아이템을 생성하는 함수
   const getListItem = (index, place) => {
     const el = document.createElement('li');
     let itemStr = `<span class="markerbg marker_${index + 1}"></span><div class="info"><h5>${place.place_name}</h5>`;
@@ -194,6 +211,7 @@ function MapContents() {
     return el;
   };
 
+  // 특정 키워드로 검색하는 함수
   const searchRest = (param) => () => {
     const ps = new window.kakao.maps.services.Places();
 
@@ -203,6 +221,12 @@ function MapContents() {
         setPlaces(data);
         setPagination(pagination);
         displayPlaces(data);
+
+        // 검색 결과가 있을 때 클래스 추가
+        document.querySelector('#menu_wrap').classList.add('on');
+        document.querySelector('.updownBtn').classList.add('on');
+        document.querySelector('#placesList').classList.add('on');
+        document.querySelector('#pagination').classList.add('on');
       } else if (status === window.kakao.maps.services.Status.ZERO_RESULT) {
         alert('검색 결과가 존재하지 않습니다.');
       } else if (status === window.kakao.maps.services.Status.ERROR) {
@@ -211,42 +235,53 @@ function MapContents() {
     });
   };
 
+  // 검색 핸들러
   const handleSearch = (e) => {
     e.preventDefault();
     searchPlaces();
   };
 
+  // 입력값 변경 핸들러
   const handleChange = (e) => {
     setKeyword(e.target.value);
   };
 
+  // 검색 결과 닫기 핸들러
   const handleClose = () => {
     setPlaces([]);
     removeAllChildNodes(document.getElementById('placesList'));
     removeMarker();
+
+    // 클래스 제거
+    document.querySelector('#menu_wrap').classList.remove('on');
+    document.querySelector('.updownBtn').classList.remove('on');
+    document.querySelector('#placesList').classList.remove('on');
+    document.querySelector('#pagination').classList.remove('on');
   };
 
   return (
     <div className="mapApp">
       <div className="map_wrap">
-        <div id="map" style={{ width: '100%', height: '400px' }}>
+        <div id="map" style={{ width: '100%', height: '500px' }}>
           <div id="menu_wrap" className="bg_white">
             <div className="option">
               <div className='keywordSearch'>
                 <form onSubmit={handleSearch}>
-                  <input type="text" value={keyword} onChange={handleChange} id="keyword" size="18" />
-                  <button type="submit">검색</button>
-                  <button type="button" onClick={handleClose}>닫기</button>
+                  <input type="text" value={keyword} onChange={handleChange} id="keyword" />
+                  {/* <button type="submit">검색</button> */}
+                  <button type="button" onClick={handleClose}>
+                    <img className='searchClose' src="/close.png" alt="닫기" />
+                  </button>
                 </form>
               </div>
             </div>
-            <hr />
-            <ul id="placesList"></ul>
-            <div id="pagination"></div>
+            {/* <hr /> */}
+            <div className='updownBtn'>
+              <img src="/down.png" alt="서치 리스트 업다운 버튼" />
+            </div>
+            <ul id="placesList" className=''></ul>
+            <div id="pagination" className=''></div>
           </div>
-          <button onClick={initMap} className='currPo'>
-            <img src="/current_position.png" alt="현재 위치" />
-          </button>
           <div className='keywordBtn'>
             <Swiper 
                 slidesPerView={3.7}
@@ -259,13 +294,17 @@ function MapContents() {
               <SwiperSlide><a className="item division" onClick={searchRest(`${adminDistrict} 펫 호텔`)}>펫 호텔</a></SwiperSlide>
             </Swiper>
           </div>
+          <button onClick={initMap} className='currPo'>
+            <img src="/current_position.png" alt="현재 위치" />
+          </button>
         </div>
       </div>
-      <p>현재 위치 행정구역명: {adminDistrict}</p>
+      {/* <p>현재 위치 행정구역명: {adminDistrict}</p> */}
     </div>
   );
 }
 
+// Suspense를 사용해 비동기 로딩 상태를 처리하는 컴포넌트
 export default function Map() {
     return (
         <Suspense fallback={<div>Loading...</div>}>
