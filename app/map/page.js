@@ -104,9 +104,7 @@ function MapContents() {
 
         // 검색 결과가 있을 때 클래스 추가
         document.querySelector('#menu_wrap').classList.add('on');
-        document.querySelector('.updownBtn').classList.add('on');
-        document.querySelector('#placesList').classList.add('on');
-        document.querySelector('#pagination').classList.add('on');
+        document.querySelector('.list_wrap').classList.add('on', 'up');
       } else if (status === window.kakao.maps.services.Status.ZERO_RESULT) {
         alert('검색 결과가 존재하지 않습니다.');
       } else if (status === window.kakao.maps.services.Status.ERROR) {
@@ -224,9 +222,7 @@ function MapContents() {
 
         // 검색 결과가 있을 때 클래스 추가
         document.querySelector('#menu_wrap').classList.add('on');
-        document.querySelector('.updownBtn').classList.add('on');
-        document.querySelector('#placesList').classList.add('on');
-        document.querySelector('#pagination').classList.add('on');
+        document.querySelector('.list_wrap').classList.add('on', 'up');
       } else if (status === window.kakao.maps.services.Status.ZERO_RESULT) {
         alert('검색 결과가 존재하지 않습니다.');
       } else if (status === window.kakao.maps.services.Status.ERROR) {
@@ -248,16 +244,26 @@ function MapContents() {
 
   // 검색 결과 닫기 핸들러
   const handleClose = () => {
+    setKeyword(''); // keyword 상태를 빈 문자열로 설정
     setPlaces([]);
     removeAllChildNodes(document.getElementById('placesList'));
     removeMarker();
 
     // 클래스 제거
     document.querySelector('#menu_wrap').classList.remove('on');
-    document.querySelector('.updownBtn').classList.remove('on');
-    document.querySelector('#placesList').classList.remove('on');
-    document.querySelector('#pagination').classList.remove('on');
+    document.querySelector('.list_wrap').classList.remove('on');
   };
+
+  // 업/다운 버튼
+  function handleUpdown() {
+    if (document.querySelector('.updownBtn').classList.contains('up')) {
+      document.querySelector('.updownBtn').classList.remove('up');
+      document.querySelector('.list_wrap').classList.add('up');
+    } else {
+      document.querySelector('.updownBtn').classList.add('up');
+      document.querySelector('.list_wrap').classList.remove('up');
+    }
+  }
 
   return (
     <div className="mapApp">
@@ -275,8 +281,9 @@ function MapContents() {
                 </form>
               </div>
             </div>
-            {/* <hr /> */}
-            <div className='updownBtn'>
+          </div>
+          <div className='list_wrap'>
+            <div className='updownBtn' onClick={handleUpdown}>
               <img src="/down.png" alt="서치 리스트 업다운 버튼" />
             </div>
             <ul id="placesList" className=''></ul>
