@@ -9,7 +9,7 @@ import { useState } from "react";
 
 export default function Home() {
     const [email, setEmail] = useState("lee3321998@naver.com")
-    const [password, setPassword] = useState('skdmltls1152')
+    const [password, setPassword] = useState('1q2w3e4r!')
     const getUser = async () => userInfo();
     const onClick = async () => signUpNewUser(email, password)
     return (
