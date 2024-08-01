@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@supabase/ssr": "^0.4.0",
+    "@supabase/supabase-js": "^2.44.4",
     "framer-motion": "^11.3.12",
     "next": "14.1.4",
     "react": "^18",
@@ -16,5 +18,9 @@
     "react-kakao-maps-sdk": "^1.1.27",
     "react-zoom-pan-pinch": "^3.6.1",
     "swiper": "^11.1.1"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.3",
+    "typescript": "5.5.4"
   }
 }

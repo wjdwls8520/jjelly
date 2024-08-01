@@ -1,11 +1,13 @@
+"use client"
+
 import Link from "next/link";
 import CommonBoard from "./component/CommonBoard";
 import BestStar from "./component/BestStar";
 import SlideFullBoard from "./component/SlideFullBoard";
 import SquareBoardSlide from "./component/SquareBoardSlide";
 
-
 export default function Home() {
+
     return (
         <>
 
