@@ -4,17 +4,14 @@ import Link from "next/link";
 import CommonBoard from "./component/CommonBoard";
 import SquareBoard from "./component/SquareBoard";
 import BestStar from "./component/BestStar";
-import { userInfo } from "./action";
 
 export default function Home() {
-
-    const getUser = async () => userInfo();
 
     return (
         <>
             <section className="section section01">
                 <div className="sloganWrap">
-                    <span onClick={getUser} className="subSW">
+                    <span className="subSW">
                         사랑과 추억을 나누는,
                     </span>
                     <span className="mainSW">
