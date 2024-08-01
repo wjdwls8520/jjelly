@@ -1,15 +1,22 @@
+"use client"
+
 import Link from "next/link";
 import CommonBoard from "./component/CommonBoard";
 import SquareBoard from "./component/SquareBoard";
 import BestStar from "./component/BestStar";
-
+import { userInfo, signUpNewUser } from "./action";
+import { useState } from "react";
 
 export default function Home() {
+    const [email, setEmail] = useState("lee3321998@naver.com")
+    const [password, setPassword] = useState('skdmltls1152')
+    const getUser = async () => userInfo();
+    const onClick = async () => signUpNewUser(email, password)
     return (
         <>
             <section className="section section01">
                 <div className="sloganWrap">
-                    <span className="subSW">
+                    <span onClick={onClick} className="subSW">
                         사랑과 추억을 나누는,
                     </span>
                     <span className="mainSW">
