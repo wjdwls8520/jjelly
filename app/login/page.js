@@ -2,11 +2,11 @@
 
 import Link from "next/link";
 import { Suspense } from "react";
-import {signUpGoogle, signUpKakao} from "./action";
+import {signUpGoogle, signInWithKakao} from "./action";
 
 function LoginContents() {
     const Google = async () => signUpGoogle();
-    const Kakao = async () => signUpKakao();
+    const Kakao = async () => signInWithKakao();
     return (
         <section className="section pt80 loginSec">
             <div className="loginContainer mt80">
