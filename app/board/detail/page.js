@@ -1,7 +1,7 @@
 'use client'
 
-import CommonBoard from "@/app/component/CommonBoard";
-import { titleData } from "@/app/data/data";
+import CommonBoard from "./app/component/CommonBoard";
+import { titleData } from "./app/data/data";
 import { useRouter, useSearchParams } from "next/navigation"
 import { useState } from "react";
 import { useEffect } from "react";
