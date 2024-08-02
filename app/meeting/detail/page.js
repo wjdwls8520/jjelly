@@ -5,9 +5,9 @@ import { useState } from "react";
 import { useEffect } from "react";
 
 import { Suspense } from "react";
-import { titleData } from "./app/data/data";
-import MeetNotice from "./app/component/MeetNotice";
-import SquareBoardSlide from "./app/component/SquareBoardSlide";
+import { titleData } from "/app/data/data";
+import MeetNotice from "/app/component/MeetNotice";
+import SquareBoardSlide from "/app/component/SquareBoardSlide";
 
 function DetailContent() {
     

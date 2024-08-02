@@ -1,12 +1,12 @@
 'use client'
 
-import ToastUiEditor from "./app/component/ToastUi"
+import ToastUiEditor from "/app/component/ToastUi"
 import { useRouter, useSearchParams } from "next/navigation"
 import { useState } from "react";
 import { useEffect } from "react";
-import { titleData } from "./app/data/data";
+import { titleData } from "/app/data/data";
 import { Suspense } from "react";
-import SellectBox from "./app/component/SellectBox";
+import SellectBox from "/app/component/SellectBox";
 
 function BoardCreateContent() {
 

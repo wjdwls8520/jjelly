@@ -2,11 +2,9 @@
 
 import Link from "next/link";
 import { Suspense } from "react";
-import {signUpGoogle, signInWithKakao} from "./action";
 
 function LoginContents() {
-    const Google = async () => signUpGoogle();
-    const Kakao = async () => signInWithKakao();
+
     return (
         <section className="section pt80 loginSec">
             <div className="loginContainer mt80">
@@ -36,13 +34,13 @@ function LoginContents() {
                             <p></p>
                         </div>
                         <div className="snsIcons">
-                            <div id="loginKakao" className="snsIcon" onClick={Kakao}>
+                            <div id="loginKakao" className="snsIcon" >
                                 <img src="/icon_login_kakao.png" alt="카카오" />
                             </div>
                             <div id="loginaver" className="snsIcon">
                                 <img src="/icon_login_naver.png" alt="네이버" />
                             </div>
-                            <div id="loginGoogle" className="snsIcon" onClick={Google}>
+                            <div id="loginGoogle" className="snsIcon" >
                                 <img src="/icon_login_google.png" alt="구글" />
                             </div>
                         </div>
