@@ -40,7 +40,7 @@ export default function RootLayout({ children }) {
         </head>
         <body className={noto.className }>
             <div id="wrap">
-                
+
                 {/* 헤더 */}
                 <Header />
 
