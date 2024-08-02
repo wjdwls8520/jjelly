@@ -3,10 +3,24 @@
 import Link from "next/link";
 import CommonBoard from "./component/CommonBoard";
 import BestStar from "./component/BestStar";
-import SlideFullBoard from "./component/SlideFullBoard";
 import SquareBoardSlide from "./component/SquareBoardSlide";
-
+import { userInfo } from "../utils/supabase/lib";
+import { useEffect, useState } from "react";
 export default function Home() {
+    const [user, setUser] = useState(null);
+
+    useEffect(() => {
+        const fetchUserInfo = async () => {
+            try {
+                const userData = await userInfo(); // 사용자 정보를 비동기적으로 가져옵니다.
+                setUser(userData);
+            } catch (error) {
+                console.error("Failed to fetch user info:", error);
+            }
+        };
+
+        fetchUserInfo();
+    }, []); // 빈 배열은 컴포넌트가 처음 렌더링될 때만 호출됩니다.
 
     return (
         <>

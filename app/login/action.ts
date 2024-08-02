@@ -4,7 +4,6 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
 
 export async function signUpGoogle() {
     const supabase = createClient();
-    console.log('구글 연동 회원가입')
     const { data, error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
