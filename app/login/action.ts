@@ -30,8 +30,8 @@ export async function signInWithKakao() {
     });
     
     if (error) {
-    console.error('Error logging in with Kakao:', error.message);
+        console.error('Error logging in with Kakao:', error.message);
     } else {
-    console.log('Logged in successfully:', data);
+        console.log('Logged in successfully:', data);
     }
 }

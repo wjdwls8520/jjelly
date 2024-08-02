@@ -7,6 +7,7 @@ import ScrollToTop from "./component/ScrollToTop";
 import PageMotion from "./component/PageMotion";
 import FloatUtil from "./component/FloatingUtil";
 import MainBanner from "./component/MainBanner";
+import { createClient } from '../utils/supabase/server';
 
 
 const noto = Noto_Sans_KR({
@@ -22,8 +23,12 @@ export const viewport = {
 }
 
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  const supabase = createClient();
 
+  const { data: { user }, error} = await supabase.auth.getUser();
+  console.log(user)
+  
   return (
     <html lang="en">
         <head>
