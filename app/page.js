@@ -13,6 +13,7 @@ export default function Home() {
         const fetchUserInfo = async () => {
             try {
                 const userData = await userInfo(); // 사용자 정보를 비동기적으로 가져옵니다.
+                console.log('Base URL:', process.env.NEXT_PUBLIC_BASE_URL);
                 setUser(userData);
             } catch (error) {
                 console.error("Failed to fetch user info:", error);
