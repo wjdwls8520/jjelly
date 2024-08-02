@@ -1,7 +1,6 @@
 import { cookies } from 'next/headers'
 import { NextResponse } from 'next/server'
 import { type CookieOptions, createServerClient } from '@supabase/ssr'
-import { redirect } from 'next/navigation'
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url)
@@ -31,10 +30,6 @@ export async function GET(request: Request) {
     )
     const { error } = await supabase.auth.exchangeCodeForSession(code)
     const { data: { session } } = await supabase.auth.getSession();
-
-    // if (session?.user.user_metadata.phone === '') {
-    //     return redirect('/code')
-    // }
 
     if (!error) {
       return NextResponse.redirect(`${baseUrl}${next}`)
