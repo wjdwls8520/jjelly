@@ -1,12 +1,14 @@
 import { createClient } from "../../utils/supabase/client";
 
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+
 export async function signUpGoogle() {
     const supabase = createClient();
     console.log('구글 연동 회원가입')
     const { data, error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
-            redirectTo: `http://localhost:3000/auth/callback`
+            redirectTo: `${baseUrl}/auth/callback`
         }
     });
     
@@ -23,7 +25,7 @@ export async function signInWithKakao() {
     const { data, error } = await supabase.auth.signInWithOAuth({
         provider: 'kakao',
         options: {
-            redirectTo: `http://localhost:3000/auth/callback`
+            redirectTo: `${baseUrl}/auth/callback`
         }
     });
     
