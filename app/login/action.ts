@@ -1,12 +1,12 @@
 import { createClient } from "../../utils/supabase/client";
 
 export async function signUpGoogle() {
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://jjelly.vercel.app';
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000/';
     const supabase = createClient();
     const { data, error } = await supabase.auth.signInWithOAuth({
         provider: 'google',
         options: {
-            redirectTo: `${baseUrl}/auth/callback`
+            redirectTo: `${baseUrl}auth/callback`
         }
     });
     
@@ -19,12 +19,12 @@ export async function signUpGoogle() {
 }
 
 export async function signInWithKakao() {
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://jjelly.vercel.app';
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000/';
     const supabase = createClient();
     const { data, error } = await supabase.auth.signInWithOAuth({
         provider: 'kakao',
         options: {
-            redirectTo: `${baseUrl}/auth/callback`
+            redirectTo: `${baseUrl}auth/callback`
         }
     });
     
